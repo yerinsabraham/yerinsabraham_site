@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
+import RichText from "@/components/RichText";
 import { site, about, quotes } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function AboutPage() {
             {about.paragraphs.map((p, idx) => (
               <Reveal key={idx} delay={idx * 50}>
                 <p className="max-w-2xl text-lg leading-relaxed text-ink-soft">
-                  {p}
+                  <RichText text={p} />
                 </p>
               </Reveal>
             ))}

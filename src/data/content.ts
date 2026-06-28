@@ -256,6 +256,20 @@ export const artworks: Artwork[] = [
   },
 ];
 
+// Terms that should auto-link wherever they appear in body prose.
+// Longer terms are matched first; only the first occurrence per block links.
+export const inlineLinks: { term: string; href: string }[] = [
+  { term: "Life Is Random", href: "/writing/life-is-random" },
+  { term: "The Polymath Podcast", href: site.socials.spotify },
+  { term: "Lira Intelligence", href: "https://liraintelligence.com/" },
+  { term: "Sarah Oba", href: site.youtubeCouple },
+  { term: "Creovine", href: "https://creovine.com/" },
+  { term: "Tablu", href: "https://www.tabluhq.com/" },
+  { term: "Brydg", href: "https://brydg.app/" },
+  { term: "Lira", href: "https://liraintelligence.com/" },
+  { term: "Medium", href: site.socials.medium },
+];
+
 export const podcast = {
   title: "The Polymath Podcast",
   blurb:
