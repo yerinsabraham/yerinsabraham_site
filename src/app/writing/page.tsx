@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import { getArticles } from "@/lib/medium";
-import { site, podcast } from "@/data/content";
+import { site } from "@/data/content";
 import { books, essays } from "@/data/writings";
 
 export const metadata: Metadata = {
@@ -142,30 +142,7 @@ export default async function WritingHub() {
         </section>
       )}
 
-      {/* PODCAST (last) */}
-      <section className="mx-auto max-w-5xl px-6 py-12 pb-28">
-        <p className="eyebrow mb-8">Podcast</p>
-        <Reveal>
-          <div className="rounded-2xl border border-line bg-paper-2/40 p-7 sm:p-9">
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink sm:text-3xl">
-              {podcast.title}
-            </h2>
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
-              {podcast.blurb}
-            </p>
-            <a
-              href={podcast.spotifyShow}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
-            >
-              Listen on Spotify &rarr;
-            </a>
-          </div>
-        </Reveal>
-      </section>
-
-      <div className="mx-auto max-w-5xl px-6 pb-24">
+      <div className="mx-auto max-w-5xl px-6 py-24">
         <a
           href="/"
           className="text-sm text-ink-soft underline-offset-4 hover:text-accent-deep hover:underline"
