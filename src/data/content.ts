@@ -191,6 +191,12 @@ export const press: Press[] = [
     year: "2024",
   },
   {
+    outlet: "The Punch",
+    quote: "I've put medicine on hold for fashion and the arts.",
+    href: "https://punchng.com/ive-put-medicine-on-hold-for-fashion-arts-yerins/",
+    year: "2021",
+  },
+  {
     outlet: "Channels Television",
     quote: "Ex-BBN housemate Yerins Abraham proposes to his partner in Rwanda.",
     href: "https://www.channelstv.com/2026/04/17/ex-bbn-housemate-yerins-abraham-proposes-to-partner-in-rwanda/",
