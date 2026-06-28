@@ -57,6 +57,11 @@ export const about = {
     "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my M.D., into software I taught myself, and across art, music and fashion. I staged the first African fashion show in Eastern Europe in 2017 and founded Metart Africa. I move often and build wherever I land; right now that means Creovine, with my real long-term aim being health technology for the regions that need it most.",
     "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
+  // Third-person bio for press, speaker intros, and syndication. Copy-ready.
+  pressBioShort:
+    "Yerins Abraham is a Nigerian polymath: a medical doctor and software engineer, artist, author and entrepreneur, and the co-founder and CEO of the AI product studio Creovine.",
+  pressBio:
+    "Yerins Abraham, known as “The Nigerian Da Vinci,” is a polymath working at the intersection of medicine, technology and art. A Ukrainian-trained medical doctor (M.D., General Medicine, Sumy State University) and self-taught full-stack engineer, he is the co-founder and CEO of Creovine, an AI product studio behind Tablu, Lira Intelligence and Brydg. As a visual artist he is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally, and he is the author of the book Index, with a second book, Life Is Random, in progress. A former Big Brother Naija housemate and recording artist, his long-term focus is building health technology for underserved regions.",
   // Quick-facts panel. Confirm/adjust any of these.
   facts: [
     { label: "Origin", value: "Delta & Bayelsa State, Nigeria" },
