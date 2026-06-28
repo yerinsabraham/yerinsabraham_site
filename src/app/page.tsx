@@ -32,6 +32,14 @@ export default async function Home() {
             {bio.body}
           </p>
         </Reveal>
+        <Reveal delay={140}>
+          <a
+            href="/about"
+            className="mt-8 inline-block text-sm text-accent-deep underline-offset-4 hover:underline"
+          >
+            Read the full story →
+          </a>
+        </Reveal>
       </Section>
 
       {/* NOW / BUILDING */}
