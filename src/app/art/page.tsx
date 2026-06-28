@@ -51,16 +51,26 @@ export default function ArtPage() {
       {/* Featured works, each large with its story */}
       <section className="mx-auto max-w-5xl px-6">
         <div className="space-y-24">
-          {featured.map((a) => (
+          {featured.map((a) => {
+            const isPortrait = a.h > a.w;
+            return (
             <Reveal key={a.src}>
               <figure>
-                <div className="relative overflow-hidden rounded-2xl border border-line bg-paper-2">
+                <div
+                  className={`relative overflow-hidden rounded-2xl border border-line bg-paper-2 ${
+                    isPortrait ? "mx-auto max-w-md" : ""
+                  }`}
+                >
                   <Image
                     src={a.src}
                     alt={a.title}
                     width={a.w}
                     height={a.h}
-                    sizes="(max-width: 1024px) 92vw, 1024px"
+                    sizes={
+                      isPortrait
+                        ? "(max-width: 640px) 92vw, 448px"
+                        : "(max-width: 1024px) 92vw, 1024px"
+                    }
                     className="h-auto w-full"
                   />
                 </div>
@@ -87,7 +97,8 @@ export default function ArtPage() {
                 </figcaption>
               </figure>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </section>
 
