@@ -2,6 +2,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
   { href: "/art", label: "Art" },
+  { href: "/#music", label: "Music" },
   { href: "/writing", label: "Writing" },
   { href: "/#contact", label: "Contact" },
 ];
