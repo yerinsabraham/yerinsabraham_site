@@ -30,6 +30,8 @@ export const site = {
     facebook: "https://www.facebook.com/abrahamyerins",
   },
   mediumHandle: "yerinsabraham",
+  // Wikidata item — cross-linked in the Person schema for entity verification.
+  wikidata: "https://www.wikidata.org/wiki/Q140372807",
 };
 
 export const bio = {
