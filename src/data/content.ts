@@ -20,14 +20,14 @@ export const site = {
   ],
   voiceLine: "My creative process is gardening, not architecture.",
   location: "Kigali, Rwanda",
-  email: "hello@yerinsabraham.com", // TODO: confirm the address you want public
+  email: "yerinsabram@gmail.com",
   domain: "https://yerinsabraham.com",
   socials: {
     instagram: "https://www.instagram.com/yerinsabraham/",
     linkedin: "https://www.linkedin.com/in/yerinsabraham/",
     medium: "https://medium.com/@yerinsabraham",
     x: "https://x.com/yerinsabraham",
-    facebook: "https://www.facebook.com/yerinsabraham/",
+    facebook: "https://www.facebook.com/abrahamyerins",
   },
   mediumHandle: "yerinsabraham",
 };
