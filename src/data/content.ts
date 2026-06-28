@@ -40,6 +40,28 @@ export const bio = {
   body: "I sit at a rare intersection: I understand the clinic and I can build the software. Right now I'm building Creovine, starting with Tablu, on the way to health technology for the places that need it most. Outside the lab and the IDE I paint, write, and make music. The range isn't a distraction from the work — it is the work.",
 };
 
+// Long-form biography for the /about page. First person, your real voice
+// (adapted from your LinkedIn summary + public record). Edit freely.
+export const about = {
+  intro:
+    "A polymath who thrives at the intersection of creativity, technology, and problem-solving.",
+  paragraphs: [
+    "Trained as a medical doctor, I've spent the last five-plus years building impactful digital solutions — full-stack and blockchain applications, decentralized platforms, and scalable systems. The clinic taught me how the human body fails and recovers; engineering gave me the tools to design systems that don't.",
+    "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects — from Web3 development to art exhibitions and fintech.",
+    "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
+    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my M.D., into software I taught myself, and across art, music and fashion — I staged the first African fashion show in Eastern Europe in 2017 and founded Giggle and Metart Africa. Today I'm based in Kigali, building Creovine, with my real long-term aim being health technology for the regions that need it most.",
+  ],
+  // Quick-facts panel. Confirm/adjust any of these.
+  facts: [
+    { label: "Origin", value: "Bayelsa State, Nigeria" },
+    { label: "Education", value: "M.D., Sumy State University (2019)" },
+    { label: "Based in", value: "Kigali, Rwanda" },
+    { label: "Languages", value: "English, Russian, Ukrainian, French" },
+    { label: "Building", value: "Creovine · Tablu" },
+    { label: "Also known as", value: "The Nigerian Da Vinci" },
+  ],
+};
+
 export const now = {
   // Update this monthly. This is the credibility section: proof you ship.
   updated: "June 2026",
