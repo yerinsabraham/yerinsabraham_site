@@ -206,34 +206,59 @@ export default async function Home() {
         </div>
       </Section>
 
-      {/* PRESS + QUOTE */}
-      <Section id="press" eyebrow="Recognition" bordered>
+      {/* QUOTE */}
+      <Section id="quote" eyebrow="In my own words" bordered>
         <Reveal>
           <div className="max-w-3xl font-[family-name:var(--font-fraunces)] text-2xl font-light italic leading-relaxed text-ink sm:text-3xl">
             <QuoteModal quote={beginningsQuote} />
           </div>
         </Reveal>
-        <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-3">
-          {press.map((p, idx) => (
-            <Reveal key={p.outlet} delay={idx * 60}>
+      </Section>
+
+      {/* PRESS — swipeable "as featured in" row */}
+      <section id="press" className="border-t border-line py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <Reveal>
+            <p className="eyebrow mb-2">As featured in</p>
+            <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
+              Press &amp; recognition
+            </h2>
+          </Reveal>
+        </div>
+        <Reveal>
+          <div className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 [scroll-padding-left:1.5rem]">
+            {press.map((p) => (
               <a
+                key={p.outlet}
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block border-t border-line pt-4 transition-colors hover:border-accent"
+                className="group flex w-[78vw] shrink-0 snap-start flex-col justify-between rounded-2xl border border-line bg-paper-2/40 p-7 transition-colors hover:border-accent hover:bg-paper-2 sm:w-[20rem]"
               >
-                <div className="flex items-baseline justify-between">
-                  <span className="font-medium text-ink">{p.outlet}</span>
-                  <span className="text-xs text-ink-soft/70">{p.year}</span>
+                <div>
+                  <p className="font-[family-name:var(--font-fraunces)] text-xl text-ink">
+                    {p.outlet}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {p.quote}
+                  </p>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  {p.quote}
-                </p>
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-xs text-ink-soft/70">{p.year}</span>
+                  <span className="text-xs text-accent-deep opacity-0 transition-opacity group-hover:opacity-100">
+                    Read &rarr;
+                  </span>
+                </div>
               </a>
-            </Reveal>
-          ))}
+            ))}
+            {/* trailing spacer so the last card isn't flush to the edge */}
+            <div aria-hidden className="w-1 shrink-0" />
+          </div>
+        </Reveal>
+        <div className="mx-auto mt-4 max-w-5xl px-6">
+          <p className="text-xs text-ink-soft/60">Swipe to see more &rarr;</p>
         </div>
-      </Section>
+      </section>
 
       {/* CONTACT */}
       <section

@@ -29,6 +29,7 @@ export const site = {
     x: "https://x.com/yerinsabraham",
     facebook: "https://www.facebook.com/abrahamyerins",
     youtube: "https://www.youtube.com/@YerinsAbraham",
+    soundcloud: "https://soundcloud.com/yerinsabraham",
   },
   // The couple's joint channel with Sarah (used on the About page).
   youtubeCouple: "https://www.youtube.com/@TheAbrahamAndSarah",
@@ -191,8 +192,20 @@ export const press: Press[] = [
   },
   {
     outlet: "Channels Television",
-    quote: "Ex-BBN housemate Yerins Abraham proposes to partner in Rwanda.",
-    href: "https://www.channelstv.com/2026/04/17/ex-bbn-housemate-yerins-abraham-proposes-to-partner-in-rwanda/amp/",
+    quote: "Ex-BBN housemate Yerins Abraham proposes to his partner in Rwanda.",
+    href: "https://www.channelstv.com/2026/04/17/ex-bbn-housemate-yerins-abraham-proposes-to-partner-in-rwanda/",
+    year: "2026",
+  },
+  {
+    outlet: "BellaNaija Weddings",
+    quote: "A birthday getaway in Rwanda that led to a sweet “yes.”",
+    href: "https://www.bellanaijaweddings.com/sarah-yerins-surprise-proposal/",
+    year: "2026",
+  },
+  {
+    outlet: "Leadership",
+    quote: "Yerins Abraham announces engagement to Sarah Oba.",
+    href: "https://leadership.ng/bbnaijas-yerins-abraham-announces-engagement-to-sarah-oba/",
     year: "2026",
   },
   {
