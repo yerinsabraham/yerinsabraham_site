@@ -2,6 +2,7 @@ import Image from "next/image";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
+import RichText from "@/components/RichText";
 import { getArticles } from "@/lib/medium";
 import {
   site,
@@ -35,7 +36,7 @@ export default async function Home() {
         </Reveal>
         <Reveal delay={80}>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            {bio.body}
+            <RichText text={bio.body} />
           </p>
         </Reveal>
         <Reveal delay={140}>
@@ -60,7 +61,9 @@ export default async function Home() {
             <Reveal key={item} delay={idx * 70}>
               <li className="flex max-w-2xl gap-4 text-lg text-ink-soft">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                {item}
+                <span>
+                  <RichText text={item} />
+                </span>
               </li>
             </Reveal>
           ))}
