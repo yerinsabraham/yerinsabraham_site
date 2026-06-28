@@ -29,7 +29,10 @@ export const site = {
     x: "https://x.com/yerinsabraham",
     facebook: "https://www.facebook.com/abrahamyerins",
     spotify: "https://open.spotify.com/show/0C58SpnW0QoKStlsTXG0ht",
+    youtube: "https://www.youtube.com/@YerinsAbraham",
   },
+  // The couple's joint channel with Sarah (used on the About page).
+  youtubeCouple: "https://www.youtube.com/@TheAbrahamAndSarah",
   mediumHandle: "yerinsabraham",
   // Wikidata item, cross-linked in the Person schema for entity verification.
   wikidata: "https://www.wikidata.org/wiki/Q140372807",
@@ -52,6 +55,7 @@ export const about = {
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
     "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my M.D., into software I taught myself, and across art, music and fashion. I staged the first African fashion show in Eastern Europe in 2017 and founded Metart Africa. I move often and build wherever I land; right now that means Creovine, with my real long-term aim being health technology for the regions that need it most.",
+    "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
   // Quick-facts panel. Confirm/adjust any of these.
   facts: [
@@ -59,8 +63,8 @@ export const about = {
     { label: "Education", value: "M.D., General Medicine, Sumy State University" },
     { label: "Languages", value: "English, Russian, Izon, French (a little)" },
     { label: "Stack", value: ".NET, React, Next.js, Flutter, AWS" },
-    { label: "Building", value: "Creovine · Tablu" },
-    { label: "Also known as", value: "The Nigerian Da Vinci" },
+    { label: "Building", value: "Creovine (Tablu, Lira, Brydg)" },
+    { label: "With", value: "Sarah Oba, partner & co-founder" },
   ],
 };
 
@@ -84,11 +88,36 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Creovine",
+    role: "Co-founder & CEO",
+    blurb:
+      "An AI product studio building the future of work, intelligent automation across hiring, customer support, and more. The home for everything below.",
+    status: "Studio",
+    href: "https://creovine.com/",
+  },
+  {
     title: "Tablu",
-    role: "Founder, Creovine",
+    role: "Creovine",
     blurb:
       "QR ordering, payments and kitchen display for owner-operated restaurants. Keep your margin, own your customer. Currently in a live pilot.",
     status: "Building now",
+    href: "https://www.tabluhq.com/",
+  },
+  {
+    title: "Lira Intelligence",
+    role: "Creovine",
+    blurb:
+      "AI guest and customer support that resolves requests instantly, built for hospitality and service businesses.",
+    status: "Live",
+    href: "https://liraintelligence.com/",
+  },
+  {
+    title: "Brydg",
+    role: "Creovine",
+    blurb:
+      "An AI-native hiring platform. Applicant tracking and recruiting automation that modernizes how teams hire.",
+    status: "Live",
+    href: "https://brydg.app/",
   },
   {
     title: "Health technology",

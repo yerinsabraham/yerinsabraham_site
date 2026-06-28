@@ -71,24 +71,41 @@ export default async function Home() {
           </h2>
         </Reveal>
         <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
-          {projects.map((p, idx) => (
-            <Reveal key={p.title} delay={idx * 60}>
-              <article className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink">
-                    {p.title}
-                  </h3>
-                  <span className="shrink-0 rounded-full border border-line px-3 py-1 text-xs text-accent-deep">
-                    {p.status}
-                  </span>
-                </div>
-                <p className="mt-1 text-sm text-ink-soft/80">{p.role}</p>
-                <p className="mt-4 text-base leading-relaxed text-ink-soft">
-                  {p.blurb}
-                </p>
-              </article>
-            </Reveal>
-          ))}
+          {projects.map((p, idx) => {
+            const Wrapper = p.href ? "a" : "div";
+            return (
+              <Reveal key={p.title} delay={idx * 60}>
+                <Wrapper
+                  {...(p.href
+                    ? {
+                        href: p.href,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      }
+                    : {})}
+                  className="group flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink">
+                      {p.title}
+                    </h3>
+                    <span className="shrink-0 rounded-full border border-line px-3 py-1 text-xs text-accent-deep">
+                      {p.status}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm text-ink-soft/80">{p.role}</p>
+                  <p className="mt-4 text-base leading-relaxed text-ink-soft">
+                    {p.blurb}
+                  </p>
+                  {p.href && (
+                    <span className="mt-4 text-sm text-accent-deep underline-offset-4 group-hover:underline">
+                      Visit site →
+                    </span>
+                  )}
+                </Wrapper>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 
