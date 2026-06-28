@@ -7,12 +7,13 @@ import { site, artworks } from "@/data/content";
 export const metadata: Metadata = {
   title: "Art",
   description:
-    "Pen-and-ink artwork by Yerins Abraham, including Mother and works from the Index period.",
+    "Pen-and-ink artwork by Yerins Abraham, including Index (2020), Mother (2024) and Life's Veil.",
   alternates: { canonical: "/art" },
 };
 
 export default function ArtPage() {
-  const [flagship, ...rest] = artworks;
+  const featured = artworks.filter((a) => a.feature);
+  const details = artworks.filter((a) => !a.feature);
 
   return (
     <main className="overflow-x-hidden">
@@ -47,40 +48,10 @@ export default function ArtPage() {
         </div>
       </header>
 
-      {/* Flagship: Mother */}
-      <section className="mx-auto max-w-5xl px-6 py-10">
-        <Reveal>
-          <figure>
-            <div className="relative overflow-hidden rounded-2xl border border-line bg-paper-2">
-              <Image
-                src={flagship.src}
-                alt={flagship.title}
-                width={flagship.w}
-                height={flagship.h}
-                sizes="(max-width: 1024px) 92vw, 1024px"
-                className="h-auto w-full"
-                priority
-              />
-            </div>
-            <figcaption className="mt-4 flex flex-wrap items-baseline justify-between gap-2">
-              <span className="font-[family-name:var(--font-fraunces)] text-2xl italic text-ink">
-                {flagship.title}
-              </span>
-              <span className="text-sm text-ink-soft">{flagship.medium}</span>
-            </figcaption>
-            {flagship.note && (
-              <p className="mt-2 max-w-2xl text-base leading-relaxed text-ink-soft">
-                {flagship.note}
-              </p>
-            )}
-          </figure>
-        </Reveal>
-      </section>
-
-      {/* Gallery */}
-      <section className="mx-auto max-w-5xl px-6 py-10 pb-28">
-        <div className="grid gap-8 sm:grid-cols-2">
-          {rest.map((a) => (
+      {/* Featured works, each large with its story */}
+      <section className="mx-auto max-w-5xl px-6">
+        <div className="space-y-24">
+          {featured.map((a) => (
             <Reveal key={a.src}>
               <figure>
                 <div className="relative overflow-hidden rounded-2xl border border-line bg-paper-2">
@@ -89,21 +60,58 @@ export default function ArtPage() {
                     alt={a.title}
                     width={a.w}
                     height={a.h}
-                    sizes="(max-width: 640px) 92vw, 46vw"
+                    sizes="(max-width: 1024px) 92vw, 1024px"
+                    className="h-auto w-full"
+                  />
+                </div>
+                <figcaption className="mt-5">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <h2 className="font-[family-name:var(--font-fraunces)] text-2xl italic text-ink sm:text-3xl">
+                      {a.title}
+                      {a.year && (
+                        <span className="not-italic text-ink-soft">
+                          {" "}
+                          ({a.year})
+                        </span>
+                      )}
+                    </h2>
+                    <span className="text-sm text-ink-soft">
+                      {[a.dimensions, a.medium].filter(Boolean).join(" · ")}
+                    </span>
+                  </div>
+                  {a.note && (
+                    <p className="mt-4 max-w-3xl text-base leading-relaxed text-ink-soft">
+                      {a.note}
+                    </p>
+                  )}
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Details & process */}
+      <section className="mx-auto max-w-5xl px-6 py-24">
+        <p className="eyebrow mb-10">Details & process</p>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {details.map((a) => (
+            <Reveal key={a.src}>
+              <figure>
+                <div className="relative overflow-hidden rounded-xl border border-line bg-paper-2">
+                  <Image
+                    src={a.src}
+                    alt={a.title}
+                    width={a.w}
+                    height={a.h}
+                    sizes="(max-width: 640px) 92vw, 30vw"
                     className="h-auto w-full transition-transform duration-500 hover:scale-[1.02]"
                   />
                 </div>
                 <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-2">
-                  <span className="font-[family-name:var(--font-fraunces)] text-lg italic text-ink">
-                    {a.title}
-                  </span>
+                  <span className="text-sm text-ink">{a.title}</span>
                   <span className="text-xs text-ink-soft">{a.medium}</span>
                 </figcaption>
-                {a.note && (
-                  <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                    {a.note}
-                  </p>
-                )}
               </figure>
             </Reveal>
           ))}

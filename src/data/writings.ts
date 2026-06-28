@@ -1,5 +1,5 @@
 /*
-  Books, essays, and podcast pieces.
+  Books and essays.
   `body` paragraphs render on the /writing/[slug] pages. Em dashes intentionally
   avoided throughout. Edit freely.
 */
@@ -94,7 +94,7 @@ export const writings: Writing[] = [
     subtitle: "On perception, belief, and the reality our brains construct.",
     excerpt:
       "What do you think is real to humans? Color does not exist out there, it is all in our brain. The mind does not seek truth and accuracy, it seeks meaning.",
-    note: "From The Polymath Podcast.",
+    note: "An essay on perception and belief.",
     body: [
       "So what is real? No seriously, what do you think is real to humans?",
       "The Unthinking Realist argues that everything we experience is exactly the way the world is. Sugar is sweet, water is wet because that is what water is, roses are red, the sky is blue because that is just how it is.",

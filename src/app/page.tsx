@@ -135,7 +135,7 @@ export default async function Home() {
       {/* WRITING teaser */}
       <Section id="writing" eyebrow="Words & ideas" bordered>
         <HeadingRow
-          title="Books, essays, a podcast"
+          title="Books, essays, and ideas"
           href="/writing"
           label="All writing"
         />

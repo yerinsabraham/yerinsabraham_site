@@ -28,7 +28,6 @@ export const site = {
     medium: "https://medium.com/@yerinsabraham",
     x: "https://x.com/yerinsabraham",
     facebook: "https://www.facebook.com/abrahamyerins",
-    spotify: "https://open.spotify.com/show/0C58SpnW0QoKStlsTXG0ht",
     youtube: "https://www.youtube.com/@YerinsAbraham",
   },
   // The couple's joint channel with Sarah (used on the About page).
@@ -75,7 +74,7 @@ export const now = {
   items: [
     "Building Tablu, restaurant ordering and payments, in a live pilot in Kisimenti.",
     "Next, a health-tech product for specialist-doctor access and patient follow-up.",
-    "Writing my book, Life Is Random, and publishing essays and podcast episodes.",
+    "Writing my book, Life Is Random, and publishing essays on Medium.",
   ],
 };
 
@@ -209,6 +208,9 @@ export type Artwork = {
   src: string;
   title: string;
   medium: string;
+  dimensions?: string;
+  year?: string;
+  feature?: boolean; // shown large with full description
   note?: string;
   w: number;
   h: number;
@@ -218,48 +220,74 @@ export const artworks: Artwork[] = [
   {
     src: "/img/index-full.png",
     title: "Index",
-    medium: "Pen and ink · 2020",
-    note: "My masterpiece. A single, vast compilation drawing made out of fear when I returned to Nigeria during the pandemic and everything I had planned fell apart. It gathers many subjects and ideas into one story, and asks the viewer to find where those stories live in their own life. Exhibited internationally.",
+    year: "2020",
+    dimensions: "106 × 365 cm",
+    medium: "Pen & ink on paper",
+    feature: true,
+    note: "My most detailed and thought-through work. A vast compilation drawing that tells a single story while asking viewers to find where those stories exist in their own lives. The idea began in 2017, when I penned the concept and started writing the book Index, which explains the piece and serves as its catalogue. I finished it in 2020, spending almost the whole year doing nothing else. Index is divided into three sections, The Intended Beginning, The Unintended Middle and The Projected End. I also spent months studying cryptography to hide codes and messages inside it.",
     w: 1870,
     h: 731,
   },
   {
     src: "/img/mother.jpg",
     title: "Mother",
-    medium: "Pen and ink",
-    note: "On female existence, pain and sacrifice. Made after a four-year creative drought.",
+    year: "2024",
+    dimensions: "106 × 275 cm",
+    medium: "Pen & ink on paper",
+    feature: true,
+    note: "A meditation on the mother as the foundational source of existence. At the center, a mother figure in anguish carries the sacrifices of the maternal journey, yet remains resilient. The branches around her represent how a mother's influence extends beyond her family into the wider community and world. A tribute to the universal significance of maternal love and sacrifice.",
     w: 1600,
     h: 1066,
   },
   {
+    src: "/img/lifes-veil.jpg",
+    title: "Life's Veil",
+    dimensions: "106 × 92 cm",
+    medium: "Pen & ink on paper",
+    feature: true,
+    note: "A symbolic work that merges anatomical realism with cultural identity. The central figure wears a traditional African headwrap, a sign of heritage and grace, while parts of the face and chest are rendered as exposed skull, spine and ribcage. Beneath culture, beauty and identity lies the shared fragility of human existence. It asks: what lies beneath the identities we wear?",
+    w: 995,
+    h: 1500,
+  },
+  {
     src: "/img/art-1.jpg",
-    title: "Index, Panel I",
-    medium: "Pen and ink · detail",
-    note: "Sun, wing, and tide. One section of the Index composition.",
+    title: "Index — The Intended Beginning",
+    medium: "Section detail",
     w: 1600,
     h: 1066,
   },
   {
     src: "/img/art-2.jpg",
-    title: "Index, Panel II",
-    medium: "Pen and ink · detail",
-    note: "Myth, memory and figure at the heart of Index.",
+    title: "Index — The Unintended Middle",
+    medium: "Section detail",
     w: 1600,
     h: 1163,
   },
   {
     src: "/img/art-3.jpg",
-    title: "Index, Panel III",
-    medium: "Pen and ink · detail",
-    note: "Brain, book and bone. The mind as landscape.",
+    title: "Index — The Projected End",
+    medium: "Section detail",
     w: 1600,
     h: 1143,
   },
   {
+    src: "/img/mother-detail.jpg",
+    title: "Mother (central panel)",
+    medium: "Detail",
+    w: 500,
+    h: 500,
+  },
+  {
+    src: "/img/index-progress.jpg",
+    title: "Index, in the studio",
+    medium: "Process",
+    w: 887,
+    h: 614,
+  },
+  {
     src: "/img/mother-process.jpg",
     title: "Mother, in progress",
-    medium: "Studio process",
-    note: "Drawing Mother by hand, one line at a time.",
+    medium: "Process",
     w: 1406,
     h: 1600,
   },
@@ -269,7 +297,6 @@ export const artworks: Artwork[] = [
 // Longer terms are matched first; only the first occurrence per block links.
 export const inlineLinks: { term: string; href: string }[] = [
   { term: "Life Is Random", href: "/writing/life-is-random" },
-  { term: "The Polymath Podcast", href: site.socials.spotify },
   { term: "Lira Intelligence", href: "https://liraintelligence.com/" },
   { term: "Sarah Oba", href: site.youtubeCouple },
   { term: "Creovine", href: "https://creovine.com/" },
@@ -278,13 +305,3 @@ export const inlineLinks: { term: string; href: string }[] = [
   { term: "Lira", href: "https://liraintelligence.com/" },
   { term: "Medium", href: site.socials.medium },
 ];
-
-export const podcast = {
-  title: "The Polymath Podcast",
-  blurb:
-    "A thought-provoking show on perception, belief, science, art and ideas, hosted by Yerins Abraham.",
-  spotifyShow: "https://open.spotify.com/show/0C58SpnW0QoKStlsTXG0ht",
-  // Spotify embed URL (used in an iframe).
-  spotifyEmbed:
-    "https://open.spotify.com/embed/show/0C58SpnW0QoKStlsTXG0ht?utm_source=generator&theme=0",
-};

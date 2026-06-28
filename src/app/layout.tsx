@@ -89,7 +89,6 @@ const personSchema = {
     site.socials.medium,
     site.socials.x,
     site.socials.facebook,
-    site.socials.spotify,
     site.socials.youtube,
     site.youtubeCouple,
     site.artProfile,
