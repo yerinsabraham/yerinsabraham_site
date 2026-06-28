@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import RichText from "@/components/RichText";
+import QuoteModal from "@/components/QuoteModal";
 import { getArticles } from "@/lib/medium";
 import {
   site,
@@ -10,7 +11,7 @@ import {
   now,
   projects,
   press,
-  quotes,
+  beginningsQuote,
   artworks,
 } from "@/data/content";
 import { books, essays } from "@/data/writings";
@@ -208,9 +209,9 @@ export default async function Home() {
       {/* PRESS + QUOTE */}
       <Section id="press" eyebrow="Recognition" bordered>
         <Reveal>
-          <blockquote className="max-w-3xl font-[family-name:var(--font-fraunces)] text-2xl font-light italic leading-relaxed text-ink sm:text-3xl">
-            &ldquo;{quotes[1]}&rdquo;
-          </blockquote>
+          <div className="max-w-3xl font-[family-name:var(--font-fraunces)] text-2xl font-light italic leading-relaxed text-ink sm:text-3xl">
+            <QuoteModal quote={beginningsQuote} />
+          </div>
         </Reveal>
         <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-3">
           {press.map((p, idx) => (

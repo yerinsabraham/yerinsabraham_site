@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { site } from "@/data/content";
+import { site, gardeningQuote } from "@/data/content";
+import QuoteModal from "@/components/QuoteModal";
 
 export default function Hero() {
   const [i, setI] = useState(0);
@@ -54,7 +55,7 @@ export default function Hero() {
         </p>
 
         <p className="mt-4 max-w-lg text-base italic text-ink-soft">
-          &ldquo;{site.voiceLine}&rdquo;
+          <QuoteModal quote={gardeningQuote} />
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">

@@ -3,7 +3,8 @@ import Image from "next/image";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import RichText from "@/components/RichText";
-import { site, about, quotes } from "@/data/content";
+import QuoteModal from "@/components/QuoteModal";
+import { site, about, gardeningQuote } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -37,9 +38,9 @@ export default function AboutPage() {
             ))}
 
             <Reveal>
-              <blockquote className="mt-10 border-l-2 border-accent pl-6 font-[family-name:var(--font-fraunces)] text-2xl font-light italic leading-relaxed text-ink">
-                &ldquo;{quotes[0]}&rdquo;
-              </blockquote>
+              <div className="mt-10 border-l-2 border-accent pl-6 font-[family-name:var(--font-fraunces)] text-2xl font-light italic leading-relaxed text-ink">
+                <QuoteModal quote={gardeningQuote} />
+              </div>
             </Reveal>
           </div>
 
