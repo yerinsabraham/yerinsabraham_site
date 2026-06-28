@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import { site, about, quotes } from "@/data/content";
@@ -43,6 +44,17 @@ export default function AboutPage() {
 
           {/* Facts panel */}
           <aside className="lg:pt-2">
+            <Reveal>
+              <div className="relative mb-6 aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-paper-2">
+                <Image
+                  src="/img/chess.jpg"
+                  alt="Yerins Abraham"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 320px"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
             <Reveal delay={80}>
               <dl className="divide-y divide-line rounded-2xl border border-line bg-paper-2/40">
                 {about.facts.map((f) => (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { site } from "@/data/content";
 
 export default function Hero() {
@@ -17,58 +18,73 @@ export default function Hero() {
   return (
     <header
       id="top"
-      className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col justify-center px-6 pt-28 pb-20"
+      className="relative mx-auto grid min-h-[92vh] max-w-6xl items-center gap-12 px-6 pt-28 pb-16 lg:grid-cols-[1.1fr_0.9fr]"
     >
-      <p className="eyebrow mb-6">{site.name}</p>
+      <div>
+        <p className="eyebrow mb-6">{site.name}</p>
 
-      {/* The wordmark — biggest type on the page */}
-      <h1 className="font-[family-name:var(--font-fraunces)] text-[clamp(3.2rem,13vw,9rem)] font-light leading-[0.92] tracking-[-0.02em] text-ink">
-        The Polymath
-      </h1>
+        {/* The wordmark, biggest type on the page */}
+        <h1 className="font-[family-name:var(--font-fraunces)] text-[clamp(3rem,11vw,7.5rem)] font-light leading-[0.92] tracking-[-0.02em] text-ink">
+          The Polymath
+        </h1>
 
-      {/* Rotating discipline — the range, without six competing headlines */}
-      <p className="mt-6 flex items-baseline gap-2 text-lg text-ink-soft">
-        <span aria-hidden className="text-accent">
-          /
-        </span>
-        <span className="relative inline-block min-w-[8ch]" aria-live="polite">
-          {site.disciplines.map((d, idx) => (
-            <span
-              key={d}
-              className="absolute left-0 transition-opacity duration-500"
-              style={{ opacity: idx === i ? 1 : 0 }}
-            >
-              {d}
-            </span>
-          ))}
-          {/* reserve width */}
-          <span className="invisible">
-            {site.disciplines.reduce((a, b) => (a.length > b.length ? a : b))}
+        {/* Rotating discipline, the range without six competing headlines */}
+        <p className="mt-6 flex items-baseline gap-2 text-lg text-ink-soft">
+          <span aria-hidden className="text-accent">
+            /
           </span>
-        </span>
-      </p>
+          <span className="relative inline-block min-w-[8ch]" aria-live="polite">
+            {site.disciplines.map((d, idx) => (
+              <span
+                key={d}
+                className="absolute left-0 transition-opacity duration-500"
+                style={{ opacity: idx === i ? 1 : 0 }}
+              >
+                {d}
+              </span>
+            ))}
+            <span className="invisible">
+              {site.disciplines.reduce((a, b) => (a.length > b.length ? a : b))}
+            </span>
+          </span>
+        </p>
 
-      <p className="mt-10 max-w-2xl font-[family-name:var(--font-fraunces)] text-xl leading-relaxed text-ink sm:text-2xl">
-        {site.throughline}
-      </p>
+        <p className="mt-10 max-w-xl font-[family-name:var(--font-fraunces)] text-xl leading-relaxed text-ink sm:text-2xl">
+          {site.throughline}
+        </p>
 
-      <p className="mt-4 max-w-xl text-base italic text-ink-soft">
-        “{site.voiceLine}”
-      </p>
+        <p className="mt-4 max-w-lg text-base italic text-ink-soft">
+          &ldquo;{site.voiceLine}&rdquo;
+        </p>
 
-      <div className="mt-12 flex flex-wrap items-center gap-4">
-        <a
-          href="#work"
-          className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
-        >
-          See the work
-        </a>
-        <a
-          href="#contact"
-          className="rounded-full border border-ink/20 px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent-deep"
-        >
-          Get in touch
-        </a>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <a
+            href="/work"
+            className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
+          >
+            See the work
+          </a>
+          <a
+            href="#contact"
+            className="rounded-full border border-ink/20 px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent-deep"
+          >
+            Get in touch
+          </a>
+        </div>
+      </div>
+
+      {/* Portrait */}
+      <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-paper-2">
+          <Image
+            src="/img/portrait.jpg"
+            alt="Yerins Abraham"
+            fill
+            priority
+            sizes="(max-width: 1024px) 90vw, 40vw"
+            className="object-cover grayscale-[15%]"
+          />
+        </div>
       </div>
     </header>
   );
