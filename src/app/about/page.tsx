@@ -6,7 +6,7 @@ import { site, about, quotes } from "@/data/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The full story — Yerins Abraham, Nigerian polymath: medical doctor, software engineer, artist and entrepreneur, building toward health technology.",
+    "The full story of Yerins Abraham, Nigerian polymath: medical doctor, software engineer, artist and entrepreneur, building toward health technology.",
   alternates: { canonical: "/about" },
 };
 

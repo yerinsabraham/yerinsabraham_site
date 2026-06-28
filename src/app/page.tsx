@@ -10,7 +10,9 @@ import {
   range,
   press,
   quotes,
+  podcast,
 } from "@/data/content";
+import { books, essays } from "@/data/writings";
 
 export default async function Home() {
   const articles = await getArticles(4);
@@ -108,60 +110,156 @@ export default async function Home() {
                 <p className="mt-2 text-base leading-relaxed text-ink-soft">
                   {r.note}
                 </p>
+                {r.href && (
+                  <a
+                    href={r.href}
+                    target={r.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      r.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="mt-3 inline-block text-sm text-accent-deep underline-offset-4 hover:underline"
+                  >
+                    {r.hrefLabel ?? "Learn more"} →
+                  </a>
+                )}
               </div>
             </Reveal>
           ))}
         </div>
       </Section>
 
-      {/* WRITING — Medium feed */}
-      {articles.length > 0 && (
-        <Section id="writing" eyebrow="Writing" bordered>
-          <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
-                Thinking in public
-              </h2>
+      {/* BOOKS */}
+      <Section id="books" eyebrow="Books" bordered>
+        <Reveal>
+          <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
+            Things I&rsquo;ve written
+          </h2>
+        </Reveal>
+        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+          {books.map((b, idx) => (
+            <Reveal key={b.slug} delay={idx * 60}>
+              <div className="flex h-full flex-col bg-paper p-7">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink">
+                    {b.title}
+                  </h3>
+                  <span className="shrink-0 rounded-full border border-line px-3 py-1 text-xs text-accent-deep">
+                    {b.status}
+                  </span>
+                </div>
+                <p className="mt-4 text-base leading-relaxed text-ink-soft">
+                  {b.excerpt}
+                </p>
+                <div className="mt-5 flex gap-5">
+                  {b.buyLink && (
+                    <a
+                      href={b.buyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-accent-deep underline-offset-4 hover:underline"
+                    >
+                      Buy on Selar →
+                    </a>
+                  )}
+                  {b.body && (
+                    <a
+                      href={`/writing/${b.slug}`}
+                      className="text-sm text-ink-soft underline-offset-4 hover:text-accent-deep hover:underline"
+                    >
+                      Read excerpt →
+                    </a>
+                  )}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* ESSAYS + MEDIUM */}
+      <Section id="writing" eyebrow="Essays & ideas" bordered>
+        <Reveal>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
+              Thinking in public
+            </h2>
+            <a
+              href="/writing"
+              className="text-sm text-accent-deep underline-offset-4 hover:underline"
+            >
+              All writing →
+            </a>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+          {essays.map((e, idx) => (
+            <Reveal key={e.slug} delay={idx * 60}>
               <a
-                href={site.socials.medium}
+                href={`/writing/${e.slug}`}
+                className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
+              >
+                <span className="text-xs uppercase tracking-wider text-accent-deep">
+                  {e.note ?? "Essay"}
+                </span>
+                <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-xl leading-snug text-ink">
+                  {e.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  {e.excerpt}
+                </p>
+              </a>
+            </Reveal>
+          ))}
+          {articles.slice(0, 2).map((a, idx) => (
+            <Reveal key={a.link} delay={(idx + 2) * 60}>
+              <a
+                href={a.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-accent-deep underline-offset-4 hover:underline"
+                className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
               >
-                Read more on Medium →
+                <span className="text-xs uppercase tracking-wider text-accent-deep">
+                  On Medium
+                </span>
+                <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-xl leading-snug text-ink">
+                  {a.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  {a.excerpt}
+                </p>
               </a>
-            </div>
-          </Reveal>
-          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
-            {articles.map((a, idx) => (
-              <Reveal key={a.link} delay={idx * 60}>
-                <a
-                  href={a.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
-                >
-                  {a.date && (
-                    <time className="text-xs text-ink-soft/70">
-                      {new Date(a.date).toLocaleDateString("en-US", {
-                        month: "long",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </time>
-                  )}
-                  <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-xl leading-snug text-ink">
-                    {a.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {a.excerpt}
-                  </p>
-                </a>
-              </Reveal>
-            ))}
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* PODCAST */}
+      <Section id="podcast" eyebrow="Podcast" bordered>
+        <Reveal>
+          <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
+            {podcast.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            {podcast.blurb}
+          </p>
+        </Reveal>
+        <Reveal delay={80}>
+          <div className="mt-8 overflow-hidden rounded-2xl border border-line">
+            <iframe
+              title={podcast.title}
+              src={podcast.spotifyEmbed}
+              width="100%"
+              height="232"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            />
           </div>
-        </Section>
-      )}
+        </Reveal>
+      </Section>
 
       {/* PRESS + QUOTE */}
       <Section id="press" eyebrow="Recognition" bordered>

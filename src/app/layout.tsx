@@ -19,11 +19,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name} — The Polymath`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} · The Polymath`,
+    template: `%s · ${site.name}`,
   },
   description:
-    "Yerins Abraham — Nigerian polymath. Medical doctor and software engineer building technology for human health. Also artist, writer and musician.",
+    "Yerins Abraham, Nigerian polymath. Medical doctor and software engineer building technology for human health. Also artist, writer and musician.",
   keywords: [
     "Yerins Abraham",
     "Nigerian polymath",
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: site.domain,
-    title: `${site.name} — The Polymath`,
+    title: `${site.name} · The Polymath`,
     description:
       "Nigerian polymath. Medical doctor and software engineer building technology for human health.",
     siteName: site.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — The Polymath`,
+    title: `${site.name} · The Polymath`,
     description:
       "Nigerian polymath. Medical doctor and software engineer building technology for human health.",
   },
@@ -84,6 +84,8 @@ const personSchema = {
     site.socials.medium,
     site.socials.x,
     site.socials.facebook,
+    site.socials.spotify,
+    site.artProfile,
     site.wikidata,
   ],
 };
