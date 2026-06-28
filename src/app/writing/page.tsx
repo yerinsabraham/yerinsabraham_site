@@ -97,35 +97,9 @@ export default async function WritingHub() {
         </div>
       </section>
 
-      {/* PODCAST */}
-      <section className="mx-auto max-w-5xl px-6 py-12">
-        <p className="eyebrow mb-8">Podcast</p>
-        <Reveal>
-          <div className="rounded-2xl border border-line bg-paper-2/40 p-7">
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink">
-              {podcast.title}
-            </h2>
-            <p className="mt-2 max-w-2xl text-base leading-relaxed text-ink-soft">
-              {podcast.blurb}
-            </p>
-            <div className="mt-6 overflow-hidden rounded-xl">
-              <iframe
-                title={podcast.title}
-                src={podcast.spotifyEmbed}
-                width="100%"
-                height="232"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
       {/* MEDIUM */}
       {articles.length > 0 && (
-        <section className="mx-auto max-w-5xl px-6 py-12 pb-28">
+        <section className="mx-auto max-w-5xl px-6 py-12">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <p className="eyebrow">On Medium</p>
             <a
@@ -167,6 +141,29 @@ export default async function WritingHub() {
           </div>
         </section>
       )}
+
+      {/* PODCAST (last) */}
+      <section className="mx-auto max-w-5xl px-6 py-12 pb-28">
+        <p className="eyebrow mb-8">Podcast</p>
+        <Reveal>
+          <div className="rounded-2xl border border-line bg-paper-2/40 p-7 sm:p-9">
+            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink sm:text-3xl">
+              {podcast.title}
+            </h2>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
+              {podcast.blurb}
+            </p>
+            <a
+              href={podcast.spotifyShow}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
+            >
+              Listen on Spotify &rarr;
+            </a>
+          </div>
+        </Reveal>
+      </section>
 
       <div className="mx-auto max-w-5xl px-6 pb-24">
         <a
