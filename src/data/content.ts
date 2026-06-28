@@ -204,6 +204,58 @@ export const quotes = [
   "Even Einstein is not a genius. It is other individuals that build you up.",
 ];
 
+export type Artwork = {
+  src: string;
+  title: string;
+  medium: string;
+  note?: string;
+  w: number;
+  h: number;
+};
+
+export const artworks: Artwork[] = [
+  {
+    src: "/img/mother.jpg",
+    title: "Mother",
+    medium: "Pen and ink",
+    note: "On female existence, pain and sacrifice. Made after a four-year creative drought.",
+    w: 1600,
+    h: 1066,
+  },
+  {
+    src: "/img/art-1.jpg",
+    title: "Untitled I",
+    medium: "Pen and ink",
+    note: "From the Index period. Sun, wing, and tide in dense linework.",
+    w: 1600,
+    h: 1066,
+  },
+  {
+    src: "/img/art-2.jpg",
+    title: "Untitled II",
+    medium: "Pen and ink",
+    note: "A surreal collage of myth, memory and figure.",
+    w: 1600,
+    h: 1163,
+  },
+  {
+    src: "/img/art-3.jpg",
+    title: "Untitled III",
+    medium: "Pen and ink",
+    note: "Brain, book and bone. The mind as landscape.",
+    w: 1600,
+    h: 1143,
+  },
+  {
+    src: "/img/mother-process.jpg",
+    title: "Mother, in progress",
+    medium: "Studio process",
+    note: "Drawing Mother by hand, one line at a time.",
+    w: 1406,
+    h: 1600,
+  },
+];
+
 export const podcast = {
   title: "The Polymath Podcast",
   blurb:

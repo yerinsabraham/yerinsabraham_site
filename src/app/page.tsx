@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
@@ -7,23 +8,26 @@ import {
   bio,
   now,
   projects,
-  range,
   press,
   quotes,
-  podcast,
+  artworks,
 } from "@/data/content";
 import { books, essays } from "@/data/writings";
 
 export default async function Home() {
-  const articles = await getArticles(4);
+  const articles = await getArticles(1);
+  const featuredProjects = projects.slice(0, 3);
+  const featuredArt = artworks.slice(0, 2);
+  const featuredBook = books[0];
+  const featuredEssay = essays[0];
 
   return (
     <main className="overflow-x-hidden">
       <Nav />
       <Hero />
 
-      {/* ABOUT / SYNTHESIS */}
-      <Section id="about" eyebrow="The synthesis">
+      {/* ABOUT teaser */}
+      <Section id="about" eyebrow="The synthesis" bordered>
         <Reveal>
           <p className="max-w-3xl font-[family-name:var(--font-fraunces)] text-2xl leading-relaxed text-ink sm:text-3xl">
             {bio.lead}
@@ -39,12 +43,12 @@ export default async function Home() {
             href="/about"
             className="mt-8 inline-block text-sm text-accent-deep underline-offset-4 hover:underline"
           >
-            Read the full story →
+            Read the full story &rarr;
           </a>
         </Reveal>
       </Section>
 
-      {/* NOW / BUILDING */}
+      {/* NOW */}
       <Section id="now" eyebrow={`Now · ${now.updated}`} bordered>
         <Reveal>
           <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
@@ -63,45 +67,31 @@ export default async function Home() {
         </ul>
       </Section>
 
-      {/* SELECTED WORK */}
+      {/* WORK teaser */}
       <Section id="work" eyebrow="Selected work" bordered>
-        <Reveal>
-          <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
-            Things I&rsquo;ve built
-          </h2>
-        </Reveal>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
-          {projects.map((p, idx) => {
+        <HeadingRow title="Building with Creovine" href="/work" label="See all work" />
+        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+          {featuredProjects.map((p, idx) => {
             const Wrapper = p.href ? "a" : "div";
             return (
               <Reveal key={p.title} delay={idx * 60}>
                 <Wrapper
                   {...(p.href
-                    ? {
-                        href: p.href,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                      }
+                    ? { href: p.href, target: "_blank", rel: "noopener noreferrer" }
                     : {})}
                   className="group flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-[family-name:var(--font-fraunces)] text-xl text-ink">
                       {p.title}
                     </h3>
-                    <span className="shrink-0 rounded-full border border-line px-3 py-1 text-xs text-accent-deep">
+                    <span className="shrink-0 rounded-full border border-line px-2.5 py-0.5 text-[0.65rem] text-accent-deep">
                       {p.status}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-ink-soft/80">{p.role}</p>
-                  <p className="mt-4 text-base leading-relaxed text-ink-soft">
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
                     {p.blurb}
                   </p>
-                  {p.href && (
-                    <span className="mt-4 text-sm text-accent-deep underline-offset-4 group-hover:underline">
-                      Visit site →
-                    </span>
-                  )}
                 </Wrapper>
               </Reveal>
             );
@@ -109,173 +99,107 @@ export default async function Home() {
         </div>
       </Section>
 
-      {/* RANGE */}
-      <Section id="range" eyebrow="The range" bordered>
-        <Reveal>
-          <h2 className="max-w-2xl font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
-            The breadth isn&rsquo;t a distraction. It&rsquo;s the point.
-          </h2>
-        </Reveal>
-        <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
-          {range.map((r, idx) => (
-            <Reveal key={r.title} delay={idx * 60}>
-              <div className="border-t border-line pt-5">
-                <p className="eyebrow mb-2">{r.field}</p>
-                <h3 className="font-[family-name:var(--font-fraunces)] text-xl text-ink">
-                  {r.title}
-                </h3>
-                <p className="mt-2 text-base leading-relaxed text-ink-soft">
-                  {r.note}
-                </p>
-                {r.href && (
-                  <a
-                    href={r.href}
-                    target={r.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      r.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="mt-3 inline-block text-sm text-accent-deep underline-offset-4 hover:underline"
-                  >
-                    {r.hrefLabel ?? "Learn more"} →
-                  </a>
-                )}
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* BOOKS */}
-      <Section id="books" eyebrow="Books" bordered>
-        <Reveal>
-          <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
-            Things I&rsquo;ve written
-          </h2>
-        </Reveal>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
-          {books.map((b, idx) => (
-            <Reveal key={b.slug} delay={idx * 60}>
-              <div className="flex h-full flex-col bg-paper p-7">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink">
-                    {b.title}
-                  </h3>
-                  <span className="shrink-0 rounded-full border border-line px-3 py-1 text-xs text-accent-deep">
-                    {b.status}
-                  </span>
+      {/* ART teaser */}
+      <Section id="art" eyebrow="Art" bordered>
+        <HeadingRow
+          title="Pen, ink, and patience"
+          href="/art"
+          label="View gallery"
+        />
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {featuredArt.map((a) => (
+            <Reveal key={a.src}>
+              <a href="/art" className="group block">
+                <div className="relative overflow-hidden rounded-2xl border border-line bg-paper-2">
+                  <Image
+                    src={a.src}
+                    alt={a.title}
+                    width={a.w}
+                    height={a.h}
+                    sizes="(max-width: 640px) 92vw, 46vw"
+                    className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
                 </div>
-                <p className="mt-4 text-base leading-relaxed text-ink-soft">
-                  {b.excerpt}
-                </p>
-                <div className="mt-5 flex gap-5">
-                  {b.buyLink && (
-                    <a
-                      href={b.buyLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-accent-deep underline-offset-4 hover:underline"
-                    >
-                      Buy on Selar →
-                    </a>
-                  )}
-                  {b.body && (
-                    <a
-                      href={`/writing/${b.slug}`}
-                      className="text-sm text-ink-soft underline-offset-4 hover:text-accent-deep hover:underline"
-                    >
-                      Read excerpt →
-                    </a>
-                  )}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* ESSAYS + MEDIUM */}
-      <Section id="writing" eyebrow="Essays & ideas" bordered>
-        <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
-              Thinking in public
-            </h2>
-            <a
-              href="/writing"
-              className="text-sm text-accent-deep underline-offset-4 hover:underline"
-            >
-              All writing →
-            </a>
-          </div>
-        </Reveal>
-
-        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
-          {essays.map((e, idx) => (
-            <Reveal key={e.slug} delay={idx * 60}>
-              <a
-                href={`/writing/${e.slug}`}
-                className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
-              >
-                <span className="text-xs uppercase tracking-wider text-accent-deep">
-                  {e.note ?? "Essay"}
-                </span>
-                <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-xl leading-snug text-ink">
-                  {e.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {e.excerpt}
+                <p className="mt-3 font-[family-name:var(--font-fraunces)] text-lg italic text-ink">
+                  {a.title}
                 </p>
               </a>
             </Reveal>
           ))}
-          {articles.slice(0, 2).map((a, idx) => (
-            <Reveal key={a.link} delay={(idx + 2) * 60}>
+        </div>
+      </Section>
+
+      {/* WRITING teaser */}
+      <Section id="writing" eyebrow="Words & ideas" bordered>
+        <HeadingRow
+          title="Books, essays, a podcast"
+          href="/writing"
+          label="All writing"
+        />
+        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+          {/* Featured book */}
+          <Reveal>
+            <div className="flex h-full flex-col bg-paper p-7">
+              <span className="text-xs uppercase tracking-wider text-accent-deep">
+                Book · {featuredBook.status}
+              </span>
+              <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-xl text-ink">
+                {featuredBook.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                {featuredBook.excerpt}
+              </p>
+              {featuredBook.buyLink && (
+                <a
+                  href={featuredBook.buyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-sm font-medium text-accent-deep underline-offset-4 hover:underline"
+                >
+                  Buy on Selar &rarr;
+                </a>
+              )}
+            </div>
+          </Reveal>
+          {/* Featured essay */}
+          <Reveal delay={60}>
+            <a
+              href={`/writing/${featuredEssay.slug}`}
+              className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
+            >
+              <span className="text-xs uppercase tracking-wider text-accent-deep">
+                {featuredEssay.note ?? "Essay"}
+              </span>
+              <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-xl text-ink">
+                {featuredEssay.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                {featuredEssay.excerpt}
+              </p>
+            </a>
+          </Reveal>
+          {/* Latest Medium */}
+          {articles[0] && (
+            <Reveal delay={120}>
               <a
-                href={a.link}
+                href={articles[0].link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
               >
                 <span className="text-xs uppercase tracking-wider text-accent-deep">
-                  On Medium
+                  Latest on Medium
                 </span>
                 <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-xl leading-snug text-ink">
-                  {a.title}
+                  {articles[0].title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {a.excerpt}
+                  {articles[0].excerpt}
                 </p>
               </a>
             </Reveal>
-          ))}
+          )}
         </div>
-      </Section>
-
-      {/* PODCAST */}
-      <Section id="podcast" eyebrow="Podcast" bordered>
-        <Reveal>
-          <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
-            {podcast.title}
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            {podcast.blurb}
-          </p>
-        </Reveal>
-        <Reveal delay={80}>
-          <div className="mt-8 overflow-hidden rounded-2xl border border-line">
-            <iframe
-              title={podcast.title}
-              src={podcast.spotifyEmbed}
-              width="100%"
-              height="232"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            />
-          </div>
-        </Reveal>
       </Section>
 
       {/* PRESS + QUOTE */}
@@ -349,6 +273,32 @@ export default async function Home() {
   );
 }
 
+function HeadingRow({
+  title,
+  href,
+  label,
+}: {
+  title: string;
+  href: string;
+  label: string;
+}) {
+  return (
+    <Reveal>
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
+          {title}
+        </h2>
+        <a
+          href={href}
+          className="text-sm text-accent-deep underline-offset-4 hover:underline"
+        >
+          {label} &rarr;
+        </a>
+      </div>
+    </Reveal>
+  );
+}
+
 function Section({
   id,
   eyebrow,
@@ -363,10 +313,10 @@ function Section({
   return (
     <section
       id={id}
-      className={`px-6 py-24 ${bordered ? "border-t border-line" : ""}`}
+      className={`px-6 py-20 ${bordered ? "border-t border-line" : ""}`}
     >
       <div className="mx-auto max-w-5xl">
-        <p className="eyebrow mb-10">{eyebrow}</p>
+        <p className="eyebrow mb-8">{eyebrow}</p>
         {children}
       </div>
     </section>
