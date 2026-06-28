@@ -77,6 +77,11 @@ const personSchema = {
     "@type": "CollegeOrUniversity",
     name: "Sumy State University",
   },
+  worksFor: {
+    "@type": "Organization",
+    name: "Creovine",
+    url: "https://creovine.com/",
+  },
   sameAs: [
     site.socials.github,
     site.socials.instagram,
@@ -85,6 +90,8 @@ const personSchema = {
     site.socials.x,
     site.socials.facebook,
     site.socials.spotify,
+    site.socials.youtube,
+    site.youtubeCouple,
     site.artProfile,
     site.wikidata,
   ],

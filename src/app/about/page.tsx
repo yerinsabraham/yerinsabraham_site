@@ -52,14 +52,24 @@ export default function AboutPage() {
                   </div>
                 ))}
               </dl>
-              <a
-                href={site.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-block text-sm text-accent-deep underline-offset-4 hover:underline"
-              >
-                Connect on LinkedIn →
-              </a>
+              <div className="mt-6 flex flex-col gap-2 text-sm">
+                <a
+                  href={site.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-deep underline-offset-4 hover:underline"
+                >
+                  Connect on LinkedIn →
+                </a>
+                <a
+                  href={site.youtubeCouple}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-deep underline-offset-4 hover:underline"
+                >
+                  Abraham &amp; Sarah on YouTube →
+                </a>
+              </div>
             </Reveal>
           </aside>
         </div>
