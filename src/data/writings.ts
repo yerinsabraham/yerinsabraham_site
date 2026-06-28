@@ -23,9 +23,9 @@ export const writings: Writing[] = [
     kind: "book",
     title: "Index",
     status: "Published",
-    subtitle: "My first book, available now.",
+    subtitle: "A book about life, in three parts.",
     excerpt:
-      "A collection of ideas and reflections, including early writing on love as an unintended manifestation, the most powerful emotion a human can experience.",
+      "A book about life, told in three parts: The Intended Beginning, The Unintended Middle and The Projected End. Just as the index at the back of a book gathers its chapters into one place, Index gathers the chapters of life into those three sections. It is also the companion to the artwork of the same name, laying out the theory behind it.",
     buyLink: "https://selar.com/11989g?currency=XOF",
     note: "Available on Selar.",
   },
