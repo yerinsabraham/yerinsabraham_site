@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import RichText from "@/components/RichText";
 import QuoteModal from "@/components/QuoteModal";
 import CopyButton from "@/components/CopyButton";
-import { site, about, gardeningQuote } from "@/data/content";
+import { site, about, gardeningQuote, speaking } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -110,6 +110,56 @@ export default function AboutPage() {
                 {about.pressBioShort}
               </p>
             </div>
+          </div>
+        </Reveal>
+
+        {/* Speaking */}
+        <Reveal>
+          <div className="mt-16">
+            <p className="eyebrow mb-6">Speaking</p>
+            <a
+              href={speaking.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group grid gap-6 sm:grid-cols-[1.4fr_1fr] sm:items-center"
+            >
+              <div className="relative aspect-video overflow-hidden rounded-2xl border border-line bg-paper-2">
+                <Image
+                  src={speaking.thumbnail}
+                  alt={speaking.title}
+                  fill
+                  sizes="(max-width: 640px) 92vw, 55vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                {/* Play button overlay */}
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-paper/90 text-ink shadow-lg transition-transform group-hover:scale-110">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="ml-1 h-6 w-6"
+                      aria-hidden
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div>
+                <h2 className="font-[family-name:var(--font-fraunces)] text-2xl text-ink">
+                  {speaking.title}
+                </h2>
+                <p className="mt-1 text-sm text-ink-soft/80">
+                  {speaking.context}
+                </p>
+                <p className="mt-3 text-base leading-relaxed text-ink-soft">
+                  {speaking.blurb}
+                </p>
+                <span className="mt-4 inline-block text-sm text-accent-deep underline-offset-4 group-hover:underline">
+                  Watch on YouTube &rarr;
+                </span>
+              </div>
+            </a>
           </div>
         </Reveal>
 
