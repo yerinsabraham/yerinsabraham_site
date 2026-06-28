@@ -37,6 +37,7 @@ export const site = {
   // Wikidata item, cross-linked in the Person schema for entity verification.
   wikidata: "https://www.wikidata.org/wiki/Q140372807",
   artProfile: "https://diarbid.com/artists/yerins-abraham",
+  portfolio: "/Yerins-Abraham-Portfolio.pdf",
 };
 
 export const bio = {
@@ -215,6 +216,14 @@ export type Artwork = {
 
 export const artworks: Artwork[] = [
   {
+    src: "/img/index-full.png",
+    title: "Index",
+    medium: "Pen and ink · 2020",
+    note: "My masterpiece. A single, vast compilation drawing made out of fear when I returned to Nigeria during the pandemic and everything I had planned fell apart. It gathers many subjects and ideas into one story, and asks the viewer to find where those stories live in their own life. Exhibited internationally.",
+    w: 1870,
+    h: 731,
+  },
+  {
     src: "/img/mother.jpg",
     title: "Mother",
     medium: "Pen and ink",
@@ -224,24 +233,24 @@ export const artworks: Artwork[] = [
   },
   {
     src: "/img/art-1.jpg",
-    title: "Untitled I",
-    medium: "Pen and ink",
-    note: "From the Index period. Sun, wing, and tide in dense linework.",
+    title: "Index, Panel I",
+    medium: "Pen and ink · detail",
+    note: "Sun, wing, and tide. One section of the Index composition.",
     w: 1600,
     h: 1066,
   },
   {
     src: "/img/art-2.jpg",
-    title: "Untitled II",
-    medium: "Pen and ink",
-    note: "A surreal collage of myth, memory and figure.",
+    title: "Index, Panel II",
+    medium: "Pen and ink · detail",
+    note: "Myth, memory and figure at the heart of Index.",
     w: 1600,
     h: 1163,
   },
   {
     src: "/img/art-3.jpg",
-    title: "Untitled III",
-    medium: "Pen and ink",
+    title: "Index, Panel III",
+    medium: "Pen and ink · detail",
     note: "Brain, book and bone. The mind as landscape.",
     w: 1600,
     h: 1143,

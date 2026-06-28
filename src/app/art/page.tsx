@@ -27,14 +27,24 @@ export default function ArtPage() {
           Dense, surreal linework drawn entirely by hand. A second language for
           the same ideas I chase in medicine and code.
         </p>
-        <a
-          href={site.artProfile}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-block text-sm text-accent-deep underline-offset-4 hover:underline"
-        >
-          View full art profile on Diarbid &rarr;
-        </a>
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href={site.portfolio}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
+          >
+            View / download portfolio (PDF)
+          </a>
+          <a
+            href={site.artProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-accent-deep underline-offset-4 hover:underline"
+          >
+            Art profile on Diarbid &rarr;
+          </a>
+        </div>
       </header>
 
       {/* Flagship: Mother */}
