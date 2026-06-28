@@ -74,6 +74,36 @@ export const about = {
   ],
 };
 
+export type Video = { title: string; href: string; thumb: string };
+
+export const musicVideos: Video[] = [
+  {
+    title: "WINGS",
+    href: "https://www.youtube.com/watch?v=BGuGNP3q1sk",
+    thumb: "/img/music-wings.jpg",
+  },
+  {
+    title: "Burn",
+    href: "https://www.youtube.com/watch?v=xTbKqA92pmY",
+    thumb: "/img/music-burn.jpg",
+  },
+  {
+    title: "Black Heritage",
+    href: "https://www.youtube.com/watch?v=6URSd-6ZoUY",
+    thumb: "/img/music-black-heritage.jpg",
+  },
+  {
+    title: "I'm Fine",
+    href: "https://www.youtube.com/watch?v=IZ3jnL_8SnY",
+    thumb: "/img/music-im-fine.jpg",
+  },
+  {
+    title: "HOPE",
+    href: "https://www.youtube.com/watch?v=u0gAjH2wtWM",
+    thumb: "/img/music-hope.jpg",
+  },
+];
+
 // A featured talk, proof of the "available for speaking" line.
 export const speaking = {
   title: "Speaking at Nigeria Fintech Week",
@@ -189,7 +219,7 @@ export type Press = {
   outlet: string;
   quote: string;
   href: string;
-  year: string;
+  year?: string;
 };
 
 export const press: Press[] = [
@@ -210,6 +240,11 @@ export const press: Press[] = [
     quote: "Ex-BBN housemate Yerins Abraham proposes to his partner in Rwanda.",
     href: "https://www.channelstv.com/2026/04/17/ex-bbn-housemate-yerins-abraham-proposes-to-partner-in-rwanda/",
     year: "2026",
+  },
+  {
+    outlet: "TVC",
+    quote: "A television feature on his life across medicine, art and tech.",
+    href: "https://www.youtube.com/watch?v=uQ1QowKYC5A",
   },
   {
     outlet: "BellaNaija Weddings",

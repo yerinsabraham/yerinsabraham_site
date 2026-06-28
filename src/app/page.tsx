@@ -13,6 +13,7 @@ import {
   press,
   beginningsQuote,
   artworks,
+  musicVideos,
 } from "@/data/content";
 import { books, essays } from "@/data/writings";
 
@@ -132,6 +133,79 @@ export default async function Home() {
           ))}
         </div>
       </Section>
+
+      {/* MUSIC — swipeable video row */}
+      <section id="music" className="border-t border-line py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="eyebrow mb-2">Music</p>
+                <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
+                  Another medium for the same ideas
+                </h2>
+              </div>
+              <div className="flex gap-5 text-sm">
+                <a
+                  href={site.socials.soundcloud}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-deep underline-offset-4 hover:underline"
+                >
+                  SoundCloud &rarr;
+                </a>
+                <a
+                  href={site.socials.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-deep underline-offset-4 hover:underline"
+                >
+                  YouTube &rarr;
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal>
+          <div className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 [scroll-padding-left:1.5rem]">
+            {musicVideos.map((v) => (
+              <a
+                key={v.href}
+                href={v.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-[72vw] shrink-0 snap-start sm:w-[22rem]"
+              >
+                <div className="relative aspect-video overflow-hidden rounded-2xl border border-line bg-paper-2">
+                  <Image
+                    src={v.thumb}
+                    alt={v.title}
+                    fill
+                    sizes="(max-width: 640px) 72vw, 22rem"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-paper/90 text-ink shadow-lg transition-transform group-hover:scale-110">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="ml-1 h-5 w-5"
+                        aria-hidden
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+                <p className="mt-3 font-[family-name:var(--font-fraunces)] text-lg italic text-ink">
+                  {v.title}
+                </p>
+              </a>
+            ))}
+            <div aria-hidden className="w-1 shrink-0" />
+          </div>
+        </Reveal>
+      </section>
 
       {/* WRITING teaser */}
       <Section id="writing" eyebrow="Words & ideas" bordered>
