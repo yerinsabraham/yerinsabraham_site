@@ -212,9 +212,7 @@ export default async function Home() {
             </a>
           </Reveal>
           <footer className="mt-20 flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-ink-soft">
-              © {site.name}. {site.location}.
-            </p>
+            <p className="text-sm text-ink-soft">© {site.name}</p>
             <ul className="flex flex-wrap gap-6 text-sm text-ink-soft">
               {Object.entries(site.socials).map(([k, v]) => (
                 <li key={k}>

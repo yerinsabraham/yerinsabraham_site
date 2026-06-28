@@ -66,8 +66,8 @@ const personSchema = {
   url: site.domain,
   knowsAbout: [
     "Medicine",
-    "Cardiology",
     "Software engineering",
+    "Full-stack development",
     "Visual art",
     "Music",
     "Writing",
@@ -78,6 +78,7 @@ const personSchema = {
     name: "Sumy State University",
   },
   sameAs: [
+    site.socials.github,
     site.socials.instagram,
     site.socials.linkedin,
     site.socials.medium,
