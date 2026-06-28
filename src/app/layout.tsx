@@ -90,6 +90,7 @@ const personSchema = {
     site.socials.x,
     site.socials.facebook,
     site.socials.youtube,
+    site.socials.soundcloud,
     site.youtubeCouple,
     site.artProfile,
     site.wikidata,
