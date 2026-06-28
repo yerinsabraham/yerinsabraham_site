@@ -83,6 +83,7 @@ const personSchema = {
     site.socials.medium,
     site.socials.x,
     site.socials.facebook,
+    site.wikidata,
   ],
 };
 
