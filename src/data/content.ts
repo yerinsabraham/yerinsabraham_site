@@ -124,7 +124,7 @@ export const projects: Project[] = [
     role: "Founder",
     blurb:
       "The real aim. Access to specialist doctors and structured follow-up for underserved regions, where the M.D. and the engineer finally meet.",
-    status: "In design",
+    status: "Research phase",
   },
   {
     title: "Metart Africa",
@@ -198,10 +198,10 @@ export const press: Press[] = [
   },
 ];
 
-// Philosophy pull-quotes from the FAB L'Style interview.
+// Pull-quotes in Yerins's own words.
 export const quotes = [
   "My creative process is gardening, not architecture. I anticipate mistakes, and when those mistakes happen, I see it as another way to create something new.",
-  "Even Einstein is not a genius. It is other individuals that build you up.",
+  "There is an end to every beginning, but no end to beginnings.",
 ];
 
 export type Artwork = {
