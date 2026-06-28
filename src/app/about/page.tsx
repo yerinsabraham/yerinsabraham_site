@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import RichText from "@/components/RichText";
 import QuoteModal from "@/components/QuoteModal";
+import CopyButton from "@/components/CopyButton";
 import { site, about, gardeningQuote } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -88,8 +89,32 @@ export default function AboutPage() {
           </aside>
         </div>
 
+        {/* Press bio — third person, copy-ready for journalists & organizers */}
         <Reveal>
-          <div className="mt-24 flex flex-wrap items-center gap-4 border-t border-line pt-10">
+          <div className="mt-24 rounded-2xl border border-line bg-paper-2/40 p-7 sm:p-9">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="eyebrow">Bio &amp; press</p>
+              <CopyButton text={about.pressBio} label="Copy bio" />
+            </div>
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-ink">
+              {about.pressBio}
+            </p>
+            <div className="mt-6 border-t border-line pt-5">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <p className="text-xs uppercase tracking-wider text-ink-soft/70">
+                  Short version
+                </p>
+                <CopyButton text={about.pressBioShort} label="Copy short bio" />
+              </div>
+              <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
+                {about.pressBioShort}
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-16 flex flex-wrap items-center gap-4 border-t border-line pt-10">
             <a
               href="/#work"
               className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
