@@ -8,7 +8,7 @@ import { books, essays } from "@/data/writings";
 export const metadata: Metadata = {
   title: "Writing",
   description:
-    "Books, essays and ideas by Yerins Abraham, including Index, Life Is Random, The Yerins Theory of Love, and The Polymath Podcast.",
+    "Books, essays and ideas by Yerins Abraham, including Index, Life Is Random, and The Yerins Theory of Love.",
   alternates: { canonical: "/writing" },
 };
 
