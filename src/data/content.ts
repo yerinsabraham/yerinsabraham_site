@@ -227,16 +227,16 @@ export type Quote = { text: string; source: string; explanation: string };
 
 export const gardeningQuote: Quote = {
   text: "My creative process is gardening, not architecture.",
-  source: "From my 2024 interview with FAB L'Style, “The Nigerian Da Vinci.”",
+  source: "Said by Yerins Abraham in his 2024 FAB L'Style interview, “The Nigerian Da Vinci.”",
   explanation:
-    "An architect draws a fixed blueprint and builds exactly to it. A gardener plants, tends, and works with whatever grows, including the surprises. I create the same way. Rather than forcing a rigid plan onto a piece, I set things in motion and respond to what emerges. I anticipate mistakes, and when they happen I treat them not as failures but as new directions, another way to make something I could never have planned. It is the same belief that runs through my book Life Is Random: the best things often come from what you did not intend.",
+    "An architect draws a fixed blueprint and builds exactly to it. A gardener plants, tends, and works with whatever grows, including the surprises. Yerins approaches creativity the same way. Rather than forcing a rigid plan onto a piece, he sets things in motion and responds to what emerges, treating mistakes not as failures but as new directions, another way to make something that could never have been planned. It is the same idea that runs through his book Life Is Random: the best things often come from what was never intended.",
 };
 
 export const beginningsQuote: Quote = {
   text: "There is an end to every beginning, but no end to beginnings.",
-  source: "A line I wrote in my book, Index.",
+  source: "A line from Yerins Abraham's book, Index.",
   explanation:
-    "Everything that starts will also end. A feeling, a season of life, a relationship, a chapter, each beginning carries its own ending. But an ending is never the final word. When one thing closes, another opens. In my writing on love, the rush you feel at the start of a relationship eventually fades, yet a new and deeper feeling can begin in its place. The point is not to fear endings, but to see that beginnings never run out.",
+    "Everything that starts will also end. A feeling, a season of life, a relationship, a chapter, each beginning carries its own ending. But an ending is never the final word. When one thing closes, another opens. In his writing on love, the rush felt at the start of a relationship eventually fades, yet a new and deeper feeling can begin in its place. The point is not to fear endings, but to recognise that beginnings never run out.",
 };
 
 export type Artwork = {
