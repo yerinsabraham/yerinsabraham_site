@@ -74,6 +74,15 @@ export const about = {
   ],
 };
 
+// A featured talk, proof of the "available for speaking" line.
+export const speaking = {
+  title: "Speaking at Nigeria Fintech Week",
+  context: "Lagos, 2022",
+  blurb: "On fintech, blockchain and entrepreneurship.",
+  href: "https://www.youtube.com/watch?v=d2d_iQ7dG84",
+  thumbnail: "/img/speaking-fintech.jpg",
+};
+
 export const now = {
   // Update this monthly. This is the credibility section: proof you ship.
   updated: "June 2026",
