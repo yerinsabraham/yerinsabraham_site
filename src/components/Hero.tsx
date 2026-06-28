@@ -70,8 +70,6 @@ export default function Hero() {
           Get in touch
         </a>
       </div>
-
-      <p className="mt-16 text-sm text-ink-soft">{site.location}</p>
     </header>
   );
 }

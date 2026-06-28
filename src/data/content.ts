@@ -19,10 +19,10 @@ export const site = {
     "Founder",
   ],
   voiceLine: "My creative process is gardening, not architecture.",
-  location: "Kigali, Rwanda",
   email: "yerinsabram@gmail.com",
   domain: "https://yerinsabraham.com",
   socials: {
+    github: "https://github.com/yerinsabraham",
     instagram: "https://www.instagram.com/yerinsabraham/",
     linkedin: "https://www.linkedin.com/in/yerinsabraham/",
     medium: "https://medium.com/@yerinsabraham",
@@ -36,7 +36,7 @@ export const site = {
 
 export const bio = {
   // The "make the polymath claim coherent" paragraph — keep it tight.
-  lead: "I'm Yerins Abraham — a Ukrainian-trained physician (M.D., cardiology) and self-taught software engineer based in Kigali.",
+  lead: "I'm Yerins Abraham — a Ukrainian-trained physician (M.D., General Medicine) and self-taught full-stack engineer.",
   body: "I sit at a rare intersection: I understand the clinic and I can build the software. Right now I'm building Creovine, starting with Tablu, on the way to health technology for the places that need it most. Outside the lab and the IDE I paint, write, and make music. The range isn't a distraction from the work — it is the work.",
 };
 
@@ -46,17 +46,17 @@ export const about = {
   intro:
     "A polymath who thrives at the intersection of creativity, technology, and problem-solving.",
   paragraphs: [
-    "Trained as a medical doctor, I've spent the last five-plus years building impactful digital solutions — full-stack and blockchain applications, decentralized platforms, and scalable systems. The clinic taught me how the human body fails and recovers; engineering gave me the tools to design systems that don't.",
+    "Trained as a medical doctor — six years of General Medicine — I've spent the last five-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. The clinic taught me how the human body fails and recovers; engineering gave me the tools to design systems that don't. I bring that same diagnostic precision to debugging and architecture.",
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects — from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
-    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my M.D., into software I taught myself, and across art, music and fashion — I staged the first African fashion show in Eastern Europe in 2017 and founded Giggle and Metart Africa. Today I'm based in Kigali, building Creovine, with my real long-term aim being health technology for the regions that need it most.",
+    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my M.D., into software I taught myself, and across art, music and fashion — I staged the first African fashion show in Eastern Europe in 2017 and founded Giggle and Metart Africa. I move often and build wherever I land; right now that means Creovine, with my real long-term aim being health technology for the regions that need it most.",
   ],
   // Quick-facts panel. Confirm/adjust any of these.
   facts: [
-    { label: "Origin", value: "Bayelsa State, Nigeria" },
-    { label: "Education", value: "M.D., Sumy State University (2019)" },
-    { label: "Based in", value: "Kigali, Rwanda" },
-    { label: "Languages", value: "English, Russian, Ukrainian, French" },
+    { label: "Origin", value: "Delta & Bayelsa State, Nigeria" },
+    { label: "Education", value: "M.D., General Medicine — Sumy State University" },
+    { label: "Languages", value: "English, Russian, Izon, French (a little)" },
+    { label: "Stack", value: ".NET, React, Next.js, Flutter, AWS" },
     { label: "Building", value: "Creovine · Tablu" },
     { label: "Also known as", value: "The Nigerian Da Vinci" },
   ],
