@@ -8,10 +8,10 @@ export const site = {
   fullName: "Yerinmene Abraham Saibakumo",
   identity: "The Polymath",
   throughline:
-    "Medical doctor and software engineer, building technology for human health.",
+    "Medical graduate and self-taught software engineer, curious about almost everything.",
   // Cycled in the hero sub-line — the range, without six competing headlines.
   disciplines: [
-    "Physician",
+    "Doctor",
     "Engineer",
     "Artist",
     "Writer",
@@ -41,9 +41,9 @@ export const site = {
 };
 
 export const bio = {
-  // The "make the polymath claim coherent" paragraph — keep it tight.
-  lead: "I'm Yerins Abraham, a doctor by training (M.D., General Medicine) and a self-taught software engineer.",
-  body: "I trained as a doctor and I build software, and that combination now points at one thing: health technology for Africa. My current focus is Rwanda's broken specialist-referral pathway, connecting frontline doctors to the specialists their patients need. I don't practise clinically; I build. Alongside this I run a product studio, Creovine, and outside the work I paint, write and make music. The range isn't a distraction from the work. It is the work.",
+  // A synthesis of who he is — a story, not a CV.
+  lead: "I'm Yerins Abraham, a polymath: a medical graduate in General Medicine and a self-taught software engineer.",
+  body: "At heart I'm a curious person, fascinated by how the human body and mind work, and just as drawn to making things, whether software, art or music. What connects it all is one instinct: to take what I understand and use it to build things that solve real problems and meet real needs. The range was never a distraction from the work. It is the work.",
 };
 
 // Long-form biography for the /about page. First person, your real voice
@@ -52,20 +52,20 @@ export const about = {
   intro:
     "A polymath who thrives at the intersection of creativity, technology, and problem-solving.",
   paragraphs: [
-    "Trained as a medical doctor, six years of General Medicine, I've spent the last five-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. The clinic taught me how the human body fails and recovers; engineering gave me the tools to design systems that don't. I bring that same diagnostic precision to debugging and architecture.",
+    "A medical graduate in General Medicine (six years of it), I've spent the last five-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. Studying medicine taught me how the human body and mind work; engineering gave me the tools to build. I bring that same diagnostic curiosity to everything I make.",
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
-    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my M.D., into software I taught myself, and across art, music and fashion. These days my focus has sharpened. The work I care most about is health technology for Africa, and right now that means exploring how to fix Rwanda's specialist-referral problem, where frontline doctors cannot easily reach the few specialists their patients need. It is early, research-phase work. My product studio, Creovine, is where this and my other software live. To be clear, I am a doctor by training, not a practising clinician. I build.",
+    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software I taught myself, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, exploring how medicine and software can come together to improve access to care. It's early, so I'd rather let the work speak than over-explain the plan. My product studio, Creovine, is where this and my other software live.",
     "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
   // Third-person bio for press, speaker intros, and syndication. Copy-ready.
   pressBioShort:
-    "Yerins Abraham is a medical doctor by training and a technologist building health technology for Africa, with a creative range that also spans art, writing and music.",
+    "Yerins Abraham is a polymath: a medical graduate and self-taught software engineer whose range spans art, writing and music, increasingly drawn to technology for human health.",
   pressBio:
-    "Yerins Abraham is a medical doctor by training and a technologist building health technology for Africa. Trained in General Medicine (M.D., Sumy State University) and a self-taught software engineer, his current focus is the specialist-referral problem in Rwanda, connecting frontline doctors to scarce specialists. He also runs the product studio Creovine, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide creative range now serves one through-line: technology that improves access to healthcare.",
+    "Yerins Abraham is a polymath, a medical graduate in General Medicine and a self-taught software engineer. His curiosity spans medicine, technology and the arts, and increasingly it points in one direction: health technology, and how to improve access to care. He also runs the product studio Creovine, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide range serves a single instinct: building things that meet real human needs.",
   // Quick-facts panel. Confirm/adjust any of these.
   facts: [
-    { label: "Focus", value: "Health technology for Africa (Rwanda)" },
+    { label: "Focus", value: "Technology for human health" },
     { label: "Training", value: "M.D., General Medicine, Sumy State University" },
     { label: "Origin", value: "Delta & Bayelsa State, Nigeria" },
     { label: "Languages", value: "English, Russian, Izon, French (a little)" },
@@ -117,17 +117,14 @@ export const speaking = {
 export const now = {
   updated: "June 2026",
   heading: "What I'm working on",
-  // The current centerpiece: the health-tech exploration.
   focus: {
-    status: "Research phase",
-    title: "Fixing specialist referral in Rwanda",
-    body: "Across Rwanda, frontline doctors struggle to reach the country's few specialists, so patients wait, travel far, or fall through the cracks. I trained as a doctor and I build software, and this is where those two threads meet. I'm exploring how a simple technology layer could connect frontline clinicians to the specialists their patients need. It is early, research-phase work: listening to doctors and mapping how referrals actually happen before building anything.",
+    tag: "Exploring",
+    body: "Lately I've been most drawn to health technology, exploring how what I know about medicine and what I can build with software might come together to improve access to care. It's early, so I'd rather let the work speak than over-explain the plan.",
     image: "/img/doctor-grad.jpg",
     imageW: 933,
     imageH: 1400,
-    imageCaption: "Graduated in General Medicine, Sumy State University.",
+    imageCaption: "Medical graduate · General Medicine, Sumy State University.",
   },
-  // Smaller, ongoing things.
   also: [
     "Writing my book, Life Is Random, and publishing essays on Medium.",
   ],
