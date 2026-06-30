@@ -62,12 +62,9 @@ export default async function Home() {
           <div>
             <Reveal>
               <span className="inline-block rounded-full border border-accent/40 px-3 py-1 text-xs font-medium text-accent-deep">
-                {now.focus.status}
+                {now.focus.tag}
               </span>
-              <h3 className="mt-5 font-[family-name:var(--font-fraunces)] text-2xl text-ink sm:text-3xl">
-                {now.focus.title}
-              </h3>
-              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+              <p className="mt-5 max-w-2xl font-[family-name:var(--font-fraunces)] text-xl leading-relaxed text-ink sm:text-2xl">
                 {now.focus.body}
               </p>
             </Reveal>
