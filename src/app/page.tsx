@@ -51,56 +51,55 @@ export default async function Home() {
         </Reveal>
       </Section>
 
-      {/* NOW */}
+      {/* NOW — current focus: health tech */}
       <Section id="now" eyebrow={`Now · ${now.updated}`} bordered>
         <Reveal>
           <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
-            What I&rsquo;m building
+            {now.heading}
           </h2>
         </Reveal>
-        <ul className="mt-8 space-y-5">
-          {now.items.map((item, idx) => (
-            <Reveal key={item} delay={idx * 70}>
-              <li className="flex max-w-2xl gap-4 text-lg text-ink-soft">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                <span>
-                  <RichText text={item} />
-                </span>
-              </li>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:items-start">
+          <div>
+            <Reveal>
+              <span className="inline-block rounded-full border border-accent/40 px-3 py-1 text-xs font-medium text-accent-deep">
+                {now.focus.status}
+              </span>
+              <h3 className="mt-5 font-[family-name:var(--font-fraunces)] text-2xl text-ink sm:text-3xl">
+                {now.focus.title}
+              </h3>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+                {now.focus.body}
+              </p>
             </Reveal>
-          ))}
-        </ul>
-      </Section>
-
-      {/* WORK teaser */}
-      <Section id="work" eyebrow="Selected work" bordered>
-        <HeadingRow title="Building with Creovine" href="/work" label="See all work" />
-        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
-          {featuredProjects.map((p, idx) => {
-            const Wrapper = p.href ? "a" : "div";
-            return (
-              <Reveal key={p.title} delay={idx * 60}>
-                <Wrapper
-                  {...(p.href
-                    ? { href: p.href, target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                  className="group flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-[family-name:var(--font-fraunces)] text-xl text-ink">
-                      {p.title}
-                    </h3>
-                    <span className="shrink-0 rounded-full border border-line px-2.5 py-0.5 text-[0.65rem] text-accent-deep">
-                      {p.status}
+            <ul className="mt-8 space-y-4 border-t border-line pt-6">
+              {now.also.map((item) => (
+                <Reveal key={item}>
+                  <li className="flex max-w-2xl gap-4 text-base text-ink-soft">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <span>
+                      <RichText text={item} />
                     </span>
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {p.blurb}
-                  </p>
-                </Wrapper>
-              </Reveal>
-            );
-          })}
+                  </li>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+          <Reveal delay={80}>
+            <figure>
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-line bg-paper-2">
+                <Image
+                  src={now.focus.image}
+                  alt="Yerins Abraham at his medical graduation"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 30vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs leading-relaxed text-ink-soft/70">
+                {now.focus.imageCaption}
+              </figcaption>
+            </figure>
+          </Reveal>
         </div>
       </Section>
 
@@ -277,6 +276,57 @@ export default async function Home() {
               </a>
             </Reveal>
           )}
+        </div>
+      </Section>
+
+      {/* OTHER WORK — ventures, demoted below the creative range */}
+      <Section id="work" eyebrow="Other work" bordered>
+        <Reveal>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-xl">
+              <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
+                Software &amp; ventures
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-ink-soft">
+                Alongside the health-tech work, I run{" "}
+                <RichText text="Creovine" />, a product studio. A few of the
+                things built there.
+              </p>
+            </div>
+            <a
+              href="/work"
+              className="text-sm text-accent-deep underline-offset-4 hover:underline"
+            >
+              See all work &rarr;
+            </a>
+          </div>
+        </Reveal>
+        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+          {featuredProjects.map((p, idx) => {
+            const Wrapper = p.href ? "a" : "div";
+            return (
+              <Reveal key={p.title} delay={idx * 60}>
+                <Wrapper
+                  {...(p.href
+                    ? { href: p.href, target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="group flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-[family-name:var(--font-fraunces)] text-xl text-ink">
+                      {p.title}
+                    </h3>
+                    <span className="shrink-0 rounded-full border border-line px-2.5 py-0.5 text-[0.65rem] text-accent-deep">
+                      {p.status}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {p.blurb}
+                  </p>
+                </Wrapper>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 

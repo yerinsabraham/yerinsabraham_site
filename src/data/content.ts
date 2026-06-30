@@ -42,8 +42,8 @@ export const site = {
 
 export const bio = {
   // The "make the polymath claim coherent" paragraph — keep it tight.
-  lead: "I'm Yerins Abraham, a Ukrainian-trained physician (M.D., General Medicine) and self-taught full-stack engineer.",
-  body: "I sit at a rare intersection: I understand the clinic and I can build the software. Right now I'm building Creovine, starting with Tablu, on the way to health technology for the places that need it most. Outside the lab and the IDE I paint, write, and make music. The range isn't a distraction from the work. It is the work.",
+  lead: "I'm Yerins Abraham, a doctor by training (M.D., General Medicine) and a self-taught software engineer.",
+  body: "I trained as a doctor and I build software, and that combination now points at one thing: health technology for Africa. My current focus is Rwanda's broken specialist-referral pathway, connecting frontline doctors to the specialists their patients need. I don't practise clinically; I build. Alongside this I run a product studio, Creovine, and outside the work I paint, write and make music. The range isn't a distraction from the work. It is the work.",
 };
 
 // Long-form biography for the /about page. First person, your real voice
@@ -55,21 +55,22 @@ export const about = {
     "Trained as a medical doctor, six years of General Medicine, I've spent the last five-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. The clinic taught me how the human body fails and recovers; engineering gave me the tools to design systems that don't. I bring that same diagnostic precision to debugging and architecture.",
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
-    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my M.D., into software I taught myself, and across art, music and fashion. I staged the first African fashion show in Eastern Europe in 2017 and founded Metart Africa. I move often and build wherever I land; right now that means Creovine, with my real long-term aim being health technology for the regions that need it most.",
+    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my M.D., into software I taught myself, and across art, music and fashion. These days my focus has sharpened. The work I care most about is health technology for Africa, and right now that means exploring how to fix Rwanda's specialist-referral problem, where frontline doctors cannot easily reach the few specialists their patients need. It is early, research-phase work. My product studio, Creovine, is where this and my other software live. To be clear, I am a doctor by training, not a practising clinician. I build.",
     "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
   // Third-person bio for press, speaker intros, and syndication. Copy-ready.
   pressBioShort:
-    "Yerins Abraham is a Nigerian polymath: a medical doctor and software engineer, artist, author and entrepreneur, and the co-founder and CEO of the AI product studio Creovine.",
+    "Yerins Abraham is a medical doctor by training and a technologist building health technology for Africa, with a creative range that also spans art, writing and music.",
   pressBio:
-    "Yerins Abraham, known as “The Nigerian Da Vinci,” is a polymath working at the intersection of medicine, technology and art. A Ukrainian-trained medical doctor (M.D., General Medicine, Sumy State University) and self-taught full-stack engineer, he is the co-founder and CEO of Creovine, an AI product studio behind Tablu, Lira Intelligence and Brydg. As a visual artist he is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally, and he is the author of the book Index, with a second book, Life Is Random, in progress. A former Big Brother Naija housemate and recording artist, his long-term focus is building health technology for underserved regions.",
+    "Yerins Abraham is a medical doctor by training and a technologist building health technology for Africa. Trained in General Medicine (M.D., Sumy State University) and a self-taught software engineer, his current focus is the specialist-referral problem in Rwanda, connecting frontline doctors to scarce specialists. He also runs the product studio Creovine, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide creative range now serves one through-line: technology that improves access to healthcare.",
   // Quick-facts panel. Confirm/adjust any of these.
   facts: [
+    { label: "Focus", value: "Health technology for Africa (Rwanda)" },
+    { label: "Training", value: "M.D., General Medicine, Sumy State University" },
     { label: "Origin", value: "Delta & Bayelsa State, Nigeria" },
-    { label: "Education", value: "M.D., General Medicine, Sumy State University" },
     { label: "Languages", value: "English, Russian, Izon, French (a little)" },
     { label: "Stack", value: ".NET, React, Next.js, Flutter, AWS" },
-    { label: "Building", value: "Creovine (Tablu, Lira, Brydg)" },
+    { label: "Studio", value: "Creovine (Tablu, Lira, Brydg)" },
     { label: "With", value: "Sarah Oba, partner & co-founder" },
   ],
 };
@@ -114,11 +115,20 @@ export const speaking = {
 };
 
 export const now = {
-  // Update this monthly. This is the credibility section: proof you ship.
   updated: "June 2026",
-  items: [
-    "Building Tablu, restaurant ordering and payments, in a live pilot in Kisimenti.",
-    "Next, a health-tech product for specialist-doctor access and patient follow-up.",
+  heading: "What I'm working on",
+  // The current centerpiece: the health-tech exploration.
+  focus: {
+    status: "Research phase",
+    title: "Fixing specialist referral in Rwanda",
+    body: "Across Rwanda, frontline doctors struggle to reach the country's few specialists, so patients wait, travel far, or fall through the cracks. I trained as a doctor and I build software, and this is where those two threads meet. I'm exploring how a simple technology layer could connect frontline clinicians to the specialists their patients need. It is early, research-phase work: listening to doctors and mapping how referrals actually happen before building anything.",
+    image: "/img/doctor-grad.jpg",
+    imageW: 933,
+    imageH: 1400,
+    imageCaption: "Graduated in General Medicine, Sumy State University.",
+  },
+  // Smaller, ongoing things.
+  also: [
     "Writing my book, Life Is Random, and publishing essays on Medium.",
   ],
 };
