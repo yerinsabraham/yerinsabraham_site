@@ -67,6 +67,14 @@ export default async function Home() {
               <p className="mt-5 max-w-2xl font-[family-name:var(--font-fraunces)] text-xl leading-relaxed text-ink sm:text-2xl">
                 {now.focus.body}
               </p>
+              {now.focus.cta && (
+                <a
+                  href={now.focus.cta.href}
+                  className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
+                >
+                  {now.focus.cta.label} &rarr;
+                </a>
+              )}
             </Reveal>
             <ul className="mt-8 space-y-4 border-t border-line pt-6">
               {now.also.map((item) => (
