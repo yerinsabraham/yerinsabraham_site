@@ -124,6 +124,7 @@ export const now = {
     imageW: 933,
     imageH: 1400,
     imageCaption: "Medical graduate · General Medicine, Sumy State University.",
+    cta: { label: "Read the field analysis", href: "/research" },
   },
   also: [
     "Writing my book, Life Is Random, and publishing essays on Medium.",
