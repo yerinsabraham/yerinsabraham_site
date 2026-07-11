@@ -35,9 +35,9 @@ export const research: Research[] = [
     slug: "the-referral-gap",
     title: "The Referral Gap",
     status: "Living document · Updated 11 July 2026",
-    tag: "Field analysis · Rwanda",
+    tag: "Field analysis",
     subtitle:
-      "A field analysis of specialist access in Rwanda: why reaching a specialist, and getting the answer back to your local doctor, is where the system breaks.",
+      "A field analysis of specialist access: why reaching a specialist, and getting the answer back to your local doctor, is where the system breaks.",
     excerpt:
       "In much of sub-Saharan Africa the hardest part of specialist care is not the treatment. It is reaching the specialist, and getting the answer back down to your local doctor. A field analysis of where the system leaks patients, and what technology can actually fix.",
     heroImage: "/img/research-doctor-library.jpg",
