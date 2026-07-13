@@ -11,7 +11,7 @@ import { research } from "@/data/research";
 const piece = research[0];
 
 export const metadata: Metadata = {
-  title: `Research — ${piece.title}`,
+  title: `Field notes: ${piece.title}`,
   description: piece.excerpt,
   alternates: { canonical: "/research" },
   openGraph: {
