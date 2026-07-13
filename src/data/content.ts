@@ -177,7 +177,7 @@ export const projects: Project[] = [
     role: "Founder",
     blurb:
       "The real aim. Access to specialist doctors and structured follow-up for underserved regions, where the M.D. and the engineer finally meet.",
-    status: "Research phase",
+    status: "Early stage",
   },
   {
     title: "Metart Africa",
