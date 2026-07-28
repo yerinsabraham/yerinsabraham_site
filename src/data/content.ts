@@ -42,8 +42,8 @@ export const site = {
 
 export const bio = {
   // A synthesis of who he is — a story, not a CV.
-  lead: "I'm Yerins Abraham, a polymath: a medical graduate in General Medicine and a self-taught software engineer.",
-  body: "At heart I'm a curious person, fascinated by how the human body and mind work, and just as drawn to making things, whether software, art or music. What connects it all is one instinct: to take what I understand and use it to build things that solve real problems and meet real needs. The range was never a distraction from the work. It is the work.",
+  lead: "Yerins Abraham is a polymath: a medical graduate in General Medicine and a self-taught software engineer.",
+  body: "At heart he is a curious person, fascinated by how the human body and mind work, and just as drawn to making things, whether software, art or music. What connects it all is one instinct: to take what he understands and use it to build things that solve real problems and meet real needs. The range was never a distraction from the work. It is the work.",
 };
 
 // Long-form biography for the /about page. First person, your real voice
