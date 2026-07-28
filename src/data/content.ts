@@ -8,7 +8,7 @@ export const site = {
   fullName: "Yerinmene Abraham Saibakumo",
   identity: "The Polymath",
   throughline:
-    "Medical graduate and self-taught software engineer, curious about almost everything.",
+    "Medical graduate and software engineer, curious about almost everything.",
   // Cycled in the hero sub-line — the range, without six competing headlines.
   disciplines: [
     "Doctor",
@@ -42,7 +42,7 @@ export const site = {
 
 export const bio = {
   // A synthesis of who he is — a story, not a CV.
-  lead: "Yerins Abraham is a polymath: a medical graduate in General Medicine and a self-taught software engineer.",
+  lead: "Yerins Abraham is a polymath: a medical graduate in General Medicine and a software engineer.",
   body: "At heart he is a curious person, fascinated by how the human body and mind work, and just as drawn to making things, whether software, art or music. What connects it all is one instinct: to take what he understands and use it to build things that solve real problems and meet real needs. The range was never a distraction from the work. It is the work.",
 };
 
@@ -55,14 +55,14 @@ export const about = {
     "A medical graduate in General Medicine (six years of it), I've spent the last five-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. Studying medicine taught me how the human body and mind work; engineering gave me the tools to build. I bring that same diagnostic curiosity to everything I make.",
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
-    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software I taught myself, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, exploring how medicine and software can come together to improve access to care. It's early, so I'd rather let the work speak than over-explain the plan. My product studio, Creovine, is where this and my other software live.",
+    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software engineering, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, exploring how medicine and software can come together to improve access to care. It's early, so I'd rather let the work speak than over-explain the plan. My product studio, Creovine, is where this and my other software live.",
     "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
   // Third-person bio for press, speaker intros, and syndication. Copy-ready.
   pressBioShort:
-    "Yerins Abraham is a polymath: a medical graduate and self-taught software engineer whose range spans art, writing and music, increasingly drawn to technology for human health.",
+    "Yerins Abraham is a polymath: a medical graduate and software engineer whose range spans art, writing and music, increasingly drawn to technology for human health.",
   pressBio:
-    "Yerins Abraham is a polymath, a medical graduate in General Medicine and a self-taught software engineer. His curiosity spans medicine, technology and the arts, and increasingly it points in one direction: health technology, and how to improve access to care. He also runs the product studio Creovine, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide range serves a single instinct: building things that meet real human needs.",
+    "Yerins Abraham is a polymath, a medical graduate in General Medicine and a software engineer. His curiosity spans medicine, technology and the arts, and increasingly it points in one direction: health technology, and how to improve access to care. He also runs the product studio Creovine, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide range serves a single instinct: building things that meet real human needs.",
   // Quick-facts panel. Confirm/adjust any of these.
   facts: [
     { label: "Focus", value: "Technology for human health" },
