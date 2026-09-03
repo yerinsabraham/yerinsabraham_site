@@ -67,9 +67,16 @@ export default async function Home() {
               <p className="mt-5 max-w-2xl font-[family-name:var(--font-fraunces)] text-xl leading-relaxed text-ink sm:text-2xl">
                 {now.focus.body}
               </p>
+              {now.focus.detail && (
+                <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+                  {now.focus.detail}
+                </p>
+              )}
               {now.focus.cta && (
                 <a
                   href={now.focus.cta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
                 >
                   {now.focus.cta.label} &rarr;
@@ -94,7 +101,7 @@ export default async function Home() {
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-line bg-paper-2">
                 <Image
                   src={now.focus.image}
-                  alt="Yerins Abraham at his medical graduation"
+                  alt="Oystar signage outside a digital health center"
                   fill
                   sizes="(max-width: 1024px) 90vw, 30vw"
                   className="object-cover"
@@ -293,9 +300,8 @@ export default async function Home() {
                 Software &amp; ventures
               </h2>
               <p className="mt-3 text-base leading-relaxed text-ink-soft">
-                Alongside the health-tech work, I run{" "}
-                <RichText text="Creovine" />, a product studio. A few of the
-                things built there.
+                What I&rsquo;m building right now, in health and beyond. Most of
+                it lives under my product studio, <RichText text="Creovine" />.
               </p>
             </div>
             <a

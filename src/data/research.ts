@@ -21,6 +21,12 @@ export type Research = {
   status: string; // e.g. "Living document · Updated July 2026"
   tag: string; // small eyebrow label, e.g. "Field analysis"
   subtitle: string;
+  // Byline + ISO date. Both feed the visible dateline and the Article schema.
+  // A dated, attributed document is citable; an undated one is not.
+  author: string;
+  authorCredential: string;
+  datePublished: string; // ISO 8601
+  dateModified: string; // ISO 8601
   excerpt: string; // teaser (cards / meta description)
   // Optional lead image. Drop a file in /public/img/ and set the path here,
   // e.g. "/img/research-kigali.jpg". Leave undefined to hide the figure.
@@ -35,11 +41,15 @@ export const research: Research[] = [
     slug: "the-referral-gap",
     title: "The Referral Gap",
     status: "Living document · Updated 11 July 2026",
-    tag: "Field analysis",
+    tag: "Field research · Rwanda",
+    author: "Yerins Abraham",
+    authorCredential: "M.D., General Medicine",
+    datePublished: "2026-07-11",
+    dateModified: "2026-07-11",
     subtitle:
-      "A field analysis of specialist access: why reaching a specialist, and getting the answer back to your local doctor, is where the system breaks.",
+      "A field analysis of specialist referral in Rwanda: why reaching a specialist, and getting the answer back to the district doctor who sent you, is where the system breaks.",
     excerpt:
-      "In much of sub-Saharan Africa the hardest part of specialist care is not the treatment. It is reaching the specialist, and getting the answer back down to your local doctor. A field analysis of where the system leaks patients, and what technology can actually fix.",
+      "In Rwanda, and across sub-Saharan Africa, the hardest part of specialist care is not the treatment. It is reaching the specialist, and getting the answer back down to the district doctor who made the referral. A field analysis of where the referral funnel leaks patients, drawn from doctors across Rwanda's system and the published literature.",
     heroImage: "/img/research-doctor-library.jpg",
     heroCaption:
       "Where this work begins: a doctor by training, in the medical library, now building technology for care.",
