@@ -11,15 +11,71 @@ import { research } from "@/data/research";
 const piece = research[0];
 
 export const metadata: Metadata = {
-  title: `Field notes: ${piece.title}`,
+  title: `${piece.title}: specialist referral in Rwanda`,
   description: piece.excerpt,
+  keywords: [
+    "referral gap",
+    "counter-referral",
+    "specialist referral Rwanda",
+    "health system Rwanda",
+    "digital health Africa",
+    "health technology Rwanda",
+    "Yerins Abraham",
+  ],
+  authors: [{ name: piece.author, url: site.domain }],
   alternates: { canonical: "/research" },
   openGraph: {
-    title: piece.title,
+    title: `${piece.title}: specialist referral in Rwanda`,
     description: piece.excerpt,
     url: `${site.domain}/research`,
     type: "article",
+    publishedTime: piece.datePublished,
+    modifiedTime: piece.dateModified,
+    authors: [site.domain],
   },
+};
+
+// Article schema, with the author bound by @id to the Person in the root
+// layout. That binding is the point: it tells a search engine the doctor and
+// the author of this analysis are one entity, and cites the literature it
+// rests on. Sanitised per the Next.js JSON-LD guide.
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": `${site.domain}/research#article`,
+  headline: `${piece.title}: specialist referral in Rwanda`,
+  name: piece.title,
+  abstract: piece.excerpt,
+  description: piece.subtitle,
+  inLanguage: "en",
+  datePublished: piece.datePublished,
+  dateModified: piece.dateModified,
+  url: `${site.domain}/research`,
+  mainEntityOfPage: `${site.domain}/research`,
+  author: {
+    "@type": "Person",
+    "@id": `${site.domain}/#person`,
+    name: piece.author,
+    honorificSuffix: "M.D.",
+    url: site.domain,
+  },
+  publisher: {
+    "@type": "Person",
+    "@id": `${site.domain}/#person`,
+    name: site.name,
+  },
+  about: [
+    { "@type": "Thing", name: "Health care referral systems" },
+    { "@type": "Thing", name: "Specialist access" },
+    { "@type": "Place", name: "Rwanda" },
+    { "@type": "Thing", name: "Digital health" },
+  ],
+  spatialCoverage: { "@type": "Country", name: "Rwanda" },
+  citation: piece.sources.map((s) => ({
+    "@type": "CreativeWork",
+    name: s.label,
+    url: s.href,
+  })),
 };
 
 export default function ResearchPage() {
@@ -27,6 +83,12 @@ export default function ResearchPage() {
 
   return (
     <main className="overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <Nav />
 
       <article className="mx-auto max-w-2xl px-6 pt-36 pb-28">
@@ -43,7 +105,16 @@ export default function ResearchPage() {
             {piece.title}
           </h1>
           <p className="mt-4 text-lg text-ink-soft">{piece.subtitle}</p>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
+          <p className="mt-6 text-sm text-ink-soft">
+            By{" "}
+            <span className="font-medium text-ink">{piece.author}</span>,{" "}
+            {piece.authorCredential}
+            <span className="mx-2 text-ink-soft/40">·</span>
+            <time dateTime={piece.datePublished}>11 July 2026</time>
+            <span className="mx-2 text-ink-soft/40">·</span>
+            Kigali, Rwanda
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-4">
             <span className="text-sm italic text-ink-soft/80">
               {piece.status}
             </span>

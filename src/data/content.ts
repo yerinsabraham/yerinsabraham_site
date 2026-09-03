@@ -8,7 +8,7 @@ export const site = {
   fullName: "Yerinmene Abraham Saibakumo",
   identity: "The Polymath",
   throughline:
-    "Medical graduate and software engineer, curious about almost everything.",
+    "Medical doctor and software engineer, curious about almost everything.",
   // Cycled in the hero sub-line — the range, without six competing headlines.
   disciplines: [
     "Doctor",
@@ -42,7 +42,7 @@ export const site = {
 
 export const bio = {
   // A synthesis of who he is — a story, not a CV.
-  lead: "Yerins Abraham is a polymath: a medical graduate in General Medicine and a software engineer.",
+  lead: "Yerins Abraham is a polymath: a medical doctor and a software engineer.",
   body: "At heart he is a curious person, fascinated by how the human body and mind work, and just as drawn to making things, whether software, art or music. What connects it all is one instinct: to take what he understands and use it to build things that solve real problems and meet real needs. The range was never a distraction from the work. It is the work.",
 };
 
@@ -52,17 +52,17 @@ export const about = {
   intro:
     "A polymath who thrives at the intersection of creativity, technology, and problem-solving.",
   paragraphs: [
-    "A medical graduate in General Medicine (six years of it), I've spent the last five-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. Studying medicine taught me how the human body and mind work; engineering gave me the tools to build. I bring that same diagnostic curiosity to everything I make.",
+    "A medical doctor trained in General Medicine (six years of it), I've spent the last five-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. Studying medicine taught me how the human body and mind work; engineering gave me the tools to build. I bring that same diagnostic curiosity to everything I make.",
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
-    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software engineering, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, exploring how medicine and software can come together to improve access to care. It's early, so I'd rather let the work speak than over-explain the plan. My product studio, Creovine, is where this and my other software live.",
+    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software engineering, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, and it led me to build Oystar, a platform that helps patients reach the specialists they need and makes sure the answer gets back to the clinic that sent them, with intelligence built in. I am starting in Rwanda, where I am based, but it is built for a problem that reaches far beyond one country. My product studio, Creovine, is where this and my other software live.",
     "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
   // Third-person bio for press, speaker intros, and syndication. Copy-ready.
   pressBioShort:
-    "Yerins Abraham is a polymath: a medical graduate and software engineer whose range spans art, writing and music, increasingly drawn to technology for human health.",
+    "Yerins Abraham is a polymath: a medical doctor and software engineer whose range spans art, writing and music, increasingly drawn to technology for human health.",
   pressBio:
-    "Yerins Abraham is a polymath, a medical graduate in General Medicine and a software engineer. His curiosity spans medicine, technology and the arts, and increasingly it points in one direction: health technology, and how to improve access to care. He also runs the product studio Creovine, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide range serves a single instinct: building things that meet real human needs.",
+    "Yerins Abraham is a polymath, a medical doctor trained in General Medicine and a software engineer. His curiosity spans medicine, technology and the arts, and increasingly it points in one direction: health technology, and how to improve access to care. He is the founder of Oystar, a platform that closes the gap between frontline clinics and specialists so patients reach the care they need, starting in Rwanda. He also runs the product studio Creovine, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide range serves a single instinct: building things that meet real human needs.",
   // Quick-facts panel. Confirm/adjust any of these.
   facts: [
     { label: "Focus", value: "Technology for human health" },
@@ -70,7 +70,7 @@ export const about = {
     { label: "Origin", value: "Delta & Bayelsa State, Nigeria" },
     { label: "Languages", value: "English, Russian, Izon, French (a little)" },
     { label: "Stack", value: ".NET, React, Next.js, Flutter, AWS" },
-    { label: "Studio", value: "Creovine (Tablu, Lira, Brydg)" },
+    { label: "Studio", value: "Creovine (Oystar, Academy, Lira, Brydg, Tablu)" },
     { label: "With", value: "Sarah Oba, partner & co-founder" },
   ],
 };
@@ -115,18 +115,21 @@ export const speaking = {
 };
 
 export const now = {
-  updated: "June 2026",
+  updated: "August 2026",
   heading: "What I'm working on",
   focus: {
-    tag: "Exploring",
-    body: "Lately I've been most drawn to health technology, exploring how what I know about medicine and what I can build with software might come together to improve access to care. It's early, so I'd rather let the work speak than over-explain the plan.",
-    image: "/img/doctor-grad.jpg",
-    imageW: 933,
-    imageH: 1400,
-    imageCaption: "Medical graduate · General Medicine, Sumy State University.",
-    cta: { label: "Read the field analysis", href: "/research" },
+    tag: "Building",
+    body: "In much of the world, a patient who needs a specialist has no reliable way to reach one.",
+    detail:
+      "They are sent off with a slip of paper, travel far, and are often never seen, while the clinic that sent them never learns what happened. I built Oystar to close that gap: a platform, with intelligence built in, that carries a patient's full case from a frontline clinic to the right specialist and brings the clinical answer back, so no one is lost in between. The patient needs no phone and no app. We are starting in Rwanda, where I am based, but this problem runs across Africa and far beyond it.",
+    image: "/img/oystar-brand.jpg",
+    imageW: 1200,
+    imageH: 1200,
+    imageCaption: "Oystar — closing the gap between clinics and specialists. Live at oystar.app.",
+    cta: { label: "Visit Oystar", href: "https://oystar.app" },
   },
   also: [
+    "Advancing Lira Intelligence, our AI customer-support product, now live.",
     "Writing my book, Life Is Random, and publishing essays on Medium.",
   ],
 };
@@ -141,10 +144,34 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Oystar",
+    role: "Founder",
+    blurb:
+      "A platform for one of health care's most broken moments: getting a patient from a frontline clinic to the specialist they need, and the answer back. It carries the full case, uses intelligence to route and complete it, and tracks every referral through six stages so no patient is lost in between. In early access, starting with private hospitals in Rwanda. The real aim, where the M.D. and the engineer finally meet.",
+    status: "Early access · Rwanda",
+    href: "https://oystar.app",
+  },
+  {
+    title: "Creovine Academy",
+    role: "Founder, with Sarah Oba",
+    blurb:
+      "A school for using AI in real work, taught from six years of shipping production software for banks and growing companies. Single courses, or a two-semester track with marked projects, live classes and a verifiable professional certificate. Web and iOS.",
+    status: "Live · Enrolling",
+    href: "https://academy.creovine.com",
+  },
+  {
+    title: "Lira Intelligence",
+    role: "Creovine",
+    blurb:
+      "AI customer support that answers from a company's own knowledge base and acts on requests across chat, email, voice and WhatsApp. Live with paying customers.",
+    status: "Live",
+    href: "https://liraintelligence.com/",
+  },
+  {
     title: "Creovine",
     role: "Co-founder & CEO",
     blurb:
-      "An AI product studio building the future of work, intelligent automation across hiring, customer support, and more. The home for everything below.",
+      "An AI product studio building the future of work: intelligent automation across hiring, customer support, and more. The studio behind much of this work.",
     status: "Studio",
     href: "https://creovine.com/",
   },
@@ -157,27 +184,12 @@ export const projects: Project[] = [
     href: "https://www.tabluhq.com/",
   },
   {
-    title: "Lira Intelligence",
-    role: "Creovine",
-    blurb:
-      "AI guest and customer support that resolves requests instantly, built for hospitality and service businesses.",
-    status: "Live",
-    href: "https://liraintelligence.com/",
-  },
-  {
     title: "Brydg",
     role: "Creovine",
     blurb:
       "An AI-native hiring platform. Applicant tracking and recruiting automation that modernizes how teams hire.",
     status: "Live",
     href: "https://brydg.app/",
-  },
-  {
-    title: "Health technology",
-    role: "Founder",
-    blurb:
-      "The real aim. Access to specialist doctors and structured follow-up for underserved regions, where the M.D. and the engineer finally meet.",
-    status: "Early stage",
   },
   {
     title: "Metart Africa",
@@ -384,8 +396,10 @@ export const artworks: Artwork[] = [
 // Longer terms are matched first; only the first occurrence per block links.
 export const inlineLinks: { term: string; href: string }[] = [
   { term: "Life Is Random", href: "/writing/life-is-random" },
+  { term: "Oystar", href: "https://oystar.app" },
   { term: "Lira Intelligence", href: "https://liraintelligence.com/" },
   { term: "Sarah Oba", href: site.youtubeCouple },
+  { term: "Creovine Academy", href: "https://academy.creovine.com" },
   { term: "Creovine", href: "https://creovine.com/" },
   { term: "Tablu", href: "https://www.tabluhq.com/" },
   { term: "Brydg", href: "https://brydg.app/" },

@@ -60,22 +60,51 @@ const personSchema = {
   "@id": `${site.domain}/#person`,
   name: site.name,
   alternateName: ["The Nigerian Da Vinci", site.fullName],
-  description: "Nigerian polymath",
-  jobTitle: "Polymath",
+  description:
+    "Nigerian physician and software engineer building health technology in Rwanda. Founder of Oystar, a clinical referral platform, and co-founder of the product studio Creovine. Also a visual artist, author and musician.",
+  jobTitle: "Physician and software engineer",
   nationality: "Nigerian",
   url: site.domain,
+  // Each occupation is one a journalist could verify. "Polymath" stays an
+  // alternateName, which is how it is actually used about him in the press,
+  // rather than a self-asserted job title.
+  hasOccupation: [
+    { "@type": "Occupation", name: "Physician" },
+    { "@type": "Occupation", name: "Software engineer" },
+    { "@type": "Occupation", name: "Entrepreneur" },
+    { "@type": "Occupation", name: "Visual artist" },
+    { "@type": "Occupation", name: "Author" },
+  ],
+  homeLocation: {
+    "@type": "Place",
+    name: "Kigali, Rwanda",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kigali",
+      addressCountry: "RW",
+    },
+  },
   knowsAbout: [
     "Medicine",
+    "Health technology",
+    "Clinical referral systems",
+    "Digital health in Africa",
     "Software engineering",
     "Full-stack development",
     "Visual art",
     "Music",
     "Writing",
-    "Health technology",
   ],
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "Sumy State University",
+    sameAs: "https://en.wikipedia.org/wiki/Sumy_State_University",
+  },
+  subjectOf: {
+    "@type": "ScholarlyArticle",
+    "@id": `${site.domain}/research#article`,
+    name: "The Referral Gap",
+    url: `${site.domain}/research`,
   },
   worksFor: {
     "@type": "Organization",
@@ -107,7 +136,9 @@ export default function RootLayout({
       <body className="min-h-screen">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema).replace(/</g, "\\u003c"),
+          }}
         />
         {children}
         <Analytics />
