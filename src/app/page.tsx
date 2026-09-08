@@ -404,8 +404,8 @@ export default async function Home() {
           <Reveal>
             <p className="eyebrow mb-6">Contact</p>
             <h2 className="max-w-3xl font-[family-name:var(--font-fraunces)] text-4xl font-light leading-tight text-ink sm:text-5xl">
-              Available for collaboration, speaking, and health-tech
-              partnerships.
+              Available for collaboration, speaking, health-tech partnerships,
+              and AI training for teams.
             </h2>
             <a
               href={`mailto:${site.email}`}
@@ -413,6 +413,16 @@ export default async function Home() {
             >
               {site.email}
             </a>
+            <p className="mt-4 text-sm text-ink-soft">
+              For organisational training, see{" "}
+              <a
+                href="https://academy.creovine.com/organisations"
+                className="underline underline-offset-4 hover:text-ink"
+              >
+                Creovine Academy for organisations
+              </a>
+              . Anything else, {site.personalEmail}.
+            </p>
           </Reveal>
           <footer className="mt-20 flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-ink-soft">© {site.name}</p>
