@@ -19,7 +19,11 @@ export const site = {
     "Founder",
   ],
   voiceLine: "My creative process is gardening, not architecture.",
-  email: "yerinsabram@gmail.com",
+  /* The address organisational outreach is sent from, so a buyer who searches
+     the sender finds the same address here. The personal one stays for
+     everything else. */
+  email: "yerins@creovine.com",
+  personalEmail: "yerinsabram@gmail.com",
   domain: "https://yerinsabraham.com",
   socials: {
     github: "https://github.com/yerinsabraham",
@@ -156,7 +160,7 @@ export const projects: Project[] = [
     title: "Creovine Academy",
     role: "Founder, with Sarah Oba",
     blurb:
-      "A school for using AI in real work, taught from six years of shipping production software for banks and growing companies. Single courses, or a two-semester track with marked projects, live classes and a verifiable professional certificate. Web and iOS.",
+      "A school for using AI in real work, taught from five-plus years of shipping production software for banks and growing companies. 120+ people trained so far. Single courses, a two-semester track with marked projects and a verifiable professional certificate, and customised programmes for organisations. Web and iOS.",
     status: "Live · Enrolling",
     href: "https://academy.creovine.com",
   },
@@ -164,7 +168,7 @@ export const projects: Project[] = [
     title: "Lira Intelligence",
     role: "Creovine",
     blurb:
-      "AI customer support that answers from a company's own knowledge base and acts on requests across chat, email, voice and WhatsApp. Live with paying customers.",
+      "AI customer support that answers from a company's own knowledge base and acts on requests across chat, email, voice and WhatsApp. Live and publicly available, with a free tier and paid plans.",
     status: "Live",
     href: "https://liraintelligence.com/",
   },
