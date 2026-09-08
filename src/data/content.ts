@@ -115,7 +115,7 @@ export const speaking = {
 };
 
 export const now = {
-  updated: "August 2026",
+  updated: "September 2026",
   heading: "What I'm working on",
   focus: {
     tag: "Building",
@@ -129,6 +129,7 @@ export const now = {
     cta: { label: "Visit Oystar", href: "https://oystar.app" },
   },
   also: [
+    "Building Creovine Academy, teaching people and teams to use AI in the work they already do. Now training organisations.",
     "Advancing Lira Intelligence, our AI customer-support product, now live.",
     "Writing my book, Life Is Random, and publishing essays on Medium.",
   ],
