@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/data/content";
 import { writings } from "@/data/writings";
+import { engineering } from "@/data/engineering";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.domain;
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/research`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/work`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/engineering`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/art`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/writing`, changeFrequency: "weekly", priority: 0.8 },
   ];
@@ -22,5 +24,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }));
 
-  return [...staticPages, ...writingPages];
+  const engineeringPages: MetadataRoute.Sitemap = engineering.map((p) => ({
+    url: `${base}/engineering/${p.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...writingPages, ...engineeringPages];
 }
