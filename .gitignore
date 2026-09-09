@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# CV and personal documents.
+# This repo is public. docs/ holds the CV PDF and its source, both carrying a
+# personal phone number, so they stay local. Committing them once would put
+# that number in public git history permanently, where deleting the file later
+# does not remove it.
+docs/
