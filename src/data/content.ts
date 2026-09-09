@@ -53,22 +53,9 @@ export type Evidence = { stat: string; label: string; href?: string };
 
 export const evidence: Evidence[] = [
   {
-    stat: "2 errors in 65,942 requests",
-    label: "Production banking API, 30 days to September 2026, p95 284ms",
-  },
-  {
-    stat: "Four live products, one API",
-    label: "155 service modules and a 46-model schema I designed and run",
-  },
-  {
     stat: "Live in Rwandan hospitals",
     label: "Oystar, carrying referrals from clinic to specialist and back",
     href: "https://oystar.app",
-  },
-  {
-    stat: "Open source",
-    label: "evalgate, a regression gate for LLM systems",
-    href: "https://github.com/yerinsabraham/evalgate",
   },
   {
     stat: "120+ engineers trained",
@@ -76,9 +63,24 @@ export const evidence: Evidence[] = [
     href: "https://academy.creovine.com",
   },
   {
-    stat: "Exhibited across Europe, Africa and the UAE",
+    stat: "2 errors in 65,942 requests",
+    label: "Production banking API, 30 days to September 2026, p95 284ms",
+  },
+  {
+    /* "Artwork" is load-bearing: "exhibited" alone reads as a trade stand or a
+       product launch, which is a different and misleading claim. */
+    stat: "Artwork exhibited across Europe, Africa and the UAE",
     label: "Kyiv, Sumy, Lagos, Abuja and Dubai. Pen and ink, at scale",
     href: "/art",
+  },
+  {
+    stat: "Four live products, one API",
+    label: "155 service modules and a 46-model schema I designed and run",
+  },
+  {
+    stat: "Open source",
+    label: "evalgate, a regression gate for LLM systems",
+    href: "https://github.com/yerinsabraham/evalgate",
   },
 ];
 
