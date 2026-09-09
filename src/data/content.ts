@@ -75,6 +75,11 @@ export const evidence: Evidence[] = [
     label: "Creovine Academy, teaching AI in real engineering work",
     href: "https://academy.creovine.com",
   },
+  {
+    stat: "Exhibited across Europe, Africa and the UAE",
+    label: "Kyiv, Sumy, Lagos, Abuja and Dubai. Pen and ink, at scale",
+    href: "/art",
+  },
 ];
 
 export const bio = {
@@ -252,7 +257,7 @@ export const range: RangeItem[] = [
   {
     field: "Visual art",
     title: "Index and Mother",
-    note: "Index is 106 x 365cm of pen and ink and took most of 2020, with months spent studying cryptography to hide readable messages inside it. Mother, 106 x 275cm, came after a four-year drought. Both exhibited internationally.",
+    note: "Index is 106 x 365cm of pen and ink and took most of 2020, with months spent studying cryptography to hide readable messages inside it. Mother, 106 x 275cm, came after a four-year drought. Exhibited in Kyiv, Sumy, Lagos, Abuja and Dubai.",
     href: "https://diarbid.com/artists/yerins-abraham",
     hrefLabel: "View art profile",
   },
