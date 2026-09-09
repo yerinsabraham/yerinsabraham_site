@@ -13,8 +13,10 @@ import {
   press,
   beginningsQuote,
   artworks,
+  evidence,
 } from "@/data/content";
 import { books, essays } from "@/data/writings";
+import { engineering } from "@/data/engineering";
 
 export default async function Home() {
   const articles = await getArticles(1);
@@ -22,11 +24,43 @@ export default async function Home() {
   const featuredArt = artworks.slice(0, 2);
   const featuredBook = books[0];
   const featuredEssay = essays[0];
+  const featuredNote = engineering[0];
 
   return (
     <main className="overflow-x-hidden">
       <Nav />
       <Hero />
+
+      {/* EVIDENCE — checkable figures before the reader has to trust an adjective */}
+      <section className="border-t border-line bg-paper-2/40">
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          <p className="eyebrow mb-8">The short version</p>
+          <ul className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
+            {evidence.map((e, idx) => {
+              const Wrapper = e.href ? "a" : "div";
+              return (
+                <Reveal key={e.stat} delay={idx * 50}>
+                  <Wrapper
+                    {...(e.href
+                      ? { href: e.href, target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className={`block border-l-2 border-accent/40 pl-4 ${
+                      e.href ? "transition-colors hover:border-accent" : ""
+                    }`}
+                  >
+                    <p className="font-[family-name:var(--font-fraunces)] text-xl leading-snug text-ink">
+                      {e.stat}
+                    </p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                      {e.label}
+                    </p>
+                  </Wrapper>
+                </Reveal>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
 
       {/* ABOUT teaser */}
       <Section id="about" eyebrow="The synthesis" bordered>
@@ -69,6 +103,11 @@ export default async function Home() {
               {now.focus.detail && (
                 <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
                   {now.focus.detail}
+                </p>
+              )}
+              {now.focus.engineering && (
+                <p className="mt-4 max-w-2xl border-l-2 border-accent/40 pl-4 text-base leading-relaxed text-ink-soft">
+                  {now.focus.engineering}
                 </p>
               )}
               {now.focus.cta && (
@@ -114,13 +153,90 @@ export default async function Home() {
         </div>
       </Section>
 
+      {/* ENGINEERING — the deepest evidence, so it sits above the creative range */}
+      <Section id="engineering" eyebrow="Engineering" bordered>
+        <Reveal>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-xl">
+              <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
+                Systems, running in production
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-ink-soft">
+                AI that does more than answer: retrieval over a company&rsquo;s own
+                knowledge, agents that take real actions, and the controls that
+                make that safe. Most of it lives under my product studio,{" "}
+                <RichText text="Creovine" />.
+              </p>
+            </div>
+            <a
+              href="/engineering"
+              className="text-sm text-accent-deep underline-offset-4 hover:underline"
+            >
+              Engineering notes &rarr;
+            </a>
+          </div>
+        </Reveal>
+        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+          {featuredProjects.map((p, idx) => {
+            const Wrapper = p.href ? "a" : "div";
+            return (
+              <Reveal key={p.title} delay={idx * 60}>
+                <Wrapper
+                  {...(p.href
+                    ? { href: p.href, target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="group flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-[family-name:var(--font-fraunces)] text-xl text-ink">
+                      {p.title}
+                    </h3>
+                    <span className="shrink-0 rounded-full border border-line px-2.5 py-0.5 text-[0.65rem] text-accent-deep">
+                      {p.status}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {p.blurb}
+                  </p>
+                </Wrapper>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        <Reveal>
+          <a
+            href={`/engineering/${featuredNote.slug}`}
+            className="group mt-8 block rounded-2xl border border-line bg-paper p-7 transition-colors hover:bg-paper-2"
+          >
+            <p className="eyebrow mb-3">{featuredNote.tag}</p>
+            <h3 className="max-w-2xl font-[family-name:var(--font-fraunces)] text-2xl font-light leading-snug text-ink transition-colors group-hover:text-accent-deep">
+              {featuredNote.title}
+            </h3>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
+              {featuredNote.excerpt}
+            </p>
+            <span className="mt-4 inline-block text-sm text-accent-deep">
+              Read the write-up &rarr;
+            </span>
+          </a>
+        </Reveal>
+      </Section>
+
       {/* ART teaser */}
       <Section id="art" eyebrow="Art" bordered>
         <HeadingRow
-          title="Pen, ink, and patience"
+          title="Pen, ink, and a year on one drawing"
           href="/art"
           label="View gallery"
         />
+        <Reveal>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
+            Index is 106 x 365cm and took most of 2020, including months studying
+            cryptography to hide readable messages inside it. It is the reason the
+            range is not a distraction: the same patience goes into the systems.
+          </p>
+        </Reveal>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {featuredArt.map((a) => (
             <Reveal key={a.src}>
@@ -147,7 +263,7 @@ export default async function Home() {
       {/* WRITING teaser */}
       <Section id="writing" eyebrow="Words & ideas" bordered>
         <HeadingRow
-          title="Books, essays, and ideas"
+          title="A published book, and one in progress"
           href="/writing"
           label="All writing"
         />
@@ -214,56 +330,6 @@ export default async function Home() {
               </a>
             </Reveal>
           )}
-        </div>
-      </Section>
-
-      {/* OTHER WORK — ventures, demoted below the creative range */}
-      <Section id="work" eyebrow="Other work" bordered>
-        <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div className="max-w-xl">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-3xl font-light text-ink sm:text-4xl">
-                Software &amp; ventures
-              </h2>
-              <p className="mt-3 text-base leading-relaxed text-ink-soft">
-                What I&rsquo;m building right now, in health and beyond. Most of
-                it lives under my product studio, <RichText text="Creovine" />.
-              </p>
-            </div>
-            <a
-              href="/work"
-              className="text-sm text-accent-deep underline-offset-4 hover:underline"
-            >
-              See all work &rarr;
-            </a>
-          </div>
-        </Reveal>
-        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
-          {featuredProjects.map((p, idx) => {
-            const Wrapper = p.href ? "a" : "div";
-            return (
-              <Reveal key={p.title} delay={idx * 60}>
-                <Wrapper
-                  {...(p.href
-                    ? { href: p.href, target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                  className="group flex h-full flex-col bg-paper p-7 transition-colors hover:bg-paper-2"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-[family-name:var(--font-fraunces)] text-xl text-ink">
-                      {p.title}
-                    </h3>
-                    <span className="shrink-0 rounded-full border border-line px-2.5 py-0.5 text-[0.65rem] text-accent-deep">
-                      {p.status}
-                    </span>
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {p.blurb}
-                  </p>
-                </Wrapper>
-              </Reveal>
-            );
-          })}
         </div>
       </Section>
 

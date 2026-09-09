@@ -23,14 +23,19 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Yerins Abraham, Nigerian polymath. Medical doctor and software engineer building technology for human health. Also artist, writer and musician.",
+    "Yerins Abraham, Nigerian polymath. Medical doctor and AI/application engineer who builds production AI systems, including Oystar, a clinical referral platform live in Rwanda. Also artist, writer and musician.",
   keywords: [
     "Yerins Abraham",
     "Nigerian polymath",
     "polymath",
     "The Nigerian Da Vinci",
     "medical doctor software engineer",
+    "AI engineer",
+    "AI application engineer",
+    "RAG",
+    "AI agents",
     "Creovine",
+    "Oystar",
     "health technology",
   ],
   authors: [{ name: site.name, url: site.domain }],
@@ -41,14 +46,14 @@ export const metadata: Metadata = {
     url: site.domain,
     title: `${site.name} · The Polymath`,
     description:
-      "Nigerian polymath. Medical doctor and software engineer building technology for human health.",
+      "Nigerian polymath. Medical doctor and AI engineer. I build production AI systems, and a clinical referral platform live in Rwanda.",
     siteName: site.name,
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} · The Polymath`,
     description:
-      "Nigerian polymath. Medical doctor and software engineer building technology for human health.",
+      "Nigerian polymath. Medical doctor and AI engineer. I build production AI systems, and a clinical referral platform live in Rwanda.",
   },
   robots: { index: true, follow: true },
 };
@@ -61,8 +66,8 @@ const personSchema = {
   name: site.name,
   alternateName: ["The Nigerian Da Vinci", site.fullName],
   description:
-    "Nigerian physician and software engineer building health technology in Rwanda. Founder of Oystar, a clinical referral platform, and co-founder of the product studio Creovine. Also a visual artist, author and musician.",
-  jobTitle: "Physician and software engineer",
+    "Nigerian physician and AI/application engineer. Builds production AI systems including agentic customer support and an AI agent running inside a live banking API, and founded Oystar, a clinical referral platform running in Rwandan hospitals. Co-founder of the product studio Creovine. Also a visual artist, author and musician.",
+  jobTitle: "AI/Application Engineer and Physician",
   nationality: "Nigerian",
   url: site.domain,
   // Each occupation is one a journalist could verify. "Polymath" stays an
