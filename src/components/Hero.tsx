@@ -29,26 +29,27 @@ export default function Hero() {
           The Polymath
         </h1>
 
-        {/* Rotating discipline, the range without six competing headlines */}
-        <p className="mt-6 flex items-baseline gap-2 text-lg text-ink-soft">
-          <span aria-hidden className="text-accent">
-            /
-          </span>
-          <span className="relative inline-block min-w-[8ch]" aria-live="polite">
-            {site.disciplines.map((d, idx) => (
-              <span
-                key={d}
-                className="absolute left-0 transition-opacity duration-500"
-                style={{ opacity: idx === i ? 1 : 0 }}
-              >
-                {d}
+        {/* Rotating discipline, each frame paired with the thing that earns it.
+            A bare list of nouns reads as range without depth; the proof is what
+            turns the same device into a claim that carries its own evidence. */}
+        <div className="mt-6 min-h-[3.25rem]" aria-live="polite">
+          {site.disciplines.map((d, idx) => (
+            <p
+              key={d.label}
+              className="absolute flex flex-wrap items-baseline gap-x-3 gap-y-1 text-lg text-ink-soft transition-opacity duration-500"
+              style={{ opacity: idx === i ? 1 : 0 }}
+              aria-hidden={idx !== i}
+            >
+              <span className="flex items-baseline gap-2">
+                <span aria-hidden className="text-accent">
+                  /
+                </span>
+                <span className="font-medium text-ink">{d.label}</span>
               </span>
-            ))}
-            <span className="invisible">
-              {site.disciplines.reduce((a, b) => (a.length > b.length ? a : b))}
-            </span>
-          </span>
-        </p>
+              <span className="text-base text-ink-soft/80">{d.proof}</span>
+            </p>
+          ))}
+        </div>
 
         <p className="mt-10 max-w-xl font-[family-name:var(--font-fraunces)] text-xl leading-relaxed text-ink sm:text-2xl">
           {site.throughline}

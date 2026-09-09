@@ -8,15 +8,16 @@ export const site = {
   fullName: "Yerinmene Abraham Saibakumo",
   identity: "The Polymath",
   throughline:
-    "Medical doctor and software engineer, curious about almost everything.",
-  // Cycled in the hero sub-line — the range, without six competing headlines.
+    "Medical doctor and software engineer. I build AI systems that take real actions in production, including one that carries a patient's case from a village clinic to the specialist who can answer it.",
+  /* Cycled in the hero sub-line. Each frame pairs the discipline with the thing
+     that earns it, because a list of bare nouns reads as range without depth. */
   disciplines: [
-    "Doctor",
-    "Engineer",
-    "Artist",
-    "Writer",
-    "Musician",
-    "Founder",
+    { label: "Doctor", proof: "M.D., General Medicine" },
+    { label: "Engineer", proof: "AI agents running inside a production bank" },
+    { label: "Founder", proof: "Creovine, four live products" },
+    { label: "Artist", proof: "Index, 106 x 365cm in pen and ink" },
+    { label: "Author", proof: "Index, published" },
+    { label: "Musician", proof: "Releases across rap and alternative" },
   ],
   voiceLine: "My creative process is gardening, not architecture.",
   /* The address organisational outreach is sent from, so a buyer who searches
@@ -44,10 +45,42 @@ export const site = {
   portfolio: "/Yerins-Abraham-Portfolio.pdf",
 };
 
+/* The evidence strip, directly under the hero.
+   Every figure here is checkable: the request and error counts come from
+   CloudWatch on the banking platform, the service counts from the repository.
+   Nothing in here is an adjective. */
+export type Evidence = { stat: string; label: string; href?: string };
+
+export const evidence: Evidence[] = [
+  {
+    stat: "2 errors in 65,942 requests",
+    label: "Production banking API, 30 days to September 2026, p95 284ms",
+  },
+  {
+    stat: "Four live products, one API",
+    label: "155 service modules and a 46-model schema I designed and run",
+  },
+  {
+    stat: "Live in Rwandan hospitals",
+    label: "Oystar, carrying referrals from clinic to specialist and back",
+    href: "https://oystar.app",
+  },
+  {
+    stat: "Open source",
+    label: "evalgate, a regression gate for LLM systems",
+    href: "https://github.com/yerinsabraham/evalgate",
+  },
+  {
+    stat: "120+ engineers trained",
+    label: "Creovine Academy, teaching AI in real engineering work",
+    href: "https://academy.creovine.com",
+  },
+];
+
 export const bio = {
   // A synthesis of who he is — a story, not a CV.
-  lead: "Yerins Abraham is a polymath: a medical doctor and a software engineer.",
-  body: "At heart he is a curious person, fascinated by how the human body and mind work, and just as drawn to making things, whether software, art or music. What connects it all is one instinct: to take what he understands and use it to build things that solve real problems and meet real needs. The range was never a distraction from the work. It is the work.",
+  lead: "Yerins Abraham is a polymath in the demanding sense: a medical doctor and a software engineer, each proven by something built.",
+  body: "Six years of medicine taught him how the body fails and how clinicians actually work. Six years of engineering gave him the means to do something about it. The two met in Oystar, a referral platform now running in Rwandan hospitals, and they meet again in the AI systems he builds for banks and businesses, where the question is never whether a model can answer but whether it can be trusted to act. The art, the writing and the music run alongside, and they are not a distraction from the work. They are why he can see a problem from an angle nobody else in the room is standing at.",
 };
 
 // Long-form biography for the /about page. First person, your real voice
@@ -125,7 +158,9 @@ export const now = {
     tag: "Building",
     body: "In much of the world, a patient who needs a specialist has no reliable way to reach one.",
     detail:
-      "They are sent off with a slip of paper, travel far, and are often never seen, while the clinic that sent them never learns what happened. I built Oystar to close that gap: a platform, with intelligence built in, that carries a patient's full case from a frontline clinic to the right specialist and brings the clinical answer back, so no one is lost in between. The patient needs no phone and no app. We are starting in Rwanda, where I am based, but this problem runs across Africa and far beyond it.",
+      "They are sent off with a slip of paper, travel far, and are often never seen, while the clinic that sent them never learns what happened. I built Oystar to close that gap: a platform, with intelligence built in, that carries a patient's full case from a frontline clinic to the right specialist and brings the clinical answer back, so no one is lost in between. The patient needs no phone and no app.",
+    engineering:
+      "The medicine tells me what has to be true. The engineering makes it true: FHIR-compatible endpoints, six tracked referral stages so a patient who never arrives is flagged instead of lost, real accounts and real authorisation with nothing mocked on the clinical path, on Next.js and a Fastify API I run on AWS. Starting in Rwanda, where I am based, for a problem that runs across Africa and far beyond it.",
     image: "/img/oystar-brand.jpg",
     imageW: 1200,
     imageH: 1200,
@@ -152,25 +187,33 @@ export const projects: Project[] = [
     title: "Oystar",
     role: "Founder",
     blurb:
-      "A platform for one of health care's most broken moments: getting a patient from a frontline clinic to the specialist they need, and the answer back. It carries the full case, uses intelligence to route and complete it, and tracks every referral through six stages so no patient is lost in between. In early access, starting with private hospitals in Rwanda. The real aim, where the M.D. and the engineer finally meet.",
+      "Carries a patient's full case from a frontline clinic to the right specialist and brings the clinical answer back, tracking six referral stages so a patient who never arrives is flagged rather than lost. FHIR-compatible, real authorisation, nothing mocked on the clinical path. Next.js on a Fastify API. Where the M.D. and the engineer finally meet.",
     status: "Early access · Rwanda",
     href: "https://oystar.app",
-  },
-  {
-    title: "Creovine Academy",
-    role: "Founder, with Sarah Oba",
-    blurb:
-      "A school for using AI in real work, taught from five-plus years of shipping production software for banks and growing companies. 120+ people trained so far. Single courses, a two-semester track with marked projects and a verifiable professional certificate, and customised programmes for organisations. Web and iOS.",
-    status: "Live · Enrolling",
-    href: "https://academy.creovine.com",
   },
   {
     title: "Lira Intelligence",
     role: "Creovine",
     blurb:
-      "AI customer support that answers from a company's own knowledge base and acts on requests across chat, email, voice and WhatsApp. Live and publicly available, with a free tier and paid plans.",
+      "AI support that answers from a company's own knowledge base and then acts: chat, email, voice and WhatsApp. Production RAG on Qdrant with hybrid retrieval, tool-calling agents under a seven-tier risk model with maker-checker approval, an MCP gateway for customer-owned tools, and an eval harness gating every merge.",
     status: "Live",
     href: "https://liraintelligence.com/",
+  },
+  {
+    title: "Brydg",
+    role: "Creovine",
+    blurb:
+      "AI-native hiring. Applications, AI-assisted interview pipelines, scheduling, offers and analytics, running on the shared Creovine API.",
+    status: "Live",
+    href: "https://brydg.app/",
+  },
+  {
+    title: "Creovine Academy",
+    role: "Founder, with Sarah Oba",
+    blurb:
+      "A school for using AI in real work, taught from six-plus years of shipping production software for banks and growing companies. 120+ people trained. Single courses, a two-semester track with marked projects and a verifiable certificate, and customised programmes for organisations. Web and iOS.",
+    status: "Live · Enrolling",
+    href: "https://academy.creovine.com",
   },
   {
     title: "Creovine",
@@ -187,14 +230,6 @@ export const projects: Project[] = [
       "QR ordering, payments and kitchen display for owner-operated restaurants. Keep your margin, own your customer. Currently in a live pilot.",
     status: "Building now",
     href: "https://www.tabluhq.com/",
-  },
-  {
-    title: "Brydg",
-    role: "Creovine",
-    blurb:
-      "An AI-native hiring platform. Applicant tracking and recruiting automation that modernizes how teams hire.",
-    status: "Live",
-    href: "https://brydg.app/",
   },
   {
     title: "Metart Africa",
@@ -216,27 +251,27 @@ export type RangeItem = {
 export const range: RangeItem[] = [
   {
     field: "Visual art",
-    title: "Mother",
-    note: "A major painting on female existence, pain and sacrifice, made after a four-year creative drought.",
+    title: "Index and Mother",
+    note: "Index is 106 x 365cm of pen and ink and took most of 2020, with months spent studying cryptography to hide readable messages inside it. Mother, 106 x 275cm, came after a four-year drought. Both exhibited internationally.",
     href: "https://diarbid.com/artists/yerins-abraham",
     hrefLabel: "View art profile",
   },
   {
     field: "Writing",
     title: "Index, and Life Is Random",
-    note: "A published book, Index, and a new one in progress on randomness, creativity and multidisciplinary thinking.",
+    note: "Index is published and serves as the catalogue to the artwork of the same name. Life Is Random is in progress, on chance, choice and multidisciplinary thinking. Essays on Medium in between.",
     href: "/writing",
     hrefLabel: "Read more",
   },
   {
     field: "Music",
-    title: "Singles and projects",
-    note: "Releases spanning rap and alternative, another medium for the same ideas.",
+    title: "Five released singles",
+    note: "WINGS, Burn, Black Heritage, I'm Fine and HOPE. Written, recorded and released across rap and alternative. Another medium for the same ideas.",
   },
   {
     field: "Fashion",
     title: "Indigozz",
-    note: "Founder. Staged the first African fashion show in Eastern Europe (2017).",
+    note: "Founder. Staged the first African fashion show in Eastern Europe, in Ukraine in 2017.",
   },
 ];
 

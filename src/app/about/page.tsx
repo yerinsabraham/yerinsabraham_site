@@ -166,7 +166,7 @@ export default function AboutPage() {
         <Reveal>
           <div className="mt-16 flex flex-wrap items-center gap-4 border-t border-line pt-10">
             <a
-              href="/#work"
+              href="/#engineering"
               className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
             >
               See the work
