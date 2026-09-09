@@ -164,8 +164,9 @@ export default async function Home() {
               <p className="mt-3 text-base leading-relaxed text-ink-soft">
                 AI that does more than answer: retrieval over a company&rsquo;s own
                 knowledge, agents that take real actions, and the controls that
-                make that safe. Most of it lives under my product studio,{" "}
-                <RichText text="Creovine" />.
+                make that safe. Four live products run on one API I designed and
+                still run, 155 service modules against a 46-model schema, under
+                my product studio <RichText text="Creovine" />.
               </p>
             </div>
             <a
