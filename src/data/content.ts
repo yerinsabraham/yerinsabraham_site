@@ -53,9 +53,24 @@ export type Evidence = { stat: string; label: string; href?: string };
 
 export const evidence: Evidence[] = [
   {
-    stat: "Live in Rwandan hospitals",
-    label: "Oystar, carrying referrals from clinic to specialist and back",
+    /* Names the thing built, not just where it runs. "Live in Rwandan hospitals"
+       said neither what was live nor whose work it was, and read as though he
+       practises there. */
+    stat: "Built a specialist referral platform, live in Rwanda",
+    label:
+      "Oystar carries a patient's full case from a frontline clinic to the right specialist, and brings the clinical answer back",
     href: "https://oystar.app",
+  },
+  {
+    /* Sits second on purpose: it answers the question the line above raises,
+       which is where the medicine actually comes from. */
+    stat: "M.D., trained in Ukraine",
+    label:
+      "Six years of general medicine at Sumy State University, taught entirely in English",
+  },
+  {
+    stat: "2 errors in 65,942 requests",
+    label: "Production banking API, 30 days to September 2026, p95 284ms",
   },
   {
     stat: "120+ engineers trained",
@@ -63,19 +78,9 @@ export const evidence: Evidence[] = [
     href: "https://academy.creovine.com",
   },
   {
-    stat: "2 errors in 65,942 requests",
-    label: "Production banking API, 30 days to September 2026, p95 284ms",
-  },
-  {
-    /* "Artwork" is load-bearing: "exhibited" alone reads as a trade stand or a
-       product launch, which is a different and misleading claim. */
     stat: "Artwork exhibited across Europe, Africa and the UAE",
     label: "Kyiv, Sumy, Lagos, Abuja and Dubai. Pen and ink, at scale",
     href: "/art",
-  },
-  {
-    stat: "Four live products, one API",
-    label: "155 service modules and a 46-model schema I designed and run",
   },
   {
     stat: "Open source",
