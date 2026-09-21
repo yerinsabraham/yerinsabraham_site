@@ -84,7 +84,8 @@ export const evidence: Evidence[] = [
   },
   {
     stat: "Open source",
-    label: "trackline, a regression gate for LLM systems",
+    label:
+      "trackline, for AI agents that quietly stop doing what they were asked",
     href: "https://github.com/yerinsabraham/trackline",
   },
 ];
@@ -182,6 +183,7 @@ export const now = {
   also: [
     "Building Creovine Academy, teaching people and teams to use AI in the work they already do. Now training organisations.",
     "Advancing Lira Intelligence, our AI customer-support product, now live.",
+    "Building trackline in the open, for catching AI agents that drift off the task they were given.",
     "Writing my book, Life Is Random, and publishing essays on Medium.",
   ],
 };
@@ -210,6 +212,14 @@ export const projects: Project[] = [
       "AI support that answers from a company's own knowledge base and then acts: chat, email, voice and WhatsApp. Production RAG on Qdrant with hybrid retrieval, tool-calling agents under a seven-tier risk model with maker-checker approval, an MCP gateway for customer-owned tools, and an eval harness gating every merge.",
     status: "Live",
     href: "https://liraintelligence.com/",
+  },
+  {
+    title: "trackline",
+    role: "Open source",
+    blurb:
+      "An AI agent that goes off task does not crash. It edits files nobody mentioned, ignores the rules file it read an hour ago, and the build stays green. trackline watches what an agent does, checks it against what it was asked to do, and can hand the violated rule back to the agent rather than only warning the human. Most checks are deterministic by design. A model is reached for once, for the one question counting cannot answer. The CI half is built and gating merges today.",
+    status: "Building \u00b7 MIT",
+    href: "https://github.com/yerinsabraham/trackline",
   },
   {
     title: "Brydg",
@@ -450,6 +460,7 @@ export const inlineLinks: { term: string; href: string }[] = [
   { term: "Life Is Random", href: "/writing/life-is-random" },
   { term: "Oystar", href: "https://oystar.app" },
   { term: "Lira Intelligence", href: "https://liraintelligence.com/" },
+  { term: "trackline", href: "/engineering/nothing-notices-when-an-agent-drifts" },
   { term: "Sarah Oba", href: site.youtubeCouple },
   { term: "Creovine Academy", href: "https://academy.creovine.com" },
   { term: "Creovine", href: "https://creovine.com/" },

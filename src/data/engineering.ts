@@ -246,6 +246,94 @@ export const engineering: EngineeringPiece[] = [
       { label: "Lira Intelligence", href: "https://liraintelligence.com" },
     ],
   },
+  {
+    slug: "nothing-notices-when-an-agent-drifts",
+    title: "Nothing notices when an agent drifts",
+    tag: "Engineering note",
+    subtitle:
+      "A coding agent reads your rules, says it understands them, and breaks them forty messages later. Nothing in the toolchain is watching.",
+    status: "In progress \u00b7 trackline",
+    author: "Yerins Abraham",
+    datePublished: "2026-09-21",
+    dateModified: "2026-09-21",
+    excerpt:
+      "An agent that goes off task does not crash. Tests pass, the build is green, and the work quietly stops being the work you asked for. Here is why it happens, what the research says about catching it, and what I am building.",
+    stack: ["TypeScript", "Agent hooks", "OpenTelemetry", "LLM evaluation", "CI"],
+    sections: [
+      {
+        paragraphs: [
+          "Give a coding agent a task and it starts well. Forty messages later it is editing files you never mentioned, adding a dependency nobody approved, and breaking a test that passed an hour ago. Nothing crashed. Nothing errored. The build is green.",
+          "This is not a rare failure. There is an open bug on Anthropic's own repository titled \"Claude ignores explicit CLAUDE.md instructions while claiming to understand them\", and an entire genre of blog posts with titles like \"I wrote 200 lines of rules for Claude Code, it ignored them all\". When that many people independently write the same post, the problem is structural rather than anecdotal.",
+        ],
+      },
+      {
+        heading: "Why the rules stop working",
+        paragraphs: [
+          "The interesting part is the mechanism. A rules file is loaded once at the start of a session. As the conversation grows, that content gets compressed or pushed out of context, and it stops reading as an instruction. It becomes ordinary text among a lot of other text, and a language model weights those differently.",
+          "Length compounds it. Reports converge on selective ignoring somewhere past eighty lines, which means the natural response to being ignored, writing more rules, makes the problem worse. And the models are trained toward helpfulness, which in practice means adding things. Scope creep is the default behaviour, not an anomaly.",
+          "So the rules decay because they are remembered rather than re-read. That single observation decides the shape of any fix. Warning the human is treating the symptom. Putting the violated rule back in front of the model at the moment it is violated is treating the cause.",
+        ],
+      },
+      {
+        heading: "Why the usual tools cannot see it",
+        paragraphs: [
+          "Unit tests check that code does what it was written to do. They have no opinion on whether it is the code you asked for. Linters check style. Type checkers check types. Code review catches it eventually, which is to say after the drift has already been committed and the context that would explain it is gone.",
+          "The production observability tools do not help either, and for a specific reason: they watch AI that has already shipped and is serving users. The agent writing the code is upstream of everything they can see.",
+        ],
+      },
+      {
+        heading: "What the research already settled",
+        paragraphs: [
+          "The approach is not speculative. Task Shield, published at ACL 2025, reframes agent safety from preventing harmful actions to enforcing task alignment: every action an agent takes must serve the objective it was given. It captures the original intent, checks each subsequent action against it, and intervenes when the two diverge. On the AgentDojo benchmark that drove attack success down to about two percent while keeping roughly seventy percent task utility.",
+          "Claim Plane tested a related idea for coding agents specifically, where a worker declares what it is authorised to change before it writes anything. Paired task success went from 23 percent to 50 percent, and integration success from 66 percent to 97 percent. Declaring scope and then enforcing it measurably works.",
+          "A third paper is the most useful for design rather than theory. A study of 10,008 public repositories found that fewer than one percent of agent configuration files declare any permission boundary at all, and 58 percent have exactly one commit. People write these files once and never touch them again. Anything that requires configuration before it does something useful will not be adopted.",
+        ],
+      },
+      {
+        heading: "The mechanism already exists",
+        paragraphs: [
+          "Claude Code runs hooks at lifecycle events. A hook fires before a tool runs and receives the full call as structured data, including the exact command or the file about to be written. Exit with code 2 and the action is blocked, and whatever the hook printed is fed back to the model so it can correct course.",
+          "That last detail is the whole thing. Reminding the agent, not just the developer, needs no API, no cloud service, and no cooperation from anyone. It is a script that reads some input and exits with a number.",
+        ],
+      },
+      {
+        heading: "What I am building",
+        paragraphs: [
+          "trackline watches what an agent actually does and compares it against what it was asked to do. Most of the checking is deliberately boring and needs no model at all: files touched outside the stated scope, off-limits files edited anyway, a previously passing test now failing, a diff far larger than the ask, a dependency added from nowhere, the same action failing repeatedly in a loop. Those are countable, which means they cannot be wrong.",
+          "A model is reached for exactly once, for the one question counting cannot answer: here is the stated goal, here is what the agent did, are they the same thing. That is the same discipline the eval gate already follows, and for the same reason. A watcher whose signal is mostly one model's opinion of another model has inherited every problem it was built to catch.",
+          "Intervention is configurable, because this is a system correcting another system and people will delegate different amounts of authority. Warn only, which logs and never interrupts. Ask first, which pauses and waits for a human. Or autopilot, which blocks and hands the reason back to the agent. Per rule, not globally, so never touch the environment file can be automatic while this looks out of scope still asks.",
+        ],
+      },
+      {
+        heading: "The risk that decides whether it works",
+        paragraphs: [
+          "Not accuracy. False alarms. A tool that interrupts wrongly gets muted on the first day and uninstalled on the second, and the clearest signal in everything developers write about this is that agents which act without permission, or need elaborate overrides to ignore, get disabled.",
+          "So every check starts in warn only mode and has to earn the right to interrupt. Four checks that are never wrong are worth more than twenty that are sometimes right. The phase that adds the checks does not end when they work. It ends when they are measurably quiet on sessions where nothing is wrong.",
+        ],
+      },
+      {
+        heading: "Where it stands",
+        paragraphs: [
+          "The CI half is built and open source: a regression gate that scores retrieval, tool selection and groundedness against committed datasets and fails the build when a prompt edit or a model swap quietly makes an agent worse. That is the subject of the note next to this one, and it is the last line of defence in the same system.",
+          "The watcher is in the foundation phase, being built deliberately rather than quickly, because a weak spine costs more later than it saves now. An interactive walkthrough will live on this page when there is something real to replay, driven by genuine recorded sessions rather than a staged animation.",
+        ],
+      },
+    ],
+    links: [
+      {
+        label: "trackline on GitHub",
+        href: "https://github.com/yerinsabraham/trackline",
+      },
+      {
+        label: "The Task Shield (ACL 2025)",
+        href: "https://arxiv.org/abs/2412.16682",
+      },
+      {
+        label: "Claim Plane",
+        href: "https://arxiv.org/abs/2607.21909",
+      },
+    ],
+  },
 ];
 
 export function getEngineering(slug: string) {
