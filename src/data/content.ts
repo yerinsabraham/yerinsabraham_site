@@ -84,8 +84,8 @@ export const evidence: Evidence[] = [
   },
   {
     stat: "Open source",
-    label: "evalgate, a regression gate for LLM systems",
-    href: "https://github.com/yerinsabraham/evalgate",
+    label: "trackline, a regression gate for LLM systems",
+    href: "https://github.com/yerinsabraham/trackline",
   },
 ];
 

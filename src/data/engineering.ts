@@ -168,8 +168,8 @@ export const engineering: EngineeringPiece[] = [
     links: [
       { label: "Lira Intelligence", href: "https://liraintelligence.com" },
       {
-        label: "evalgate, the harness this argues for",
-        href: "https://github.com/yerinsabraham/evalgate",
+        label: "trackline, the harness this argues for",
+        href: "https://github.com/yerinsabraham/trackline",
       },
     ],
   },
@@ -179,7 +179,7 @@ export const engineering: EngineeringPiece[] = [
     tag: "Engineering note",
     subtitle:
       "Why the eval gate on an agent has two different rules, and why the one that matters refuses to average.",
-    status: "Open source \u00b7 evalgate",
+    status: "Open source \u00b7 trackline",
     author: "Yerins Abraham",
     datePublished: "2026-09-09",
     dateModified: "2026-09-09",
@@ -240,8 +240,8 @@ export const engineering: EngineeringPiece[] = [
     ],
     links: [
       {
-        label: "evalgate on GitHub",
-        href: "https://github.com/yerinsabraham/evalgate",
+        label: "trackline on GitHub",
+        href: "https://github.com/yerinsabraham/trackline",
       },
       { label: "Lira Intelligence", href: "https://liraintelligence.com" },
     ],
