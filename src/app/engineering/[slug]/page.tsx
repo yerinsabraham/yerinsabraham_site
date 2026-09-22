@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
+import TracklineWalkthrough from "@/components/TracklineWalkthrough";
 import Reveal from "@/components/Reveal";
 import ShareButton from "@/components/ShareButton";
 import { site } from "@/data/content";
@@ -148,6 +149,7 @@ export default async function EngineeringPiecePage({
                   </Reveal>
                 ))}
               </div>
+              {p.walkthroughAfter === sIdx && <TracklineWalkthrough />}
             </section>
           ))}
         </div>

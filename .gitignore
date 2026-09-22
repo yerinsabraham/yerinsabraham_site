@@ -46,3 +46,12 @@ next-env.d.ts
 # that number in public git history permanently, where deleting the file later
 # does not remove it.
 docs/
+
+# Symlink to the separate job-search project, kept here only so its files are
+# clickable from this workspace in the editor. Not part of this repo.
+/job-search
+
+# Local trackline install: the hook config points at a machine-specific binary
+# path, and the findings log is a record of one person's sessions.
+.claude/settings.json
+.trackline/

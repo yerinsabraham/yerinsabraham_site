@@ -83,3 +83,15 @@ body {
   font-weight: 500;
   color: var(--accent-deep);
 }
+
+/* Used by the trackline walkthrough, where each step lifts in as it is reached. */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

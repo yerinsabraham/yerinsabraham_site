@@ -29,6 +29,13 @@ export type EngineeringPiece = {
   stack: string[];
   sections: EngineeringSection[];
   links?: EngineeringLink[];
+  /**
+   * Render the trackline walkthrough after this section index.
+   *
+   * A piece declares where its demo belongs rather than the page guessing from
+   * the slug, so the two cannot drift apart when either is renamed.
+   */
+  walkthroughAfter?: number;
 };
 
 export const engineering: EngineeringPiece[] = [
@@ -315,14 +322,19 @@ export const engineering: EngineeringPiece[] = [
         heading: "Where it stands",
         paragraphs: [
           "The CI half is built and open source: a regression gate that scores retrieval, tool selection and groundedness against committed datasets and fails the build when a prompt edit or a model swap quietly makes an agent worse. That is the subject of the note next to this one, and it is the last line of defence in the same system.",
-          "The watcher is in the foundation phase, being built deliberately rather than quickly, because a weak spine costs more later than it saves now. An interactive walkthrough will live on this page when there is something real to replay, driven by genuine recorded sessions rather than a staged animation.",
+          "The walkthrough above is a real session, recorded and replayed. Not a mock-up: a coding agent was given that task in a small project and left to work unsupervised, and what you are reading is the exported output of the checks that watched it. The three actions marked as unseen are shown rather than hidden, because an action nobody could look at is not an action that was fine.",
         ],
       },
     ],
+    walkthroughAfter: 5,
     links: [
       {
         label: "trackline on GitHub",
         href: "https://github.com/yerinsabraham/trackline",
+      },
+      {
+        label: "The measurements behind it",
+        href: "https://github.com/yerinsabraham/trackline/tree/main/docs/experiments",
       },
       {
         label: "The Task Shield (ACL 2025)",
