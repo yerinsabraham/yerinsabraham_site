@@ -83,7 +83,7 @@ export const evidence: Evidence[] = [
     href: "/art",
   },
   {
-    stat: "Open source",
+    stat: "Open source, on npm",
     label:
       "trackline, for AI agents that quietly stop doing what they were asked",
     href: "https://github.com/yerinsabraham/trackline",
@@ -183,7 +183,7 @@ export const now = {
   also: [
     "Building Creovine Academy, teaching people and teams to use AI in the work they already do. Now training organisations.",
     "Advancing Lira Intelligence, our AI customer-support product, now live.",
-    "Building trackline in the open, for catching AI agents that drift off the task they were given.",
+    "Shipped trackline v0.1.0, for catching AI agents that drift off the task they were given. Now extending it to more agents.",
     "Writing my book, Life Is Random, and publishing essays on Medium.",
   ],
 };
@@ -217,8 +217,8 @@ export const projects: Project[] = [
     title: "trackline",
     role: "Open source",
     blurb:
-      "An AI agent that goes off task does not crash. It edits files nobody mentioned, ignores the rules file it read an hour ago, and the build stays green. trackline watches what an agent does, checks it against what it was asked to do, and can hand the violated rule back to the agent rather than only warning the human. Most checks are deterministic by design. A model is reached for once, for the one question counting cannot answer. The CI half is built and gating merges today.",
-    status: "Building \u00b7 MIT",
+      "An AI agent that goes off task does not crash. It edits files nobody mentioned, ignores the rules file it read an hour ago, and the build stays green. trackline watches what an agent does, checks it against what it was asked to do, and can hand the violated rule back to the agent rather than only warning the human. Most checks are deterministic by design. A model is reached for once, for the one question counting cannot answer. Works with Claude Code and Codex today: npm install -g trackline.",
+    status: "v0.1.0 on npm \u00b7 Apache-2.0",
     href: "https://github.com/yerinsabraham/trackline",
   },
   {
