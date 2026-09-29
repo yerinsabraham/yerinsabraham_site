@@ -176,7 +176,7 @@ export const engineering: EngineeringPiece[] = [
       { label: "Lira Intelligence", href: "https://liraintelligence.com" },
       {
         label: "trackline, the harness this argues for",
-        href: "https://github.com/yerinsabraham/trackline",
+        href: "https://trackline.dev",
       },
     ],
   },
@@ -247,8 +247,8 @@ export const engineering: EngineeringPiece[] = [
     ],
     links: [
       {
-        label: "trackline on GitHub",
-        href: "https://github.com/yerinsabraham/trackline",
+        label: "trackline",
+        href: "https://trackline.dev",
       },
       { label: "Lira Intelligence", href: "https://liraintelligence.com" },
     ],
@@ -259,10 +259,10 @@ export const engineering: EngineeringPiece[] = [
     tag: "Engineering note",
     subtitle:
       "A coding agent reads your rules, says it understands them, and breaks them forty messages later. Nothing in the toolchain is watching.",
-    status: "v0.1.0 \u00b7 trackline",
+    status: "v0.11.0 \u00b7 trackline",
     author: "Yerins Abraham",
     datePublished: "2026-09-21",
-    dateModified: "2026-09-23",
+    dateModified: "2026-09-25",
     excerpt:
       "An agent that goes off task does not crash. Tests pass, the build is green, and the work quietly stops being the work you asked for. Here is why it happens, what the research says about catching it, and what I am building.",
     stack: ["TypeScript", "Agent hooks", "OpenTelemetry", "LLM evaluation", "CI"],
@@ -321,15 +321,19 @@ export const engineering: EngineeringPiece[] = [
       {
         heading: "Where it stands",
         paragraphs: [
-          "Version 0.1.0 is published. npm install -g trackline, then trackline init, and it watches Claude Code or Codex from the next tool call, in warn only mode until you tell it otherwise. It is a compiled binary that adds about fourteen milliseconds per action, and every package carries a signed provenance record tying it to the commit that built it.",
+          "trackline is published on npm, at 0.11.0 as of 27 September 2026. npm install -g trackline, then trackline init, and it watches Claude Code, Codex or Cursor from the next tool call, in warn only mode until you tell it otherwise. It is a compiled binary that adds about fourteen milliseconds per action, and every package carries a signed provenance record tying it to the commit that built it.",
           "The CI half ships alongside it: a regression gate that scores retrieval, tool selection and groundedness against committed datasets and fails the build when a prompt edit or a model swap quietly makes an agent worse. That is the subject of the note next to this one, and it is the last line of defence in the same system.",
-          "Next is reach. The point of a watcher that sits outside every agent is that it is the same watcher for all of them, so the work now is more agents, starting with Cursor.",
+          "Reach turned out to mean two directions, not one. trackline mcp exposes the same checks as an MCP server, so any MCP client gets them without a plugin written specifically for it. And trackline traces takes the same watcher past the editor entirely: it reads a production agent's own OpenTelemetry export and checks it the same way, policy violations, outages, loops, drift, live rather than after the fact.",
           "The walkthrough above is a real session, recorded and replayed. Not a mock-up: a coding agent was given that task in a small project and left to work unsupervised, and what you are reading is the exported output of the checks that watched it. The three actions marked as unseen are shown rather than hidden, because an action nobody could look at is not an action that was fine.",
         ],
       },
     ],
     walkthroughAfter: 5,
     links: [
+      {
+        label: "trackline",
+        href: "https://trackline.dev",
+      },
       {
         label: "trackline on GitHub",
         href: "https://github.com/yerinsabraham/trackline",

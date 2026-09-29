@@ -56,7 +56,7 @@ export const evidence: Evidence[] = [
     /* Names the thing built, not just where it runs. "Live in Rwandan hospitals"
        said neither what was live nor whose work it was, and read as though he
        practises there. */
-    stat: "Built a specialist referral platform, live in Rwanda",
+    stat: "Built a specialist referral platform, in early access in Rwanda",
     label:
       "Oystar carries a patient's full case from a frontline clinic to the right specialist, and brings the clinical answer back",
     href: "https://oystar.app",
@@ -73,7 +73,7 @@ export const evidence: Evidence[] = [
     label: "Production banking API, 30 days to September 2026, p95 284ms",
   },
   {
-    stat: "120+ engineers trained",
+    stat: "120+ people trained",
     label: "Creovine Academy, teaching AI in real engineering work",
     href: "https://academy.creovine.com",
   },
@@ -86,14 +86,14 @@ export const evidence: Evidence[] = [
     stat: "Open source, on npm",
     label:
       "trackline, for AI agents that quietly stop doing what they were asked",
-    href: "https://github.com/yerinsabraham/trackline",
+    href: "https://trackline.dev",
   },
 ];
 
 export const bio = {
   // A synthesis of who he is — a story, not a CV.
   lead: "Yerins Abraham is a polymath in the demanding sense: a medical doctor and a software engineer, each proven by something built.",
-  body: "Six years of medicine taught him how the body fails and how clinicians actually work. Six years of engineering gave him the means to do something about it. The two met in Oystar, a referral platform now running in Rwandan hospitals, and they meet again in the AI systems he builds for banks and businesses, where the question is never whether a model can answer but whether it can be trusted to act. The art, the writing and the music run alongside, and they are not a distraction from the work. They are why he can see a problem from an angle nobody else in the room is standing at.",
+  body: "Six years of medicine taught him how the body fails and how clinicians actually work. Six years of engineering gave him the means to do something about it. The two met in Oystar, a referral platform now in early access in Rwanda, and they meet again in the AI systems he builds for banks and businesses, where the question is never whether a model can answer but whether it can be trusted to act. The art, the writing and the music run alongside, and they are not a distraction from the work. They are why he can see a problem from an angle nobody else in the room is standing at.",
 };
 
 // Long-form biography for the /about page. First person, your real voice
@@ -102,7 +102,7 @@ export const about = {
   intro:
     "A polymath who thrives at the intersection of creativity, technology, and problem-solving.",
   paragraphs: [
-    "A medical doctor trained in General Medicine (six years of it), I've spent the last five-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. Studying medicine taught me how the human body and mind work; engineering gave me the tools to build. I bring that same diagnostic curiosity to everything I make.",
+    "A medical doctor trained in General Medicine (six years of it), I've spent the last six-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. Studying medicine taught me how the human body and mind work; engineering gave me the tools to build. I bring that same diagnostic curiosity to everything I make.",
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
     "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software engineering, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, and it led me to build Oystar, a platform that helps patients reach the specialists they need and makes sure the answer gets back to the clinic that sent them, with intelligence built in. I am starting in Rwanda, where I am based, but it is built for a problem that reaches far beyond one country. My product studio, Creovine, is where this and my other software live.",
@@ -158,8 +158,8 @@ export const musicVideos: Video[] = [
 // A featured talk, proof of the "available for speaking" line.
 export const speaking = {
   title: "Speaking at Nigeria Fintech Week",
-  context: "Lagos, 2022",
-  blurb: "On fintech, blockchain and entrepreneurship.",
+  context: "Lagos, October 2022",
+  blurb: "On fintech, blockchain and entrepreneurship, as founder of Metart Africa.",
   href: "https://www.youtube.com/watch?v=d2d_iQ7dG84",
   thumbnail: "/img/speaking-fintech.jpg",
 };
@@ -183,7 +183,7 @@ export const now = {
   also: [
     "Building Creovine Academy, teaching people and teams to use AI in the work they already do. Now training organisations.",
     "Advancing Lira Intelligence, our AI customer-support product, now live.",
-    "Shipped trackline v0.1.0, for catching AI agents that drift off the task they were given. Now extending it to more agents.",
+    "Shipping trackline, now v0.11.0 on npm: watches Claude Code, Codex and Cursor locally, and production agents through their own OpenTelemetry traces.",
     "Writing my book, Life Is Random, and publishing essays on Medium.",
   ],
 };
@@ -217,9 +217,9 @@ export const projects: Project[] = [
     title: "trackline",
     role: "Open source",
     blurb:
-      "An AI agent that goes off task does not crash. It edits files nobody mentioned, ignores the rules file it read an hour ago, and the build stays green. trackline watches what an agent does, checks it against what it was asked to do, and can hand the violated rule back to the agent rather than only warning the human. Most checks are deterministic by design. A model is reached for once, for the one question counting cannot answer. Works with Claude Code and Codex today: npm install -g trackline.",
-    status: "v0.1.0 on npm \u00b7 Apache-2.0",
-    href: "https://github.com/yerinsabraham/trackline",
+      "An AI agent that goes off task does not crash. It edits files nobody mentioned, ignores the rules file it read an hour ago, and the build stays green. trackline watches what an agent does, checks it against what it was asked to do, and can hand the violated rule back to the agent rather than only warning the human. Most checks are deterministic by design. A model is reached for once, for the one question counting cannot answer. Works with Claude Code, Codex and Cursor, and an MCP server exposes the same checks to any MCP client. Since 0.2.0, it also watches production agents through their own OpenTelemetry traces, flagging policy violations, outages, loops and drift, live rather than after the fact: npm install -g trackline.",
+    status: "v0.11.0 on npm \u00b7 Apache-2.0",
+    href: "https://trackline.dev",
   },
   {
     title: "Brydg",
@@ -241,8 +241,8 @@ export const projects: Project[] = [
     title: "Creovine",
     role: "Co-founder & CEO",
     blurb:
-      "An AI product studio building the future of work: intelligent automation across hiring, customer support, and more. The studio behind much of this work.",
-    status: "Studio",
+      "An AI product studio building the future of work: intelligent automation across hiring, customer support, and more. The studio behind much of this work. Operating as Creovine since 2025, and incorporated as Creovine LTD in March 2026 in Nigeria (CAC RC 9380814) and Rwanda (company code 156057511).",
+    status: "Since 2025",
     href: "https://creovine.com/",
   },
   {
@@ -257,8 +257,9 @@ export const projects: Project[] = [
     title: "Metart Africa",
     role: "Founder & CEO",
     blurb:
-      "A venture at the intersection of art, technology and the African creative economy.",
-    status: "Live",
+      "A web3 platform for African art and NFTs, and the venture I spoke for at Nigeria Fintech Week in 2022. Part of the building that came before Creovine.",
+    status: "Founded 2022 \u00b7 discontinued",
+    href: "https://www.youtube.com/watch?v=51usU_kAFSg",
   },
 ];
 
@@ -468,4 +469,166 @@ export const inlineLinks: { term: string; href: string }[] = [
   { term: "Brydg", href: "https://brydg.app/" },
   { term: "Lira", href: "https://liraintelligence.com/" },
   { term: "Medium", href: site.socials.medium },
+];
+
+/* The /verify page. One row per claim a recruiter would check, each with the
+   place a stranger can confirm it. "On request" means the proof exists but is
+   private (a contract, a diploma, a dashboard), and is shared directly. */
+export type VerifyLink = { label: string; href: string };
+export type VerifyItem = {
+  claim: string;
+  detail: string;
+  access: "Public" | "On request" | "Public + on request";
+  links: VerifyLink[];
+};
+export type VerifyGroup = { heading: string; items: VerifyItem[] };
+
+export const verification: VerifyGroup[] = [
+  {
+    heading: "Identity and education",
+    items: [
+      {
+        claim: "Name",
+        detail:
+          "Legal name Yerinmene Abraham Saibakumo. Yerins Abraham is the name I use professionally, and Saibakumo is where the yerinssaibs email comes from.",
+        access: "Public",
+        links: [{ label: "Wikidata", href: "https://www.wikidata.org/wiki/Q140372807" }],
+      },
+      {
+        claim: "M.D., General Medicine, Sumy State University, 2019",
+        detail:
+          "Six-year programme taught in English. Reported in the press in 2021. Diploma and supplement available on request.",
+        access: "Public + on request",
+        links: [
+          {
+            label: "Legit.ng, 2021",
+            href: "https://www.legit.ng/1426546-medicine-music-a-peek-into-versatile-life-bbnaija-2021-housemate-yerins.html",
+          },
+          {
+            label: "The Punch, 2021",
+            href: "https://punchng.com/ive-put-medicine-on-hold-for-fashion-arts-yerins/",
+          },
+        ],
+      },
+      {
+        claim: "Big Brother Naija, Season 6, 2021",
+        detail:
+          "In 2021 I was a housemate on Big Brother Naija. It is most of what a search for my name returns, and most of the press below dates from it.",
+        access: "Public",
+        links: [
+          {
+            label: "PM News, August 2021",
+            href: "https://pmnewsnigeria.com/2021/08/08/bbnaija-yerins-evicted-from-shine-ya-eye-house/",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Building before Creovine, 2020 to 2025",
+    items: [
+      {
+        claim: "Founder, Metart Africa",
+        detail:
+          "A web3 platform for African art and NFTs. The founder introduction was published on the Metart Africa channel on 17 November 2022. Discontinued.",
+        access: "Public",
+        links: [
+          { label: "Founder introduction, Nov 2022", href: "https://www.youtube.com/watch?v=51usU_kAFSg" },
+          {
+            label: "Metart Africa on LinkedIn, 2023",
+            href: "https://www.linkedin.com/posts/metartafrica_wagbi-wagbi-alchemyplatform-activity-7029432016685178881-6hw-",
+          },
+        ],
+      },
+      {
+        claim: "Speaker, Nigeria Fintech Week, Lagos, October 2022",
+        detail:
+          "On fintech, blockchain and entrepreneurship, as founder of Metart Africa. The recording was published on the Metart Africa channel on 27 December 2022.",
+        access: "Public",
+        links: [{ label: "Talk recording", href: "https://www.youtube.com/watch?v=d2d_iQ7dG84" }],
+      },
+      {
+        claim: "Apps and platforms built and discontinued",
+        detail:
+          "Earlier products, including Giggle and Metart Africa, were taken down when they closed, so their code and listings are no longer public. A 2024 profile covers them; screenshots and records are available on request.",
+        access: "Public + on request",
+        links: [
+          {
+            label: "FAB L'Style, April 2024",
+            href: "https://fablstyle.com/yerins-abraham-the-nigerian-da-vinci-on-his-quest-for-boundless-creativity/",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Work since 2025",
+    items: [
+      {
+        claim: "Co-founder, Creovine",
+        detail:
+          "Operating as Creovine since 2025, incorporated in March 2026 as Creovine LTD: Nigeria, CAC RC 9380814 (2 March 2026), and Rwanda, company code 156057511 (25 March 2026). Its API serves Lira, Brydg, Oystar and CVault.",
+        access: "Public",
+        links: [
+          { label: "creovine.com", href: "https://creovine.com" },
+          { label: "Creovine API", href: "https://api.creovine.com" },
+          { label: "CAC public search", href: "https://search.cac.gov.ng" },
+        ],
+      },
+      {
+        claim: "Backend engineer (contract), Fluxus Technologies Ltd, since February 2026",
+        detail:
+          "Lead backend engineer on Riverly, a .NET 8 banking platform. Most of the codebase is mine by commit and by line. The contract and a reference are available on request.",
+        access: "Public + on request",
+        links: [{ label: "api.riverly.ng", href: "https://api.riverly.ng" }],
+      },
+      {
+        claim: "Production numbers on the banking API",
+        detail:
+          "2 server errors across 65,942 requests in the 30 days to 9 September 2026, p95 284ms, from CloudWatch. The platform is early-stage, so these are reliability figures, not volume figures. Dashboard export on request.",
+        access: "On request",
+        links: [],
+      },
+      {
+        claim: "LykLuk, 2025 to 2026",
+        detail:
+          "Flutter engineering and brand marketing on a live-shopping app. Reference available on request.",
+        access: "Public + on request",
+        links: [{ label: "LykLuk on the App Store", href: "https://apps.apple.com/us/app/lykluk/id6444111490" }],
+      },
+    ],
+  },
+  {
+    heading: "Code and products",
+    items: [
+      {
+        claim: "trackline, open source",
+        detail:
+          "Apache-2.0, on npm since September 2026. Every commit is under my name.",
+        access: "Public",
+        links: [
+          { label: "GitHub", href: "https://github.com/yerinsabraham/trackline" },
+          { label: "npm", href: "https://www.npmjs.com/package/trackline" },
+        ],
+      },
+      {
+        claim: "Products and their status",
+        detail:
+          "Lira Intelligence and Brydg are live. Creovine Academy is enrolling. Oystar is in early access in Rwanda. Tablu is in a pilot.",
+        access: "Public",
+        links: [
+          { label: "Lira", href: "https://liraintelligence.com" },
+          { label: "Brydg", href: "https://brydg.app" },
+          { label: "Academy", href: "https://academy.creovine.com" },
+          { label: "Oystar", href: "https://oystar.app" },
+        ],
+      },
+      {
+        claim: "Creovine Academy, 120+ people trained",
+        detail: "Cohort and organisation training records available on request.",
+        access: "On request",
+        links: [],
+      },
+    ],
+  },
 ];

@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/engineering`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/art`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/writing`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/verify`, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   const writingPages: MetadataRoute.Sitemap = writings

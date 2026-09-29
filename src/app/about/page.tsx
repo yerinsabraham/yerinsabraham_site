@@ -77,6 +77,12 @@ export default function AboutPage() {
                   Connect on LinkedIn →
                 </a>
                 <a
+                  href="/verify"
+                  className="text-accent-deep underline-offset-4 hover:underline"
+                >
+                  Verify my record →
+                </a>
+                <a
                   href={site.youtubeCouple}
                   target="_blank"
                   rel="noopener noreferrer"
