@@ -105,7 +105,7 @@ export const about = {
     "A medical doctor trained in General Medicine (six years of it), I've spent the last six-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. Studying medicine taught me how the human body and mind work; engineering gave me the tools to build. I bring that same diagnostic curiosity to everything I make.",
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
-    "Most of what I built between 2020 and 2025 is no longer online. I founded products, ran them, and shut them down when they had taught me what they could: Giggle; Metart Africa, a web3 platform for African art that I spoke for at Nigeria Fintech Week in Lagos in 2022; and client work in blockchain, payments and backend systems. When a product closed, its code went private and its listings came down, and I started again with what I had learned. In 2025 that work consolidated under one name, Creovine, which was incorporated in 2026 and is where I build now.",
+    "Most of what I built between 2020 and 2025 is no longer online. I founded products, ran them, and shut them down when they had taught me what they could: Giddle; Metart Africa, a web3 platform for African art that I spoke for at Nigeria Fintech Week in Lagos in 2022; and client work in blockchain, payments and backend systems. When a product closed, its code went private and its listings came down, and I started again with what I had learned. Creovine is that same work, continued: building since 2020, under the Creovine name from 2025, and incorporated in 2026.",
     "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software engineering, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, and it led me to build Oystar, a platform that helps patients reach the specialists they need and makes sure the answer gets back to the clinic that sent them, with intelligence built in. I am starting in Rwanda, where I am based, but it is built for a problem that reaches far beyond one country. My product studio, Creovine, is where this and my other software live.",
     "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
@@ -242,8 +242,8 @@ export const projects: Project[] = [
     title: "Creovine",
     role: "Co-founder & CEO",
     blurb:
-      "An AI product studio building the future of work: intelligent automation across hiring, customer support, and more. The studio behind much of this work. Operating as Creovine since 2025, and incorporated as Creovine LTD in March 2026 in Nigeria (CAC RC 9380814) and Rwanda (company code 156057511).",
-    status: "Since 2025",
+      "An AI product studio building the future of work: intelligent automation across hiring, customer support, and more. The studio behind my work since 2020, named Creovine in 2025 and incorporated as Creovine LTD in March 2026 in Nigeria (CAC RC 9380814) and Rwanda (company code 156057511).",
+    status: "2020 \u2013 present",
     href: "https://creovine.com/",
   },
   {
@@ -253,6 +253,14 @@ export const projects: Project[] = [
       "QR ordering, payments and kitchen display for owner-operated restaurants. Keep your margin, own your customer. Currently in a live pilot.",
     status: "Building now",
     href: "https://www.tabluhq.com/",
+  },
+  {
+    title: "Adna",
+    role: "Founder",
+    blurb:
+      "A B2B crypto payment gateway for Nigerian merchants: accept BTC, USDT and USDC, and settle in naira within the hour.",
+    status: "Live",
+    href: "https://adna.app",
   },
   {
     title: "Metart Africa",
@@ -526,7 +534,7 @@ export const verification: VerifyGroup[] = [
     ],
   },
   {
-    heading: "Building before Creovine, 2020 to 2025",
+    heading: "Before the Creovine name, 2020 to 2025",
     items: [
       {
         claim: "Founder, Metart Africa",
@@ -551,7 +559,7 @@ export const verification: VerifyGroup[] = [
       {
         claim: "Apps and platforms built and discontinued",
         detail:
-          "Earlier products, including Giggle and Metart Africa, were taken down when they closed, so their code and listings are no longer public. A 2024 profile covers them; screenshots and records are available on request.",
+          "Earlier products, including Giddle and Metart Africa, were taken down when they closed, so their code and listings are no longer public. A 2024 profile covers them; screenshots and records are available on request.",
         access: "Public + on request",
         links: [
           {
@@ -563,12 +571,12 @@ export const verification: VerifyGroup[] = [
     ],
   },
   {
-    heading: "Work since 2025",
+    heading: "Since 2025",
     items: [
       {
-        claim: "Co-founder, Creovine",
+        claim: "Co-founder, Creovine, 2020 to present",
         detail:
-          "Operating as Creovine since 2025, incorporated in March 2026 as Creovine LTD: Nigeria, CAC RC 9380814 (2 March 2026), and Rwanda, company code 156057511 (25 March 2026). Its API serves Lira, Brydg, Oystar and CVault.",
+          "Building since 2020, under the Creovine name since 2025, and incorporated in March 2026 as Creovine LTD: Nigeria, CAC RC 9380814 (2 March 2026), and Rwanda, company code 156057511 (25 March 2026). Its API serves Lira, Brydg, Oystar and CVault.",
         access: "Public",
         links: [
           { label: "creovine.com", href: "https://creovine.com" },
@@ -577,9 +585,9 @@ export const verification: VerifyGroup[] = [
         ],
       },
       {
-        claim: "Senior Backend Engineer, Fluxus Technologies Ltd, since 2025",
+        claim: "Senior Backend Engineer, Fluxus (Fluxus Technologies Ltd), since 2025",
         detail:
-          "Lead backend engineer on Riverly, a .NET 8 banking platform. Roughly three-quarters of the codebase is mine, across 600+ commits. The engagement contract is available on request.",
+          "Lead backend engineer on Riverly, a .NET 8 banking platform. Most of the codebase is mine, across 600+ commits. The engagement contract is available on request.",
         access: "Public + on request",
         links: [{ label: "api.riverly.ng", href: "https://api.riverly.ng" }],
       },
@@ -589,6 +597,13 @@ export const verification: VerifyGroup[] = [
           "2 server errors across 65,942 requests in the 30 days to 9 September 2026, p95 284ms, from CloudWatch. The platform is early-stage, so these are reliability figures, not volume figures. Dashboard export on request.",
         access: "On request",
         links: [],
+      },
+      {
+        claim: "Founder, Adna",
+        detail:
+          "A B2B crypto payment gateway for Nigerian merchants, settling BTC, USDT and USDC in naira.",
+        access: "Public",
+        links: [{ label: "adna.app", href: "https://adna.app" }],
       },
       {
         claim: "LykLuk, 2025 to 2026",
