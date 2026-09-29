@@ -56,7 +56,7 @@ export const evidence: Evidence[] = [
     /* Names the thing built, not just where it runs. "Live in Rwandan hospitals"
        said neither what was live nor whose work it was, and read as though he
        practises there. */
-    stat: "Built a specialist referral platform, in early access in Rwanda",
+    stat: "Built a specialist referral platform, live in Rwanda",
     label:
       "Oystar carries a patient's full case from a frontline clinic to the right specialist, and brings the clinical answer back",
     href: "https://oystar.app",
@@ -93,7 +93,7 @@ export const evidence: Evidence[] = [
 export const bio = {
   // A synthesis of who he is — a story, not a CV.
   lead: "Yerins Abraham is a polymath in the demanding sense: a medical doctor and a software engineer, each proven by something built.",
-  body: "Six years of medicine taught him how the body fails and how clinicians actually work. Six years of engineering gave him the means to do something about it. The two met in Oystar, a referral platform now in early access in Rwanda, and they meet again in the AI systems he builds for banks and businesses, where the question is never whether a model can answer but whether it can be trusted to act. The art, the writing and the music run alongside, and they are not a distraction from the work. They are why he can see a problem from an angle nobody else in the room is standing at.",
+  body: "Six years of medicine taught him how the body fails and how clinicians actually work. Six years of engineering gave him the means to do something about it. The two met in Oystar, a referral platform now live in Rwanda, and they meet again in the AI systems he builds for banks and businesses, where the question is never whether a model can answer but whether it can be trusted to act. The art, the writing and the music run alongside, and they are not a distraction from the work. They are why he can see a problem from an angle nobody else in the room is standing at.",
 };
 
 // Long-form biography for the /about page. First person, your real voice
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     role: "Founder",
     blurb:
       "Carries a patient's full case from a frontline clinic to the right specialist and brings the clinical answer back, tracking six referral stages so a patient who never arrives is flagged rather than lost. FHIR-compatible, real authorisation, nothing mocked on the clinical path. Next.js on a Fastify API. Where the M.D. and the engineer finally meet.",
-    status: "Early access · Rwanda",
+    status: "Live · Rwanda",
     href: "https://oystar.app",
   },
   {
@@ -630,7 +630,7 @@ export const verification: VerifyGroup[] = [
       {
         claim: "Products and their status",
         detail:
-          "Lira Intelligence and Brydg are live. Creovine Academy is enrolling. Oystar is in early access in Rwanda. Tablu is in a pilot.",
+          "Lira Intelligence and Brydg are live. Creovine Academy is enrolling. Oystar is live in Rwanda. Tablu is in a pilot.",
         access: "Public",
         links: [
           { label: "Lira", href: "https://liraintelligence.com" },
