@@ -20,11 +20,9 @@ export const site = {
     { label: "Musician", proof: "Releases across rap and alternative" },
   ],
   voiceLine: "My creative process is gardening, not architecture.",
-  /* The address organisational outreach is sent from, so a buyer who searches
-     the sender finds the same address here. The personal one stays for
-     everything else. */
-  email: "yerins@creovine.com",
-  personalEmail: "yerinsabram@gmail.com",
+  /* One address everywhere: the CV, this site, GitHub and npm. */
+  email: "yerinssaibs@gmail.com",
+  personalEmail: "yerinssaibs@gmail.com",
   domain: "https://yerinsabraham.com",
   socials: {
     github: "https://github.com/yerinsabraham",
