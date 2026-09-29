@@ -105,6 +105,7 @@ export const about = {
     "A medical doctor trained in General Medicine (six years of it), I've spent the last six-plus years building impactful digital solutions: full-stack and blockchain applications, scalable APIs, and cloud infrastructure for startups and growing tech companies. Studying medicine taught me how the human body and mind work; engineering gave me the tools to build. I bring that same diagnostic curiosity to everything I make.",
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
+    "Most of what I built between 2020 and 2025 is no longer online. I founded products, ran them, and shut them down when they had taught me what they could: Giggle; Metart Africa, a web3 platform for African art that I spoke for at Nigeria Fintech Week in Lagos in 2022; and client work in blockchain, payments and backend systems. When a product closed, its code went private and its listings came down, and I started again with what I had learned. In 2025 that work consolidated under one name, Creovine, which was incorporated in 2026 and is where I build now.",
     "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software engineering, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, and it led me to build Oystar, a platform that helps patients reach the specialists they need and makes sure the answer gets back to the clinic that sent them, with intelligence built in. I am starting in Rwanda, where I am based, but it is built for a problem that reaches far beyond one country. My product studio, Creovine, is where this and my other software live.",
     "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
@@ -576,9 +577,9 @@ export const verification: VerifyGroup[] = [
         ],
       },
       {
-        claim: "Backend engineer (contract), Fluxus Technologies Ltd, since February 2026",
+        claim: "Senior Backend Engineer, Fluxus Technologies Ltd, since 2025",
         detail:
-          "Lead backend engineer on Riverly, a .NET 8 banking platform. Most of the codebase is mine by commit and by line. The contract and a reference are available on request.",
+          "Lead backend engineer on Riverly, a .NET 8 banking platform. Roughly three-quarters of the codebase is mine, across 600+ commits. The engagement contract is available on request.",
         access: "Public + on request",
         links: [{ label: "api.riverly.ng", href: "https://api.riverly.ng" }],
       },
@@ -592,7 +593,7 @@ export const verification: VerifyGroup[] = [
       {
         claim: "LykLuk, 2025 to 2026",
         detail:
-          "Flutter engineering and brand marketing on a live-shopping app. Reference available on request.",
+          "Flutter engineering and brand marketing on a live-shopping app.",
         access: "Public + on request",
         links: [{ label: "LykLuk on the App Store", href: "https://apps.apple.com/us/app/lykluk/id6444111490" }],
       },
