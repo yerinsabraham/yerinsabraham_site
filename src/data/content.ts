@@ -346,6 +346,12 @@ export const press: Press[] = [
     year: "2026",
   },
   {
+    outlet: "GO Lifestyle Magazine",
+    quote: "An interview on Monkey Post and turning the street football he grew up playing into a game.",
+    href: "https://www.instagram.com/p/De10w-Vjn5K/",
+    year: "2026",
+  },
+  {
     outlet: "FAB L'Style",
     quote: "The Nigerian Da Vinci, on his quest for boundless creativity.",
     href: "https://fablstyle.com/yerins-abraham-the-nigerian-da-vinci-on-his-quest-for-boundless-creativity/",
