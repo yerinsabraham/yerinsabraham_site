@@ -15,6 +15,7 @@ export const site = {
     { label: "Doctor", proof: "M.D., General Medicine" },
     { label: "Engineer", proof: "AI agents running inside a production bank" },
     { label: "Founder", proof: "Creovine, four live products" },
+    { label: "Game maker", proof: "Monkey Post, 18,803 players in week one" },
     { label: "Artist", proof: "Index, 106 x 365cm in pen and ink" },
     { label: "Author", proof: "Index, published" },
     { label: "Musician", proof: "Releases across rap and alternative" },
@@ -54,7 +55,7 @@ export const evidence: Evidence[] = [
     /* Names the thing built, not just where it runs. "Live in Rwandan hospitals"
        said neither what was live nor whose work it was, and read as though he
        practises there. */
-    stat: "Built a specialist referral platform, live in Rwanda",
+    stat: "Built a specialist referral platform, live in Rwanda and Nigeria",
     label:
       "Oystar carries a patient's full case from a frontline clinic to the right specialist, and brings the clinical answer back",
     href: "https://oystar.app",
@@ -65,6 +66,12 @@ export const evidence: Evidence[] = [
     stat: "M.D., trained in Ukraine",
     label:
       "Six years of general medicine at Sumy State University, taught entirely in English",
+  },
+  {
+    stat: "46,244 people opened Monkey Post in its first week",
+    label:
+      "18,803 played a match, and the launch video passed one million views. A browser football game from Adna Games",
+    href: "https://monkeypost.xyz",
   },
   {
     stat: "2 errors in 65,942 requests",
@@ -91,7 +98,7 @@ export const evidence: Evidence[] = [
 export const bio = {
   // A synthesis of who he is — a story, not a CV.
   lead: "Yerins Abraham is a polymath in the demanding sense: a medical doctor and a software engineer, each proven by something built.",
-  body: "Six years of medicine taught him how the body fails and how clinicians actually work. Six years of engineering gave him the means to do something about it. The two met in Oystar, a referral platform now live in Rwanda, and they meet again in the AI systems he builds for banks and businesses, where the question is never whether a model can answer but whether it can be trusted to act. The art, the writing and the music run alongside, and they are not a distraction from the work. They are why he can see a problem from an angle nobody else in the room is standing at.",
+  body: "Six years of medicine taught him how the body fails and how clinicians actually work. Six years of engineering gave him the means to do something about it. The two met in Oystar, a referral platform now live in Rwanda and Nigeria, and they meet again in the AI systems he builds for banks and businesses, where the question is never whether a model can answer but whether it can be trusted to act. The art, the writing and the music run alongside, and they are not a distraction from the work. They are why he can see a problem from an angle nobody else in the room is standing at.",
 };
 
 // Long-form biography for the /about page. First person, your real voice
@@ -104,14 +111,15 @@ export const about = {
     "Beyond tech, I'm an artist and entrepreneur, exploring ways to merge design, storytelling, and technology into experiences that resonate and drive engagement. My versatility lets me adapt quickly, learn new tools, and deliver across wildly different projects, from Web3 development to art exhibitions and fintech.",
     "I'm passionate about products and systems that are both technically robust and creatively inspired, and I enjoy collaborating with teams to turn complex ideas into functional, meaningful outcomes.",
     "Most of what I built between 2020 and 2025 is no longer online. I founded products, ran them, and shut them down when they had taught me what they could: Giddle; Metart Africa, a web3 platform for African art that I spoke for at Nigeria Fintech Week in Lagos in 2022; and freelance and contract work for clients in blockchain, payments and backend systems. When a product closed, its code went private and its listings came down, and I started again with what I had learned. Creovine is that same work, continued: building since 2020, under the Creovine name from 2025, and incorporated in 2026.",
-    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software engineering, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, and it led me to build Oystar, a platform that helps patients reach the specialists they need and makes sure the answer gets back to the clinic that sent them, with intelligence built in. I am starting in Rwanda, where I am based, but it is built for a problem that reaches far beyond one country. My product studio, Creovine, is where this and my other software live.",
+    "My path ran from Nigeria to Sumy State University in Ukraine, where I earned my medical degree, into software engineering, and across art, music and fashion. These days my curiosity keeps pulling me toward health technology, and it led me to build Oystar, a platform that helps patients reach the specialists they need and makes sure the answer gets back to the clinic that sent them, with intelligence built in. I started in Rwanda, where I am based, and it now runs in Nigeria too, because the problem reaches far beyond one country. My product studio, Creovine, is where this and my other software live.",
+    "In October 2026 I launched Monkey Post, a browser football game built on the street football I grew up playing in Nigeria. 46,244 people opened it in its first week and 18,803 played a match. That response is why I started Adna Games, the studio behind Monkey Post and Pac9, a table tennis game where your phone is the bat.",
     "I don't build alone. I build with my partner Sarah Oba, a product manager, full-stack engineer and content creator, and the co-founder behind Creovine with me. We share our life and work openly, including on our YouTube channel, and in 2026 I proposed to her in Rwanda, a story that found its way across the internet. The best things I make, I make with her.",
   ],
   // Third-person bio for press, speaker intros, and syndication. Copy-ready.
   pressBioShort:
     "Yerins Abraham is a polymath: a medical doctor and software engineer whose range spans art, writing and music, increasingly drawn to technology for human health.",
   pressBio:
-    "Yerins Abraham is a polymath, a medical doctor trained in General Medicine and a software engineer. His curiosity spans medicine, technology and the arts, and increasingly it points in one direction: health technology, and how to improve access to care. He is the founder of Oystar, a platform that closes the gap between frontline clinics and specialists so patients reach the care they need, starting in Rwanda. He also runs the product studio Creovine, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide range serves a single instinct: building things that meet real human needs.",
+    "Yerins Abraham is a polymath, a medical doctor trained in General Medicine and a software engineer. His curiosity spans medicine, technology and the arts, and increasingly it points in one direction: health technology, and how to improve access to care. He is the founder of Oystar, a platform that closes the gap between frontline clinics and specialists so patients reach the care they need, starting in Rwanda. He also runs the product studio Creovine and the game studio Adna Games, whose browser football game Monkey Post reached 46,244 people in its first week, and as a visual artist is known for large pen-and-ink works including Index (2020) and Mother (2024), exhibited internationally; he is the author of the book Index. Known in the media as “The Nigerian Da Vinci,” his wide range serves a single instinct: building things that meet real human needs.",
   // Quick-facts panel. Confirm/adjust any of these.
   facts: [
     { label: "Focus", value: "Technology for human health" },
@@ -120,6 +128,7 @@ export const about = {
     { label: "Languages", value: "English, Russian, Izon, French (a little)" },
     { label: "Stack", value: ".NET, React, Next.js, Flutter, AWS" },
     { label: "Studio", value: "Creovine (Oystar, Academy, Lira, Brydg, Tablu)" },
+    { label: "Games", value: "Adna Games (Monkey Post, Pac9)" },
     { label: "With", value: "Sarah Oba, partner & co-founder" },
   ],
 };
@@ -164,7 +173,7 @@ export const speaking = {
 };
 
 export const now = {
-  updated: "September 2026",
+  updated: "November 2026",
   heading: "What I'm working on",
   focus: {
     tag: "Building",
@@ -172,7 +181,7 @@ export const now = {
     detail:
       "They are sent off with a slip of paper, travel far, and are often never seen, while the clinic that sent them never learns what happened. I built Oystar to close that gap: a platform, with intelligence built in, that carries a patient's full case from a frontline clinic to the right specialist and brings the clinical answer back, so no one is lost in between. The patient needs no phone and no app.",
     engineering:
-      "The medicine tells me what has to be true. The engineering makes it true: FHIR-compatible endpoints, six tracked referral stages so a patient who never arrives is flagged instead of lost, real accounts and real authorisation with nothing mocked on the clinical path, on Next.js and a Fastify API I run on AWS. Starting in Rwanda, where I am based, for a problem that runs across Africa and far beyond it.",
+      "The medicine tells me what has to be true. The engineering makes it true: FHIR-compatible endpoints, six tracked referral stages so a patient who never arrives is flagged instead of lost, real accounts and real authorisation with nothing mocked on the clinical path, on Next.js and a Fastify API I run on AWS. Live in Rwanda, where I am based, and in Nigeria, for a problem that runs across Africa and far beyond it.",
     image: "/img/oystar-brand.jpg",
     imageW: 1200,
     imageH: 1200,
@@ -181,6 +190,7 @@ export const now = {
   },
   also: [
     "Building Creovine Academy, teaching people and teams to use AI in the work they already do. Now training organisations.",
+    "Running Adna Games: Monkey Post, the street football game, and Pac9, table tennis with your phone as the bat.",
     "Advancing Lira Intelligence, our AI customer-support product, now live.",
     "Shipping trackline, now v0.11.0 on npm: watches Claude Code, Codex and Cursor locally, and production agents through their own OpenTelemetry traces.",
     "Writing my book, Life Is Random, and publishing essays on Medium.",
@@ -201,7 +211,7 @@ export const projects: Project[] = [
     role: "Founder",
     blurb:
       "Carries a patient's full case from a frontline clinic to the right specialist and brings the clinical answer back, tracking six referral stages so a patient who never arrives is flagged rather than lost. FHIR-compatible, real authorisation, nothing mocked on the clinical path. Next.js on a Fastify API. Where the M.D. and the engineer finally meet.",
-    status: "Live · Rwanda",
+    status: "Live · Rwanda & Nigeria",
     href: "https://oystar.app",
   },
   {
@@ -235,6 +245,22 @@ export const projects: Project[] = [
       "A school for using AI in real work, taught from six-plus years of shipping production software for banks and growing companies. 120+ people trained. Single courses, a two-semester track with marked projects and a verifiable certificate, and customised programmes for organisations. Web and iOS.",
     status: "Live · Enrolling",
     href: "https://academy.creovine.com",
+  },
+  {
+    title: "Monkey Post",
+    role: "Adna Games",
+    blurb:
+      "A browser football game built on the street football Nigerian kids play: five a side, small goals, no goalkeeper, hawkers beside the pitch. No download, playable in seconds on a phone. 46,244 people opened it in launch week (6 to 12 October 2026), 18,803 played a match, and the launch video passed one million views. Online multiplayer runs on its own realtime server in Cape Town.",
+    status: "Live",
+    href: "https://monkeypost.xyz",
+  },
+  {
+    title: "Pac9",
+    role: "Adna Games",
+    blurb:
+      "A 3D table tennis game in the browser where your phone is the bat. Scan a QR code and your swings drive the game, timed at the moment you swing, with the phone buzzing on contact. Play on a laptop, a TV or a tablet, or with a mouse or keyboard.",
+    status: "Live",
+    href: "https://pac9.xyz",
   },
   {
     title: "Creovine",
@@ -313,6 +339,12 @@ export type Press = {
 };
 
 export const press: Press[] = [
+  {
+    outlet: "Technext",
+    quote: "How Monkey Post turned Nigeria's street football into a hit browser game.",
+    href: "https://technext24.com/reviews/monkey-post-nigerian-street-football-game/",
+    year: "2026",
+  },
   {
     outlet: "FAB L'Style",
     quote: "The Nigerian Da Vinci, on his quest for boundless creativity.",
@@ -473,6 +505,8 @@ export const inlineLinks: { term: string; href: string }[] = [
   { term: "Creovine Academy", href: "https://academy.creovine.com" },
   { term: "Creovine", href: "https://creovine.com/" },
   { term: "Tablu", href: "https://www.tabluhq.com/" },
+  { term: "Monkey Post", href: "https://monkeypost.xyz" },
+  { term: "Pac9", href: "https://pac9.xyz" },
   { term: "Brydg", href: "https://brydg.app/" },
   { term: "Lira", href: "https://liraintelligence.com/" },
   { term: "Medium", href: site.socials.medium },
@@ -628,7 +662,7 @@ export const verification: VerifyGroup[] = [
       {
         claim: "Products and their status",
         detail:
-          "Lira Intelligence is live. Creovine Academy is enrolling. Oystar is live in Rwanda. Brydg is in development. Tablu is in a pilot.",
+          "Lira Intelligence is live. Creovine Academy is enrolling. Oystar is live in Rwanda and Nigeria. Brydg is in development. Tablu is in a pilot.",
         access: "Public",
         links: [
           { label: "Lira", href: "https://liraintelligence.com" },
@@ -638,11 +672,56 @@ export const verification: VerifyGroup[] = [
         ],
       },
       {
+        claim: "Monkey Post and Pac9, Adna Games",
+        detail:
+          "Both games are live in the browser. Monkey Post launch week, 6 to 12 October 2026: 46,244 people opened it, 18,803 played a match and about 35,800 matches were played, from the game's own analytics (not audited). Covered by Technext. Traction report on request.",
+        access: "Public + on request",
+        links: [
+          { label: "monkeypost.xyz", href: "https://monkeypost.xyz" },
+          { label: "pac9.xyz", href: "https://pac9.xyz" },
+          {
+            label: "Technext, 2026",
+            href: "https://technext24.com/reviews/monkey-post-nigerian-street-football-game/",
+          },
+        ],
+      },
+      {
         claim: "Creovine Academy, 120+ people trained",
         detail: "Cohort and organisation training records available on request.",
         access: "On request",
         links: [],
       },
     ],
+  },
+];
+
+/* Adna Games, the game studio. Shown as its own section on the home page. */
+export type Game = {
+  title: string;
+  line: string;
+  stat?: string;
+  href: string;
+  image: string;
+  w: number;
+  h: number;
+};
+
+export const games: Game[] = [
+  {
+    title: "Monkey Post",
+    line: "Street football the way Nigerian kids play it: five a side, small goals, no goalkeeper.",
+    stat: "46,244 people in launch week",
+    href: "https://monkeypost.xyz",
+    image: "/img/monkey-post.jpg",
+    w: 1600,
+    h: 900,
+  },
+  {
+    title: "Pac9",
+    line: "Table tennis in the browser, with your phone as the bat.",
+    href: "https://pac9.xyz",
+    image: "/img/pac9.jpg",
+    w: 1200,
+    h: 630,
   },
 ];

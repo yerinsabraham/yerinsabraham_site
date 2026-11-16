@@ -6,7 +6,7 @@ import { projects } from "@/data/content";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Software and ventures by Yerins Abraham, including Creovine and its products Tablu, Lira Intelligence and Brydg, plus health technology.",
+    "Software and ventures by Yerins Abraham, including Creovine and its products Tablu, Lira Intelligence and Brydg, health technology, and the Adna Games titles Monkey Post and Pac9.",
   alternates: { canonical: "/work" },
 };
 
@@ -21,8 +21,9 @@ export default function WorkPage() {
           Software, shipped.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          I co-found and lead Creovine, an AI product studio. These are the
-          products we build, and where I am headed next.
+          I co-found and lead Creovine, an AI product studio, and run Adna
+          Games, the studio behind my games. These are the products we build,
+          and where I am headed next.
         </p>
       </header>
 

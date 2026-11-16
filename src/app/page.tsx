@@ -14,6 +14,7 @@ import {
   beginningsQuote,
   artworks,
   evidence,
+  games,
 } from "@/data/content";
 import { books, essays } from "@/data/writings";
 import { engineering } from "@/data/engineering";
@@ -222,6 +223,58 @@ export default async function Home() {
             </span>
           </a>
         </Reveal>
+      </Section>
+
+      {/* GAMES — Adna Games */}
+      <Section id="games" eyebrow="Games" bordered>
+        <HeadingRow
+          title="Adna Games"
+          href="/work"
+          label="All work"
+        />
+        <Reveal>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
+            The game studio I started after Monkey Post. Both games run in the
+            browser with nothing to download, and both start from something
+            people already know how to play.
+          </p>
+        </Reveal>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {games.map((g) => (
+            <Reveal key={g.title}>
+              <a
+                href={g.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div className="relative overflow-hidden rounded-2xl border border-line bg-paper-2">
+                  <Image
+                    src={g.image}
+                    alt={`${g.title} gameplay`}
+                    width={g.w}
+                    height={g.h}
+                    sizes="(max-width: 640px) 92vw, 46vw"
+                    className="aspect-video h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <div className="mt-3 flex items-baseline justify-between gap-3">
+                  <p className="font-[family-name:var(--font-fraunces)] text-lg text-ink">
+                    {g.title}
+                  </p>
+                  {g.stat && (
+                    <span className="shrink-0 text-xs text-accent-deep">
+                      {g.stat}
+                    </span>
+                  )}
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                  {g.line}
+                </p>
+              </a>
+            </Reveal>
+          ))}
+        </div>
       </Section>
 
       {/* ART teaser */}
